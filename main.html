@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html>
-<h1>Hello</h1>
-<p>This website by Shashank Pathak is made for pre-registration of his new game</p>
-<h1>For more info :</h1><a href=https://ShashankDAV.github.io/info.html>Click here</a>
+<h1>Shashank's Website</h1><br><br>
+<h1><span id="sp"></span></h1>
+<input type="name" id="name">
+<button onclick="Submit()">Submit</button>
+
+function submit() {
+    let x=document.getElementById("name").value;
+    let y="Welcome " + x
+    document.getElementById("sp").innerHTML = y;
+}
+
+<h1>His Game Info</h1><br>
+<h2>For more info : <a href=https://ShashankDAV.github.io/info.html>Click here</a></h2>
