@@ -16,6 +16,18 @@ function f() {
 }
 
 </script>
-</script>
 <h1>His Game Info</h1><br>
 <h2>For more info : <a href=https://ShashankDAV.github.io/info.html>Click here</a></h2>
+<h1><span id="i"></span></h1>
+<input type="name" id="n">
+<button onclick="f()">click me</button>
+
+<script>
+
+function f() {
+	let s= document.getElementById("n").value;
+	let j="Hello "+s;
+	document.getElementById("i").innerHTML=j;
+}
+
+</script>
