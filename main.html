@@ -20,10 +20,12 @@
 <button onclick="f()" style="position:relative;right:5;width:20%;height:5%"><font size=7>Submit</font></button><br><br>
 
 <script>
-var u = getUrlParameter("n");
+var u = new URLSearchParams(window.location.search);
+var y= u.get("name")
+
 function f() {
 	let s= document.getElementById("n").value;
-	let j="Welcome "+s+" to my website";
+	let j="Welcome "+y+s+" to my website";
 	document.getElementById("i").innerHTML=j;
 }
 
