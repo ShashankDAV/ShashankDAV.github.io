@@ -20,7 +20,8 @@
 <button onclick="f()" style="position:relative;right:5;width:20%;height:5%"><font size=7>Submit</font></button><br><br>
 
 <script>
-
+var u = getUrlParameter("name");
+document.getElementById("i").innerHTML=u
 function f() {
 	let s= document.getElementById("n").value;
 	let j="Welcome "+s+" to my website";
