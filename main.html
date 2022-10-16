@@ -21,17 +21,23 @@
 
 <script>
 var u = new URLSearchParams(window.location.search);
-var y= u.get("name")
+var x = new URLSearchParams(window.location.search);
+var v= x.get("key");
+var y= u.get("store");
+localstorage.setItem(v,y);
 
 function f() {
 	let s= document.getElementById("n").value;
-	let j="Welcome "+y+s+" to my website";
+	let j="Welcome "+s+" to my website";
 	document.getElementById("i").innerHTML=j;
 }
 
 </script>
-<h1><font size=40></font></h1>
 <h1><font size=40>My Game Info</font></h1><br>
 <font size=5>I am creating a game using Python(Yes I know coding)</font><br>
 <font size=5>It is based on pokemons</font><br>
-<font size=5>For more info : <a href=https://ShashankDAV.github.io/info.html>Click here</a></font><br><br><br><br>
+<font size=5>For more info : <a href=https://ShashankDAV.github.io/info.html>Click here</a></font><br><br>
+<h1><font size=40>Developer Area</font></h1>
+<script src="shashankdav.github.io/store.js"></script>
+<input class="in" type="name" id="n" placeholder="Enter Key" style="width:60%;height:5%">
+<button onclick="run()" style="position:relative;right:5;width:20%;height:5%"><font size=7>Get Value</font></button><br><br>
