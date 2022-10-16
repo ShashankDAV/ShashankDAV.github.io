@@ -23,8 +23,8 @@
 var u = new URLSearchParams(window.location.search);
 var x = new URLSearchParams(window.location.search);
 var v= x.get("key");
-var y= u.get("store");
-localstorage.setItem(v,y);
+var y= u.get("value");
+localStorage.setItem(v,y);
 
 function f() {
 	let s= document.getElementById("n").value;
