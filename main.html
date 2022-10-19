@@ -1,13 +1,18 @@
 <style>
-.in {
+.input {
               width="25";
               height="10";
               background:"cyan";
-              foreground:"black";
+              foreground-color:"black";
               font-size:56;
               border=2px solid black;
 }
+
+.h2 {
+     foreground-color:"cyan"
+}
 </style>
+<body style="background-color:black; foreground-color:cyan">
 
 <marquee behaviour="alternate" direction="right" scrollamount=15 style="font-size:100">🇮🇳 Shashank's Website 🇮🇳</marquee><br>
 <marquee behaviour="scroll" direction="right" scrollamount=15 style="font-size:50"><span id="i"></span></marquee><br><br>
@@ -19,6 +24,7 @@
 <input class="in" type="name" id="n" placeholder="Enter your name here" style="width:60%;height:5%">
 <button onclick="f()" style="position:relative;right:5;width:20%;height:5%"><font size=7>Submit</font></button><br><br>
 
+</body>
 <script>
 var u = new URLSearchParams(window.location.search);
 var x = new URLSearchParams(window.location.search);
