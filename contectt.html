@@ -1,76 +1,22 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<style>
+.tweet-body{
+            width: 82%;
+            margin-left: 60px;
+}
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+.tweet-body textarea{
+                     overflow: hidden; resize: none; }
+                     margin-top: 40px;
+                     height: 80px;
+                     border: 1px solid red;
+                     border-radius: 4px;
+                     padding: 10px;
+                     font-size: 14px;
+}
 
-<body>
-  <h2>Contact Information</h2>
-  <h3>Ashish Singh</h3>
-  <p>
+</style>
 
-      panki road redma <br>
-      <i>📞📞 8789293187</i><br>
-      <i>📧📨 ashish47994@gmail.com</i>
-    </em>
-    <hr>
-  <table cellspacing="5">
-    <form class="" action="mailto: shashankpathak963@gmail.com" method="post" enctype="text/plain">
-      <tr>
-        <td> <label>your name:</label>
-        </td>
-        <td> <input type="text" name="your name" value=""></td>
-      </tr>
-      <tr>
-        <td><label>email</label></td>
-        <td><input type="email" name="email" value=""></td>
-      </tr>
-      <tr>
-        <td> <label>password</label></td>
-        <td> <input type="" name="your password" value=""></td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>Date & time Of Submission</label>
-        </td>
-        <td><input type="datetime-local" name="time and date" value=""></td>
-      </tr>
-      <tr>
-        <td><label>  Photo ID</label>
-        </td>
-        <td> <input type="file" name=".doc" value=""></td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>your message</label>
-        </td>
-        <td>
-          <textarea name="message" rows="8" cols="80"></textarea>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label>
-            <em>please check the check box
-              <br>before submiting</em>
-          </label>
-        </td>
-        <td><input type="radio" name="" value=""></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td> <input type="submit" name=""></td>
-      </tr>
-  </table>
-  </form>
-  </p>
-  </form>
-
-</body>
-
-</html>
+<div class="tweet-body"> 
+<form method="post" enctype="multipart/form-data"> 
+	<textarea class="status" name="status" placeholder="Write your post here!" rows="4" cols="50"></textarea> 
+</div> 
