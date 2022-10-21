@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <style>
 .in {
               width="25";
