@@ -1,5 +1,4 @@
-<h1>Hi</h1>
-<button>C</button>
+<!DOCTYPE html>
 <style>
 .in {
               width="25";
@@ -50,7 +49,6 @@ a {
 
 .ak {
      position: relative;
-     bottom: -20px;
      left: -5px;
      margin: 20px 20px;
      font-size: 40px;
