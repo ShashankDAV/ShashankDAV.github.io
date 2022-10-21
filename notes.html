@@ -5,11 +5,13 @@
 
 var key = document.getElementById("sub").value;
 var value = document.getElementById("hw").value;
+var key1 = "eng"
 
 function run() {
                 var eng = localStorage.setItem(key,value);
                 var sci = localStorage.setItem(key , value);
                 var maths = localStorage.setItem(key , value);
+                alert("${localStorage.getItem(key1)}");
 }
 
 function runx() {
@@ -18,3 +20,12 @@ function runx() {
                                        run()
 }
 </script>
+
+<div>
+
+<div>
+<input type="name" value="name">
+<input type="name" value="sub">
+<input type="name" value="hw">
+<button onclick="runx()">Submit</button>
+</div>
