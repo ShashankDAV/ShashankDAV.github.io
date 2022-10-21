@@ -2,32 +2,17 @@
 
 </style>
 <script>
-
-var key = document.getElementById("sub").value;
-var value = document.getElementById("hw").value;
-var key1 = "eng";
-
+var u= ""
 function run() {
-                localStorage.setItem(key1,value);
-                var y = local storage.getItem(key1);
-                alert(y);
-}
-
-function runx() {
-                var x = document.getElementById("name").value;
-                alert(x);
-                if (x=="shashankdav") {
-                                       alert("ran");
-                                       run();
-}
+                var na = document.getElementById("name").value;
+                document.getElementById("u").innerHTML=na;
 }
 </script>
 
 <div>
 
 <div>
+<h1><span id="u"></span></h1>
 <input type="name" id="name">
-<input type="name" id="sub">
-<input type="name" id="hw">
-<button onclick="runx()">Submit</button>
+<button onclick="run()">Submit</button>
 </div>
