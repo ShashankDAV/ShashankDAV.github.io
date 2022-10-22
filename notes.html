@@ -22,6 +22,18 @@ function run() {
             padding: 5px 5px;
 }
 
+.button {
+            font-size: 100px;
+            position: relative;
+            right: -3px;
+            display: flex;
+            align-items: centre;
+            background-color: lightblue;
+            border-radius: 15px;
+            border: 4px solid black;
+            padding: 5px 5px;
+}
+
 h1 {
     position: relative;
     font-size: 100px;
@@ -39,6 +51,7 @@ h2 {
 }
 
 </style>
+<body style="background-color: peach">
 
 <div class="container">
 <h1>Maths: </h1><h2 id="math"></h2>
@@ -51,4 +64,6 @@ h2 {
 </div>
 
 
-<button class="container" onclick="run()">Get Today's HomeWork</button>
+<button class="button" onclick="run()">Get Today's HomeWork</button>
+
+</body>
