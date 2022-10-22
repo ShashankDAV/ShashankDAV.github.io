@@ -2,16 +2,18 @@
 var maths = "Do ws-3 of ch-9";
 var science = "Do D of ch-5";
 var english = "Read ch-7";
-document.getElementById("math").innerHTML=maths;
-document.getElementById("sci").innerHTML=science;
-document.getElementById("eng").innerHTML=english;
+function run() {
+         document.getElementById("math").innerHTML=maths;
+         document.getElementById("sci").innerHTML=science;
+         document.getElementById("eng").innerHTML=english;
+}
 </script>
 
 <style>
 
 .container {
             position: relative;
-            right: -5px;
+            right: -3px;
             display: flex;
             align-items: centre;
             background-color: lightpink;
@@ -47,3 +49,6 @@ h2 {
 <div class="container">
 <h1>English: </h1><h2 id="eng"></h2>
 </div>
+
+
+<button class="container" onclick="run()">Get Today's HomeWork</button>
