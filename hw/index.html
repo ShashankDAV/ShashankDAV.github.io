@@ -1,0 +1,72 @@
+<script>
+var maths = "Do ws-3 of ch-9";
+var science = "Do D of ch-5";
+var english = "Read ch-7";
+function run() {
+         document.getElementById("math").innerHTML=maths;
+         document.getElementById("sci").innerHTML=science;
+         document.getElementById("eng").innerHTML=english;
+}
+</script>
+
+<style>
+
+.container {
+            position: relative;
+            bottom: -20px;
+            right: -3px;
+            display: flex;
+            align-items: centre;
+            background-color: lightpink;
+            border-radius: 15px;
+            border: 4px solid black;
+            padding: 5px 5px;
+}
+
+.button {
+            font-size: 15px;
+            position: relative;
+            bottom: -12px;
+            right: -3px;
+            display: flex;
+            align-items: centre;
+            background-color: lightblue;
+            border-radius: 15px;
+            border: 4px solid black;
+            padding: 5px 5px;
+            width: 965px;
+}
+
+h1 {
+    position: relative;
+    font-size: 100px;
+    color: black;
+    right: -25px;
+    margin: 5px 5px;
+}
+
+h2 {
+    position: relative;
+    font-size: 75px;
+    top: -35px;
+    right: -40px;
+    margin-bottom: 20px;
+}
+
+</style>
+<body style="background-color: #FDE5B4">
+
+<div class="container">
+<h1>Maths: </h1><h2 id="math"></h2>
+</div>
+<div class="container">
+<h1>Science: </h1><h2 id="sci"></h2>
+</div>
+<div class="container">
+<h1>English: </h1><h2 id="eng"></h2>
+</div>
+
+
+<button class="button" onclick="run()"><h1>  Get  HomeWork  </h1></button>
+
+</body>
