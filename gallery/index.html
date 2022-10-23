@@ -90,4 +90,27 @@ h1 {
 </th>
 </table>
 </div>
- 
+<style>
+
+div {
+	height: 500px;
+	background-color: lightpink;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.cl {
+	background-color: linear-gradient(to bottom right, red, yellow);
+	width:150px;
+	height:50px;
+	position: relative;
+	right: -100px;
+}
+
+.cl:hover {
+	border-color: linear-gradient(to bottom,red, green);
+}
+</style>
+
+<div><button class="cl">cl</button></div>
