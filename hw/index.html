@@ -1,5 +1,5 @@
 <script>
-var da = "22/10/22"
+var da = "Date: 22/10/22"
 var maths = "Do ws-3 of ch-9";
 var science = "Do D of ch-5";
 var english = "Read ch-7";
@@ -16,7 +16,7 @@ function run() {
          document.getElementById("san").innerHTML=sanskrit;
          document.getElementById("date").innerHTML=da;
 }
-run()
+
 </script>
 
 <style>
@@ -47,6 +47,17 @@ run()
             width: 965px;
 }
 
+.label {
+        font-size: 30px;
+        position: relative;
+        right: -3px;
+        background-color: lightpink;
+        border-radius: 15px;
+        border: 4px solid black;
+        padding: 5px 5px;
+        width: 950px;
+}
+
 h1 {
     position: relative;
     font-size: 100px;
@@ -65,7 +76,7 @@ h2 {
 
 </style>
 <body style="background-color: #FDE5B4">
-<h1 class="button" id="date"></h1>
+<h1 class="label" id="date">Date: </h1>
 
 <div class="container">
 <h1>Maths: </h1><h2 id="math"></h2>
