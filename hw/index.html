@@ -1,12 +1,22 @@
 <script>
+var da = "22/10/22"
 var maths = "Do ws-3 of ch-9";
 var science = "Do D of ch-5";
 var english = "Read ch-7";
+var hindi = "बातचीत के लिए अपने कॉपी में लिखें।";
+var sost = "Complete ch-16 all work";
+var sanskrit = "पृष्ठ संख्या-77 कॉपी में लिखें";
+
 function run() {
          document.getElementById("math").innerHTML=maths;
          document.getElementById("sci").innerHTML=science;
          document.getElementById("eng").innerHTML=english;
+         document.getElementById("hin").innerHTML=hindi;
+         document.getElementById("sst").innerHTML=sost;
+         document.getElementById("san").innerHTML=sanskrit;
+         document.getElementById("date").innerHTML=da;
 }
+run()
 </script>
 
 <style>
@@ -50,11 +60,12 @@ h2 {
     font-size: 75px;
     top: -35px;
     right: -40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 </style>
 <body style="background-color: #FDE5B4">
+<h1 class="button" id="date"></h1>
 
 <div class="container">
 <h1>Maths: </h1><h2 id="math"></h2>
@@ -65,7 +76,15 @@ h2 {
 <div class="container">
 <h1>English: </h1><h2 id="eng"></h2>
 </div>
-
+<div class="container">
+<h1>Hindi: </h1><h2 id="hin"></h2>
+</div>
+<div class="container">
+<h1>SST: </h1><h2 id="sst"></h2>
+</div>
+<div class="container">
+<h1>Sanskrit: </h1><h2 id="san"></h2>
+</div>
 
 <button class="button" onclick="run()"><h1>  Get  HomeWork  </h1></button>
 
