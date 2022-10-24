@@ -57,7 +57,7 @@
     </script>
 <script>
        if (movie=="dead") {
-                        var s = localStorage.getItem('MyMovieList');
+                        var s = JSON.parse(localStorage.getItem('MyMovieList'));
                         document.getElementById("h4").innerHTML = s;
 }
 </body>
