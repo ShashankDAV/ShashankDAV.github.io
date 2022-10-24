@@ -1,16 +1,12 @@
-<body>
-<input type="name" id="I">
-<button onclick="add()">Add</button>
-<button onclick="get()">Get</button>
-</body>
-<script>
-let name= [];
-function add() {
-                var x = document.getElementById("I").value;
-                alert(x);
-}
+<input id="na" type="name">
+<button onclick="f()">c</button>
 
-function get() {
-                var b= localStorage.getItem("n");
-                alert(b);
+<script>
+let m = [];
+function f() {
+	let x = document.getElementById("na").value;
+	m.push(x);
+	alert(m);
+	//local storage.setItem("key",m);
+}
 </script>
