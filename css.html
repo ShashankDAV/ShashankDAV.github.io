@@ -6,12 +6,13 @@
 <script>
 let name= [];
 function add() {
-var x = document.getElementById("I").value;
-name.push(x);
-localStorage.setItem("n",name);
+                var x = document.getElementById("I").value;
+                name.push(x);
+                alert(name)
+                localStorage.setItem("n",JSON.stringify(name) );
 }
 
 function get() {
-var b= localStorage.getItem("n");
-alert(b);
+                var b= localStorage.getItem("n");
+                alert(b);
 </script>
