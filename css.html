@@ -56,9 +56,11 @@
         });
     </script>
 <script>
-       if (movie=="dead") {
-                        var s = JSON.parse(localStorage.getItem('MyMovieList'));
-                        document.getElementById("h4").innerHTML = s;
+var x = document.getElementById("title").value;
+if (x=="dead") {
+               var s = JSON.parse(localStorage.getItem('MyMovieList'));
+               document.write(s);
+               alert(s);
 }
 </body>
 </html>
