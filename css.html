@@ -6,11 +6,13 @@ let m = [];
 function f() {
 	let x = document.getElementById("na").value;
 	m.push(x);
+        if (x=="shashankdav") {
+                               m.pop();
+}
 	alert(m);
 	localStorage.setItem("move", m);
         if (x=="shashankdav") {
            alert("Hello Master");
-           m.pop();
            let y = localStorage.getItem("move");
            alert(y);
 }
