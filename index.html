@@ -8,6 +8,13 @@ Shashank
 #main {
        display: none;
 }
+#btn {
+      display: block;
+      width: 500px;
+      float: center;
+      height: 150px;
+      border: 4px solid linear-gradient(90deg,blue,cyan);
+}
 .in {
               width="25";
               height="10";
@@ -147,8 +154,10 @@ hr {
 <div class="pg-1">
 <p class="pg-1-p">This is my personal website. If you are from <a class="pg-1-a" href="http://mkdav.in">MK DAV Public School</a> and want notes or homework of class 7E you can get it by clicking link on menu or type <a class="pg-1-a" href="https://davnotes.art.blog">https://dav<br>notes.art.blog</a>(by Yugraj) in your browser for notes and type <a class="pg-1-a" href="https://shashankdav.github.io/hw">https://shashankdav.github.io/hw</a> in your browser for homework.</p></div>
 </div>
-<button onclick="f()">Load</button>
+<button onclick="f()" id="btn">Load</button>
 <script>
-function f() {
-              document.getElementById("main").style.display="block";
+function show() {
+         document.getElementById('main').style.display = "block";
+         document.getElementById('btn').style.display = "none";
 }
+</script>
