@@ -142,7 +142,7 @@ Login Page
 </div>
 
 <script>
-
+local storage.setItem("key",[])
 let li = localStorage.getItem("key");
 
 function show() {
@@ -159,6 +159,7 @@ function show() {
 }
 
 function set() {
+         alert(li)
          var fna = document.getElementById("f_name").value;
          var lna = document.getElementById("l_name").value;
          var nam = fna+" "+lna;
