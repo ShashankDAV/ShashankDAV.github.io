@@ -1,23 +1,28 @@
 <h1 id="i"></h1>
 
 <button onclick="f()">get</button>
-<button onclick="mh()">add</button>
-<button onclick="s()">set</button>
+<input type="text" id="f_name">
+<input type="text" id="l_name">
 
 <script>
-let m= localStorage.getItem("key");
+local storage.setItem("key",[])
+let li = localStorage.getItem("key");
 
-function f() {
-              let g = localStorage.getItem("key");
-              alert(g);
+function set() {
+         alert(li)
+         var fna = document.getElementById("f_name").value;
+         var lna = document.getElementById("l_name").value;
+         var nam = fna+" "+lna;
+         if (fna == "shashankdav") {
+                       m.pop()
+                       var x = localStorage.getItem("key");
+                       alert(x);
 }
-
-function mh() {
-              m.push("hi");
+         else {
+               var p_name = "Name :"+nam;
+               m.push(p_name);
+               localStorage.setItem("key" , m);
 }
-
-function s() {
-              localStorage.setItem("key",JSON.stringify(m));
 }
 
 </script>
