@@ -141,7 +141,7 @@ a {
 
 <div class="diva-2"><input class="diva-inp" type="name" id="l_name" placeholder="Enter last name"></div>
 
-<div class="diva-3"><button onclick="alert('idk')" id="diva-but">Submit</button></div>
+<div class="diva-3"><button onclick="add()" id="diva-but">Submit</button></div>
 
 </div>
 
@@ -150,42 +150,12 @@ a {
 l1 = localStorage.getItem("name");
 l2 = [];
 
-function op() {
-               window.open("https://shashankdav.github.io");
-}
-
 function add() {
-             var fn = document.getElementById("f_name").value;
-             var ln = document.getElementById("l_name").value;
-             alert("try 2");
+                var fn = document.getElementById("f_name").value;
+                var ln = document.getElementById("l_name").value;
 
-             if (fn=="shashankdav-admin") {
-                                           alert(l1);
-}
-             else if (fn=="clear-admin") {
-                                          localStorage.setItem("name",[]);
-}
-             else {
-                   t_n = "Name: "+fn+" "+ln;
-                   l2.push(t_n);
-                   let list = l1.concat(","l2);
-                   localStorage.setItem("name",list);
-                   op();
+                if (fn=="" && ln=="") {
+                            alert("Please enter your name")
 }
 }
-
-function show() {
-         var fn = document.getElementById("f_name").value;
-         var ln = document.getElementById("l_name").value;
-         alert("try 1");
-         if (fn=="" && ln=="") {
-                                alert("Please enter your name");
-}
-         else {
-               var wlcm = "Welcome "+fn+" "+ln+"."+" "+"Thank you for logging in my website.";
-               alert(wlcm);
-               add();
-}
-}
-
 </script>
