@@ -7,6 +7,7 @@
 <script>
 
 m = localStorage.getItem("key");
+n = [];
 
 function f() {
              var fn = document.getElementById("f_name").value;
@@ -14,7 +15,8 @@ function f() {
                            alert(m);
 }
              else {
-                  m.push(fn);
+                  n.push(fn);
+                  m.concat(n);
                   localStorage.setItem("key",m);
 }
 }
