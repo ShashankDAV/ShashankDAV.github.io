@@ -12,7 +12,7 @@ n = [];
 function f() {
              var fn = document.getElementById("f_name").value;
              n.push(fn);
-             let mn = m.concat(n);
+             let mn = m.concat(","+n);
              var x = localStorage.getItem("key");
              localStorage.setItem("key",mn);
              alert(x);
