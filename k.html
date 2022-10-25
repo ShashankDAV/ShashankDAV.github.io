@@ -1,23 +1,21 @@
 <input id="name" type="text">
 <input id="name1" type="name">
 
-<button onclick="s()">c</button>
+<button onclick="save()">c</button>
 
 <script>
-var data = [];
-function s(){
-             var first = document.getElementById("name").value;
-             var last = document.getElementById("name1").value;
-             alert("1");
-             data.push(first); 
-             data.push(last);
-             var data_string = JSON.stringify(data);
-             alert("2");
-             var file = new Blob( [data_string], {type:"text"});
-             alert("3);
-             anchor = document.createElement("a"); anchor.href= URL.createObjectURL(file);
-             anchor.download="save.txt";
-             anchor.click();
-             alert("final")
+let fileHandle;
+
+async function button() {
+                        [fileHandle] = await window.showOpenFilePicker();
+                        let fileData = await fileHandle.getFile();
+                        let text = await fileData.text();
+                        textarea.innerText = text;
+}
+
+async function save() {
+                       let stream = await fileHandle.createWritable(); 
+                       await stream.write("idk");
+                       await stream.close();
 }
 </script>
