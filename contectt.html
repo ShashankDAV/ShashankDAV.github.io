@@ -97,7 +97,7 @@ Shashank
 	z-index: 10;
 }
 
-.diva-but {
+#diva-but {
 	font-size: 100px;
 	width: 700px;
 	height: 140px;
@@ -169,17 +169,10 @@ Shashank
 	100% {transform: rotate(360deg)}
 }
 
-#
-
-#btn {
-      font-size: 50px;
-      display: block;
-      width: 500px;
-      float: center;
-      height: 150px;
-      background-color: blue;
-      border: 4px solid linear-gradient(90deg,blue,cyan);
+#main {
+       display: none;
 }
+
 .in {
               width="25";
               height="10";
@@ -193,23 +186,99 @@ body {
       background-image: url('bgg.jpg');
 }
 
-button {
-     color: white;
-     background-color: #000040;
-     border-radius: 20px;
-}
-
-input {
-     color: white;
-     background-color: #000040;
-     border-radius: 20px;
-}
 a {
    color: cyan;
    text-decoration:none;
 }
 
+.imgg {
+     border-radius:50%;
+}
+
+.ing {
+      border-radius:15%;
+}
+
+.align {
+       text-align: right;
+       position: relative;
+       width: 1000px;
+       height: 6px;
+       border-radius:15px;
+       margin: 5px 2px;
+       bottom: -5px;
+}
+
+.ak {
+     position: relative;
+     bottom: -20px;
+     left: -5px;
+     margin: 20px 20px;
+     font-size: 40px;
+     color: white;
+}
+
+.div2-h1 {
+         position: relative;
+         right: -20px;
+         font-size: 50px;
+         width: 350px;
+         text-align: centre;
+}
+
+.div2-p {
+         font-size: 40px;
+         position: relative;
+         color: lightgrey;
+}
+
+.apj {
+      position: relative;
+      right: -7px;
+      height: 600px;
+      width: 975px;
+      border-radius: 3px;
+      border: 2px solid black;
+      margin: 5px 5px;
+}
+
+hr {
+   font-weight: 10px;
+   font-size: 20px;
+   position: relative;
+   right: -17px;
+}
+
+@keyframes her {
+    0% {left: 975px}
+}
+
+.pg-1 {
+       margin-left: 12px;
+       display: flex;
+       align-items: center;
+       border-radius: 15px;
+       padding: 5px 5px;
+       width: 970px;
+}
+
+.pg-1-p {
+         font-family: italic;
+         font-size: 50px;
+         margin: 5px 5px;
+         color: #FFE5B4;
+}
+
+.pg-1-a {
+         font-size: 50px;
+         font-family: italic;
+         color: blue;
+         margin: 5px 5px;
+}
+
 </style>
+
+<body style="background-color: #000040; color: white">
 
 <div class="main-div">
 
@@ -219,6 +288,25 @@ a {
 
 <div class="diva-2"><input class="diva-inp" type="name" id="l_name" placeholder="Enter last name"></div>
 
-<div class="diva-3"><button onclick="show()" class="diva-but">Submit</button></div>
+<div class="diva-3"><button onclick="show()" id="diva-but">Submit</button></div>
 
 </div>
+
+<div id="main">
+<h1 style="background-color: black; color: white; height:6%" class="align"><a class="ak" href="https://shashankdav.github.io/hw">HomeWork</a><a class="ak" href="https://davnotes.art.blog">Notes</a><a class="ak" href="mailto: shashankpathak963@gmail.com?subject=Contact&body=Enter your name here:">Contact</a></h1>  
+<table>    
+<tr><th><div class="div1"><img src="cartoon_img.png" class="div1-img"></th><th><h1 class="div2-h1">My Info</h1><h2 class="div2-p">I am Shashank<br>I read in class 7<br>of MK DAV Public School</h2></div></th></tr>
+</table><br>
+<hr>
+<br>
+<img class="apj" src="apj.jpg">
+<div class="pg-1">
+<p class="pg-1-p">This is my personal website. If you are from <a class="pg-1-a" href="http://mkdav.in">MK DAV Public School</a> and want notes or homework of class 7E you can get it by clicking link on menu or type <a class="pg-1-a" href="https://davnotes.art.blog">https://dav<br>notes.art.blog</a>(by Yugraj) in your browser for notes and type <a class="pg-1-a" href="https://shashankdav.github.io/hw">https://shashankdav.github.io/hw</a> in your browser for homework.</p></div>
+</div>
+
+<script>
+function show() {
+         document.getElementById('main').style.display = "block";
+         document.getElementById('btn').style.display = "none";
+}
+</script>
