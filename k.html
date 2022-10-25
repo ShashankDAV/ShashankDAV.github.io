@@ -1,25 +1,26 @@
 <input id="name" type="text">
 <input id="name1" type="name">
 
+<button onclick="s()">c</button>
 
 <script>
-function save func(){
+function s(){
 
 var first = document.getElementById("name").value;
 var last = document.getElementById("name1").value;
 
 var data = [];
-
+alert("1");
 data.push(first); 
 
 data.push(last);
 
 var data_string = JSON.stringify(data);
-
+alert("2");
 var file = new Blob( [data_string], {type:"text"});
-
+alert("3);
 var anchor = document.createElement("a"); anchor.href= URL.createObjectURL(file);
 anchor.download="save.txt";
 anchor.click();
-
+alert("final")
 </script>
