@@ -146,6 +146,10 @@ Login Page
 l1 = localStorage.getItem("name");
 l2 = [];
 
+function op() {
+               window.open("https://shashankdav.github.io","_blank");
+}
+
 function add() {
              var fn = document.getElementById("f_name").value;
              var ln = document.getElementById("l_name").value;
@@ -161,6 +165,7 @@ function add() {
                    l2.push(t_n);
                    let list = l1.concat(l2);
                    localStorage.setItem("name",list);
+                   setTimeout(op,5000);
 }
 }
 
