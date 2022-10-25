@@ -11,14 +11,11 @@ n = [];
 
 function f() {
              var fn = document.getElementById("f_name").value;
-             if (fn=="sp") {
-                           alert(m);
-}
-             else {
-                  n.push(fn);
-                  m.concat(n);
-                  localStorage.setItem("key",m);
-}
+             n.push(fn);
+             m.concat(n);
+             var x = localStorage.getItem("key");
+             localStorage.setItem("key",m);
+             alert(x);
 }
 
 </script>
