@@ -141,7 +141,7 @@ a {
 
 <div class="diva-2"><input class="diva-inp" type="name" id="l_name" placeholder="Enter last name"></div>
 
-<div class="diva-3"><a href="https://shashankdav.github.io"><button onclick="show()" id="diva-but">Submit</button></a></div>
+<div class="diva-3"><button onclick="show()" id="diva-but">Submit</button></div>
 
 </div>
 
@@ -151,7 +151,7 @@ l1 = localStorage.getItem("name");
 l2 = [];
 
 function op() {
-               window.open("https://shashankdav.github.io","_blank");
+               window.open("https://shashankdav.github.io");
 }
 
 function add() {
@@ -169,6 +169,7 @@ function add() {
                    l2.push(t_n);
                    let list = l1.concat(","l2);
                    localStorage.setItem("name",list);
+                   op();
 }
 }
 
