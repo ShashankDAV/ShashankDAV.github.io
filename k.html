@@ -1,14 +1,23 @@
 <h1 id="i"></h1>
 
-<button onclick="f()">C</button>
+<button onclick="f()">get</button>
+<button onclick="mh()">add</button>
+<button onclick="s()">set</button>
 
 <script>
-
-localStorage.setItem("key","Lee");
+let m= [];
 
 function f() {
               let g = localStorage.getItem("key");
               alert(g);
+}
+
+function mh() {
+              m.push("hi");
+}
+
+function s() {
+              localStorage.setItem("key",JSON.stringify(m));
 }
 
 </script>
