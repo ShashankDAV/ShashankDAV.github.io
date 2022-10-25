@@ -1,21 +1,12 @@
-<input id="name" type="text">
-<input id="name1" type="name">
-
-<button onclick="save()">c</button>
+<h1 id="i"></h1>
 
 <script>
-let fileHandle;
 
-async function button() {
-                        [fileHandle] = await window.showOpenFilePicker();
-                        let fileData = await fileHandle.getFile();
-                        let text = await fileData.text();
-                        textarea.innerText = text;
+localStorage.setItem("key","Lee");
+
+function f() {
+              let g = localStorage.getItem("key");
+              alert(g);
 }
 
-async function save() {
-                       let stream = await fileHandle.createWritable(); 
-                       await stream.write("idk");
-                       await stream.close();
-}
 </script>
