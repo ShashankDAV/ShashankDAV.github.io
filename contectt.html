@@ -6,7 +6,7 @@ Shashank
 </head>
 <style>
 
-.main-div {
+#main-div {
 	background: linear-gradient(135deg,black,blue);
 	height: 1500px;
 	border-radius: 25px;
@@ -280,7 +280,7 @@ hr {
 
 <body style="background-color: #000040; color: white">
 
-<div class="main-div">
+<div id="main-div">
 
 <div class="normal"><h1 class="normal-h1">Login</h1></div>
 
@@ -305,8 +305,15 @@ hr {
 </div>
 
 <script>
+var fn = document.getElementById("f_name").value;
+var ln = document.getElementById("l_name").value;
 function show() {
-         document.getElementById('main').style.display = "block";
-         document.getElementById('btn').style.display = "none";
+         if (fn != "" && ln != "") {
+                                   document.getElementById('main').style.display = "block";
+                                   document.getElementById('main-div').style.display = "none";
+}
+         else {
+               alert("Please enter your name");
+}
 }
 </script>
