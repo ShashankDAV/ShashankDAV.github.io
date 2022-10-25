@@ -307,13 +307,15 @@ hr {
 <script>
 var fn = document.getElementById("f_name").value;
 var ln = document.getElementById("l_name").value;
+alert(fn);
+alert(ln);
 function show() {
-         if (fn != "" && ln != "") {
-                                   document.getElementById('main').style.display = "block";
-                                   document.getElementById('main-div').style.display = "none";
+         if (fn == "" && ln == "") {
+                                   alert("Please enter your name");
 }
          else {
-               alert("Please enter your name");
+               document.getElementById('main').style.display = "block";
+               document.getElementById('main-div').style.display = "none";
 }
 }
 </script>
