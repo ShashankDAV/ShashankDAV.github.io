@@ -142,8 +142,6 @@ Login Page
 </div>
 
 <script>
-local storage.setItem("key",[])
-let li = localStorage.getItem("key");
 
 function show() {
          var fn = document.getElementById("f_name").value;
@@ -154,24 +152,6 @@ function show() {
          else {
                var wlcm = "Welcome "+fn+" "+ln+"."+" "+"Thank you for logging in my website.";
                alert(wlcm);
-               set();
-}
-}
-
-function set() {
-         alert(li)
-         var fna = document.getElementById("f_name").value;
-         var lna = document.getElementById("l_name").value;
-         var nam = fna+" "+lna;
-         if (nam == "shashankdav") {
-                       m.pop()
-                       var x = localStorage.getItem("key");
-                       alert(x);
-}
-         else {
-               var p_name = "Name :"+nam;
-               m.push(p_name);
-               localStorage.setItem("key" , m);
 }
 }
 
