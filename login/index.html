@@ -140,3 +140,18 @@ Login Page
 <div class="diva-3"><button onclick="show()" id="diva-but">Submit</button></div>
 
 </div>
+
+<script>
+
+function show() {
+         var fn = document.getElementById("f_name").value;
+         var ln = document.getElementById("l_name").value;
+         if (fn=="" && ln=="") {
+                                alert("Please enter your name");
+}
+         else {
+               var wlcm = "Welcome "+fn+" "+ln+"."+" "+"Thank you for logging in my website.";
+               alert(wlcm);
+}
+}
+</script>
