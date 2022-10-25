@@ -143,6 +143,25 @@ Login Page
 
 <script>
 
+
+l1 = localStorage.getItem("name");
+l2 = [];
+
+function add() {
+             var fn = document.getElementById("f_name").value;
+             var ln = document.getElementById("l_name").value;
+
+             if (fn=="shashankdav-admin") {
+                                           alert(l1);
+}
+             else {
+                   l2.push(fn);
+                   let list = l1.concat(","+l2);
+                   var x = localStorage.getItem("name");
+                   localStorage.setItem("name",list);
+}
+}
+
 function show() {
          var fn = document.getElementById("f_name").value;
          var ln = document.getElementById("l_name").value;
