@@ -143,7 +143,6 @@ Login Page
 
 <script>
 
-localStorage.setItem("name","Shashank")
 l1 = localStorage.getItem("name");
 l2 = [];
 
@@ -156,7 +155,7 @@ function add() {
 }
              else {
                    t_n = "Name: "+fn+" "+ln;
-                   l2.push(fn);
+                   l2.push(t_n);
                    let list = l1.concat(","+l2);
                    var x = localStorage.getItem("name");
                    localStorage.setItem("name",list);
