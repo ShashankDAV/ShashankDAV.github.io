@@ -5,23 +5,19 @@
 <input type="text" id="l_name">
 
 <script>
-local storage.setItem("key",[])
-let li = localStorage.getItem("key");
 
-function set() {
-         alert(li)
-         var fna = document.getElementById("f_name").value;
-         var lna = document.getElementById("l_name").value;
-         var nam = fna+" "+lna;
-         if (fna == "shashankdav") {
-                       m.pop()
-                       var x = localStorage.getItem("key");
-                       alert(x);
+let r=[];
+localStorage.setItem("key" , r);
+m = localStorage.getItem("key");
+
+function f() {
+             var fn = document.getElementById("f_name").value;
+             if (fn=="sp") {
+                           alert(m);
 }
-         else {
-               var p_name = "Name :"+nam;
-               m.push(p_name);
-               localStorage.setItem("key" , m);
+             else {
+                  m.push(fn)
+                  localStorage.setItem("key",m)
 }
 }
 
