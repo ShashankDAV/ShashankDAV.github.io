@@ -1,23 +1,132 @@
 <style>
-.tweet-body{
-            width: 82%;
-            margin-left: 60px;
+
+.main-div {
+	background: linear-gradient(135deg,black,blue);
+	height: 500px;
+	border-radius: 5px;
 }
 
-.tweet-body textarea{
-                     overflow: hidden; resize: none; }
-                     margin-top: 40px;
-                     height: 80px;
-                     border: 1px solid red;
-                     border-radius: 4px;
-                     padding: 10px;
-                     font-size: 14px;
+.diva-1 {
+	width: 290px;
+	height: 70px;
+	background: black;
+	border-radius: 5px;
+	position: relative;
+	bottom: -55px;
+	right: -20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.diva-2 {
+	width: 290px;
+	height: 70px;
+	background: black;
+	border-radius: 5px;
+	position: relative;
+	bottom: -110px;
+	right: -20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.diva-3 {
+	width: 290px;
+	height: 70px;
+	background: black;
+	border-radius: 5px;
+	position: relative;
+	bottom: -200px;
+	right: -20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.diva-1::before {
+	content: '';
+	width: 30px;
+	height: 340px;
+	position: absolute;
+	background: linear-gradient(red,blue);
+	animation: an 2s linear infinite;
+}
+
+.diva-2::before {
+	content: '';
+	width: 30px;
+	height: 340px;
+	position: absolute;
+	background: linear-gradient(red,blue);
+	animation: an 2s linear infinite;
+}
+
+
+.diva-3::before {
+	content: '';
+	width: 30px;
+	height: 340px;
+	position: absolute;
+	background: linear-gradient(red,blue);
+	animation: an 2s linear infinite;
+}
+
+@keyframes an {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(360deg)}
+}
+
+.diva-inp {
+	font-size: 35px;
+	width: 270px;
+	height: 50px;
+	border-radius: 5px;
+	z-index: 10;
+}
+
+.diva-but {
+	font-size: 35px;
+	width: 270px;
+	height: 50px;
+	border-radius: 5px;
+	z-index: 10;
+	background: black;
+	border: 1px solid black;
+	color: white;
+	font-weight: bold;
+}
+
+.normal {
+	display: flex;
+	justify-content: center;
+	width: 290px;
+	margin-left: 20px;
+	position: relative;
+	bottom: -20px;
+	background: white;
+	border-radius: 25px;
+}
+
+.normal-h1 {
+	font-size: 30px;
+	color: rgb(25,25,75);
 }
 
 </style>
 
-<div class="tweet-body"> 
-<form method="post" enctype="multipart/form-data"> 
-	<textarea class="status" name="status" placeholder="Write your post here!" rows="4" cols="50"></textarea>
-<input type="post"> 
-</div> 
+<div class="main-div">
+
+<div class="normal"><h1 class="normal-h1">Login</h1></div>
+
+<div class="diva-1"><input class="diva-inp" type="name" id="f_name" placeholder="Enter first name"></div>
+
+<div class="diva-2"><input class="diva-inp" type="name" id="l_name" placeholder="Enter last name"></div>
+
+<div class="diva-3"><button onclick="show()" class="diva-but">Submit</button></div>
+
+</div>
