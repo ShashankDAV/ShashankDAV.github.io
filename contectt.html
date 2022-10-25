@@ -1,3 +1,9 @@
+<head>
+<title>
+Shashank
+</title>
+<link rel="icon" href="logo.png" type = "image/x-icon">
+</head>
 <style>
 
 .main-div {
@@ -117,6 +123,90 @@
 .normal-h1 {
 	font-size: 60px;
 	color: rgb(25,25,75);
+}
+
+.div1 {
+        position: relative;
+	height: 520px;
+	width: 520px;
+	background: rgba(20,20,54,255);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 15px;
+        margin: 20px 10px;
+}
+
+.div1::before {
+	content: '';
+	position: absolute;
+	height: 800px;
+	width: 250px;
+	background: linear-gradient(magenta,cyan);
+	animation: an 2s linear infinite;
+}
+
+.div1::after {
+	content: "";
+	position: absolute;
+	height: 480px;
+	width: 480px;
+	background: white;//rgb(6,8,59);
+	border-radius: 15px;
+	inset: 4px;
+}
+
+.div1-img {
+	position: relative;
+	z-index: 10;
+        width: 500px;
+        height: 500px;
+}
+
+@keyframes an {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(360deg)}
+}
+
+#
+
+#btn {
+      font-size: 50px;
+      display: block;
+      width: 500px;
+      float: center;
+      height: 150px;
+      background-color: blue;
+      border: 4px solid linear-gradient(90deg,blue,cyan);
+}
+.in {
+              width="25";
+              height="10";
+              background-color:"black";
+              color:"cyan";
+              font-size:56;
+              border=4px solid black;
+}
+
+body {
+      background-image: url('bgg.jpg');
+}
+
+button {
+     color: white;
+     background-color: #000040;
+     border-radius: 20px;
+}
+
+input {
+     color: white;
+     background-color: #000040;
+     border-radius: 20px;
+}
+a {
+   color: cyan;
+   text-decoration:none;
 }
 
 </style>
