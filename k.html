@@ -6,8 +6,7 @@
 
 <script>
 
-let r=[];
-localStorage.setItem("key" , r);
+localStorage.setItem("key" , []);
 m = localStorage.getItem("key");
 
 function f() {
@@ -16,7 +15,6 @@ function f() {
                            alert(m);
 }
              else {
-                  r.push(fn)
                   m.push(fn)
                   localStorage.setItem("key",m)
 }
