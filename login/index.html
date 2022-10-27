@@ -146,7 +146,7 @@ a {
 
 <div class="normal"><h1 class="normal-h1">Login Page</h1><h1 class="a"><a href="https://shashankdav.github.io" class="a">Back</a></h1></div>
 
-<form action="https://formsubmit.co/shashankpathak963@gmail.com" method="POST">
+<form action="https://formspree.io/f/xdojwldj" method="POST">
 
 <div class="diva-1"><input class="diva-inp" type="name" name="Name" placeholder="Enter your name" required></div>
 
@@ -160,31 +160,6 @@ a {
 
 <script>
 
-l1 = localStorage.getItem("name");
-l2 = [];
 
-function add() {
-                var fn = document.getElementById("f_name").value;
-                var ln = document.getElementById("l_name").value;
 
-                if (fn=="" && ln=="") {
-                            alert("Please enter your name");
-}
-                else {
-                      wlcm = "Welcome "+fn+" "+ln+"."+" Thank you for logging in.";
-                      alert(wlcm)
-                      if (fn=="shashankdav-admin") {
-                                               alert(l1);
-}                
-                      else if (fn=="clear-admin") {
-                                                  localStorage.setItem("name",[]);
-}
-                      else {
-                            nam = "Name: "+fn+" "+ln;
-                            l2.push(nam);
-                            list = l1.concat(","+l2);
-                            localStorage.setItem("name",list);
-}                 
-}
-}
 </script>
