@@ -76,19 +76,20 @@ function send() {
 	alert(array);*/
 	
 	cb.value = cb.value + "\n" + "You: " + mess;
-	if (me=="hi") {
+	if (me.includes("hi")) {
 		cb.value = cb.value + "\nBot: Hello, How may I help you?";
 		message.value = "";
 	}
-	else if (me=="who created you") {
+	else if (me.includes("who created you")) {
 		cb.value = cb.value + "\nBot: Shashank Pathak created me.";
 		message.value = "";
 	}
-	else if (me=="hello") {
+	else if (me.includes("hello")) {
 		cb.value = cb.value + "\nBot: Hello, How may I help you?";
 		message.value = "";
 	}
-	else if (me=="what is this website") {
+	else if (me.includes("what is this website")) {
+                cb.value = cb.value + "Error 404";
 		message.value = "";
 	}
 	else {
