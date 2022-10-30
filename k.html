@@ -1,21 +1,65 @@
-<h1 id="i"></h1>
+<!DOCTYPE html>
 
-<button onclick="f()">get</button>
-<input type="text" id="f_name">
-<input type="text" id="l_name">
+<html>
+ 
 
-<script>
+<head>
 
-m = localStorage.getItem("key");
-n = [];
+  <title>Send Mail</title>
 
-function f() {
-             var fn = document.getElementById("f_name").value;
-             n.push(fn);
-             let mn = m.concat(","+n);
-             var x = localStorage.getItem("key");
-             localStorage.setItem("key",mn);
-             alert(x);
-}
+  <script src=
 
-</script>
+    "https://smtpjs.com/v3/smtp.js">
+
+  </script>
+ 
+
+  <script type="text/javascript">
+
+    function sendEmail() {
+
+      Email.send({
+
+        Host: "smtp.gmail.com",
+
+        Username: "shashankpathak963@gmail.com",
+
+        Password: "rzplgpttwulcjxnz",
+
+        To: "anushkapathak963@gmail.com",
+
+        From: "shashankpathak963@gmail.com",
+
+        Subject: "Sending Email using javascript",
+
+        Body: "Well that was easy!!",
+
+      })
+
+        .then(function (message) {
+
+          alert("mail sent successfully")
+
+        });
+
+    }
+
+  </script>
+
+</head>
+ 
+
+<body>
+
+  <form method="post">
+
+    <input type="button" value="Send Email"
+
+        onclick="sendEmail()" />
+
+  </form>
+
+</body>
+ 
+
+</html>
