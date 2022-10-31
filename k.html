@@ -1,4 +1,87 @@
-<form action="mailto:shashankpathak963@gmail.com">
-<input type="text">
-<input type="submit">
-</form>
+<style>
+
+.main {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+.tab-1 {
+	position: relative;
+	height: 150px;
+	width: 300px;
+	background: linear-gradient(135deg , blue , cyan);
+	float: left;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-family: monospace;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 2px;
+}
+
+.tb-1 {
+	display: block;
+	background: linear-gradient(135deg , red , magenta);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transform: translate(0px , 55px);
+	border-radius: 15px;
+}
+
+.tab-2 {
+	position: relative;
+	height: 150px;
+	width: 300px;
+	background: linear-gradient(135deg , blue , cyan);
+	float: left;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-family: monospace;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 2px;
+}
+
+.tb-2 {
+	display: none;
+	background: linear-gradient(135deg , red , magenta);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transform: translate(0px , 55px);
+	border-radius: 15px;
+}
+
+</style>
+
+<div class="main">
+
+<button class="tab-1" onclick="tab1()" id="tab-1">Tab 1</button>
+<button class="tab-2" onclick="tab2()" id="tab-2">Tab 2</button>
+
+<div class="tb-1" id="tb-1"><h1 class="h1">HeLlO x 1</h1></div>
+<div class="tb-2" id="tb-2"><h1 class="h1">HeLlO x 2</h1></div>
+
+</div>
+
+<script>
+
+function tab1() {
+	document.getElementById("tb-1").style.display = "block";
+	document.getElementById("tb-2").style.display = "none";
+	document.getElementById("tab-2").style.background = "linear-gradient(135deg , blue , cyan)";
+	document.getElementById("tab-1").style.background = "linear-gradient(135deg , red , yellow)";
+}
+
+function tab2() {
+	document.getElementById("tb-2").style.display = "block";
+	document.getElementById("tb-1").style.display = "none";
+	document.getElementById("tab-1").style.background = "linear-gradient(135deg , blue , cyan)";
+	document.getElementById("tab-2").style.background = "linear-gradient(135deg , red , yellow)";
+}
+
+</script>
