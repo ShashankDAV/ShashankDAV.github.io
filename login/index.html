@@ -166,11 +166,11 @@ a {
 
 <form action="https://formspree.io/f/mrgdyaal" method="POST">
 
-<div class="diva-1"><input class="diva-inp" type="name" name="Name" placeholder="Enter your name" required></div>
+<div class="diva-1"><input class="diva-inp" type="name" name="Name" id="nm" placeholder="Enter your name" required></div>
 
-<div class="diva-2"><input class="diva-inp" type="email" name="Email" placeholder="Enter your email" required></div>
+<div class="diva-2"><input class="diva-inp" type="email" name="Email" id="em" placeholder="Enter your email" required></div>
 
-<div class="diva-3"><button id="diva-but">Submit</button></div>
+<div class="diva-3"><button id="diva-but" onclick="login()">Submit</button></div>
 
 </form>
 
@@ -180,6 +180,11 @@ a {
 
 function back() {
                 window.history.back();
+}
+
+function login() {
+                 var nm = document.getElementById("nm").value;
+                 localStorage.setItem(name , nm);
 }
 
 </script>
