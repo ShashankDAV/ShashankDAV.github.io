@@ -180,13 +180,13 @@ a {
 
 function back() {
                 window.history.back();
+                var b = localStorage.getItem(name);
+                alert(b);
 }
 
 function login() {
                  var nm = document.getElementById("nm").value;
                  localStorage.setItem(name , nm);
-                 var b = localStorage.getItem(name);
-                 alert(b);
 }
 
 </script>
