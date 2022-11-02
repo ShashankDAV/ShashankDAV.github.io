@@ -184,7 +184,7 @@ hr {
 
 <body style="background-color: #000040; color: white; font-family: monospace">
 <div id="main">
-<h1 style="background-color: black; color: white; height:6%" class="align"><a class="ak" href="https://shashankdav.github.io/hw">HomeWork</a><a class="ak" href="https://davnotes.art.blog">Notes</a><a class="ak" href="https://shashankdav.github.io/login">Login</a></h1>
+<h1 style="background-color: black; color: white; height:6%" class="align"><a class="ak" href="https://shashankdav.github.io/hw">HomeWork</a><a class="ak" href="https://davnotes.art.blog">Notes</a><a class="ak" onclick="login()">Login</a></h1>
 
 <br>
 
@@ -209,12 +209,20 @@ hr {
 <p class="pg-1-p">This is my personal website. If you are from <a class="pg-1-a" href="http://mkdav.in">MK DAV Public School</a> and want notes or homework of class 7E you can get it by clicking link on menu or type <a class="pg-1-a" href="https://davnotes.art.blog">https://davnotes.art.blog</a>(by Yugraj) in your browser for notes and type <a class="pg-1-a" href="https://shashankdav.github.io/hw">https://shashankdav.github.io/hw</a> in your browser for homework.</p></div>
 </div>
 
-<button onclick="get()">h</button>
-
 <script>
 
 function get() {
                var b = localStorage.getItem(name);
                alert(b);
+}
+
+function login() {
+               var log = localStorage.getItem(login);
+               if (log=="true") {
+                                alert("You have already logged in");
+}
+               else {
+                    window.open("https://shashankdav.github.io/login");
+}
 }
 </script>
