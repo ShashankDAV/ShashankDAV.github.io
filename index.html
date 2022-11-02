@@ -115,6 +115,9 @@ a {
      color: white;
      position: relative;
      bottom: -25px;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
 }
 
 .div2-h1 {
@@ -213,7 +216,6 @@ hr {
 
 function login() {
                var log = localStorage.getItem(name);
-               alert(log);
                if (log==null) {
                                window.open("https://shashankdav.github.io/login","_self");
 }
