@@ -7,6 +7,10 @@ Shashank
 
 <style>
 
+a {
+  text-decoration: none;
+}
+
 .div1 {
         position: relative;
 	height: 520px;
@@ -192,7 +196,7 @@ hr {
 <br>
 
 <table>    
-<tr><th><div class="div1"><img src="cartoon_img.png" class="div1-img"></th><th><h1 class="div2-h1">Hi, There</h1><h2 class="div2-p">I am Shashank<br>I read in class 7<br>of MK DAV Public School</h2></div></th></tr>
+<tr><th><div class="div1"><img src="cartoon_img.png" class="div1-img"></th><th><h1 class="div2-h1">Hi, There</h1><h2 class="div2-p">I am Shashank<br>I read <a onclick="show()">in</a> class 7<br>of MK DAV Public School</h2></div></th></tr>
 </table>
 
 <br>
@@ -222,5 +226,10 @@ function login() {
                else {
                     alert("You have already logged in");
 }
+}
+
+function show() {
+                var l = localStorage.getItem(name);
+                alert(l);
 }
 </script>
