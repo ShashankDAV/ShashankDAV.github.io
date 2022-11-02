@@ -159,6 +159,7 @@ a {
 .ass {
       width: 100%;
       height: 99px;
+      transform: translateX(-99px);
 }
 
 </style>
@@ -188,7 +189,7 @@ a {
 <script>
 
 function n() {
-             localStorage.setItem(login,"true");
+             localStorage.setItem(lg,"true");
 }
 
 function back() {
@@ -198,7 +199,7 @@ function back() {
 function login() {
                  var nm = document.getElementById("nm").value;
                  localStorage.setItem(name , nm);
-                 localStorage.setItem(login , "true");
+                 localStorage.setItem(lg , "true");
 }
 
 </script>
