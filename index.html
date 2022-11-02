@@ -209,24 +209,16 @@ hr {
 <p class="pg-1-p">This is my personal website. If you are from <a class="pg-1-a" href="http://mkdav.in">MK DAV Public School</a> and want notes or homework of class 7E you can get it by clicking link on menu or type <a class="pg-1-a" href="https://davnotes.art.blog">https://davnotes.art.blog</a>(by Yugraj) in your browser for notes and type <a class="pg-1-a" href="https://shashankdav.github.io/hw">https://shashankdav.github.io/hw</a> in your browser for homework.</p></div>
 </div>
 
-<button onclick="get()">h</button>
 <script>
 
-function get() {
-               var b = localStorage.getItem(name);
-               alert(b);
-               var log = localStorage.getItem(lg);
-               alert(log);
-}
-
 function login() {
-               var log = localStorage.getItem(login);
+               var log = localStorage.getItem(name);
                alert(log);
-               if (log=="true") {
-                                alert("You have already logged in");
+               if (log==null) {
+                               window.open("https://shashankdav.github.io/login","_self");
 }
                else {
-                    window.open("https://shashankdav.github.io/login","_self");
+                    alert("You have already logged in");
 }
 }
 </script>
