@@ -151,9 +151,10 @@ function scroll() {
 
 function sc(x) {
       const menu = document.getElementById("menu");
-      
-      if (x >= 36) {
+      alert(x);
+      if (x >= 0) {
             menu.classList.add("stick");
+            alert(x);
 }     else {
             menu.classList.remove("stick");
 }
