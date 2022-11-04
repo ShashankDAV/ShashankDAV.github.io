@@ -1,13 +1,13 @@
 <style>
 
 body {
-      background: lightcyan;
+      background: url("bgg.jpg");
       padding: 20px 20px;
 }
 .menu {
 width: 100%;
 height: 120px;
-background: black;
+background: transparent;
 display: flex;
 align-items: center;
 justify-content: inline-block;
@@ -129,7 +129,8 @@ function scroll() {
       let u = document.getElementById("menu");
       u.style.position = "fixed";
       u.style.width = "99%";
-      u.style.margin = "0 -23"
+      u.style.margin = "0 -23";
+      u.style.background = "black";
       let v = document.getElementById("rest");
       v.style.margin = "150 0";
 }
