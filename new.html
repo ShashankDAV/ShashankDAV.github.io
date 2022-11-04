@@ -142,10 +142,8 @@ function scroll() {
       v.style.margin = "150 0";
 }
 
-function sc() {
-      let x = window.pageYOffset;
-      alert(x);
-      if (window.pageYOffset > 0) {
+function sc(x) {
+      if (x > 0) {
                                alert(window.pageYOffset);
                                let u = document.getElementById("menu");
                                u.style.position = "fixed";
@@ -154,18 +152,9 @@ function sc() {
                                u.style.background = "black";
                                let v = document.getElementById("rest");
                                v.style.margin = "150 0";
-}     else {
-                               alert(window.pageYOffset);
-                               let u = document.getElementById("menu");
-                               u.style.position = "fixed";
-                               u.style.width = "99%";
-                               u.style.margin = "0 -23";
-                               u.style.background = "black";
-                               let v = document.getElementById("rest");
-                               v.style.margin = "150 0";
-}
+} 
 }
 
-window.addEventListener("scroll", sc())
+window.addEventListener("scroll", sc(window.pageYOffset))
 
 </script>
