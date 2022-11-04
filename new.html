@@ -91,7 +91,6 @@ user-select: none;
       background: cyan;
       padding: 20px;
       border-radius: 15px;
-      height: 6000;
 }
 
 .about h1 {
@@ -141,8 +140,6 @@ user-select: none;
 </div>
 </div>
 
-<button onclick="h()">h</button>
-
 <script>
 
 function scroll() {
@@ -166,13 +163,6 @@ function sc(x) {
 }
 }
 
-function h() {
-      var x = window.scrollY;
-      var y = window.pageYOffSet;
-      alert(x);
-      alert(y);
-}
-
-window.addEventListener('scroll' , sc(window.scrollY) , { passive : true })
+window.addEventListener('scroll' , scroll())
 
 </script>
