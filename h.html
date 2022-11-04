@@ -50,9 +50,13 @@ stop_button.addEventListener('click', function() {
 <script>
 
 function str() {
-    let x = document.querySelector("#bu");
-    c_s = navigator.mediaDevices.getUserMedia({video: true , audio: true});
-    x.srcObject = c_s;
+    alert("h");
+    let x = document.querySelector("#video");
+    alert("h2");
+    cs = await navigator.mediaDevices.getUserMedia({video: true , audio: true});
+    alert("h3");
+    x.srcObject = cs;
+    alert("h4")
 }
 
 </script>
