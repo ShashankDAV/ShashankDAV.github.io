@@ -1,17 +1,18 @@
 <style>
 
 body {
-      background: url("bg1.jpg");
+      background: url("bg2.jpg");
       padding: 20px 20px;
 }
 .menu {
-width: 100%;
+width: 99%;
 height: 120px;
 background: transparent;
 display: flex;
 align-items: center;
 justify-content: inline-block;
 border-radius: 30px;
+margin: 0 -23;
 }
 
 ul {
@@ -142,7 +143,7 @@ function scroll() {
 }
 
 function sc() {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 0) {
                                let u = document.getElementById("menu");
                                u.style.position = "fixed";
                                u.style.width = "99%";
