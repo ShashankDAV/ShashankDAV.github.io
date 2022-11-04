@@ -104,6 +104,13 @@ user-select: none;
       margin: 10;
 }
 
+.stick {
+       position: fixed;
+       width: 99%;
+       background: black;
+       margin: 0 -23;
+}
+
 </style>
 
 <div class="menu" id="menu">
@@ -143,18 +150,15 @@ function scroll() {
 }
 
 function sc(x) {
-      alert(x);
-      if (x > 36) {
-                               let u = document.getElementById("menu");
-                               u.style.position = "fixed";
-                               u.style.width = "99%";
-                               u.style.margin = "0 -23";
-                               u.style.background = "black";
-                               let v = document.getElementById("rest");
-                               v.style.margin = "150 0";
-} 
+      const menu = document.getElementById("menu");
+      
+      if (x >= 36) {
+            menu.classList.add("stick");
+}     else {
+            menu.classList.remove("stick");
+}
 }
 
-window.addEventListener("scroll", sc(window.pageYOffset))
+window.addEventListener("scroll", sc(window.scrollY))
 
 </script>
