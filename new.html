@@ -158,7 +158,7 @@ function scroll() {
 function sc(x) {
       const menu = document.getElementById("menu");
       alert(x);
-      if (x >= 36) {
+      if (x >= 20) {
             menu.classList.add("stick");
             alert(x);
 }     else {
@@ -173,7 +173,7 @@ function h() {
       alert(y);
 }
 
-//window.addEventListener("scroll", sc(window.scrollY))
-document.body.onscroll = sc(window.scrollY)
+document.body.onscroll = sc(window.scrollY);
+window.onscroll = sc(window.scrollY);
 
 </script>
