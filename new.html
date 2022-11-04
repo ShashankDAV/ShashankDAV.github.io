@@ -173,7 +173,7 @@ function h() {
       alert(y);
 }
 
-window.addEventListener("scroll", sc(window.pageYOffSet))
-window.addEventListener("scroll", sc(window.scrollY))
+//window.addEventListener("scroll", sc(window.scrollY))
+document.body.onscroll = sc(window.scrollY)
 
 </script>
