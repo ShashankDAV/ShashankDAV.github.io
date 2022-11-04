@@ -141,6 +141,8 @@ user-select: none;
 </div>
 </div>
 
+<button onclick="h()">h</button>
+
 <script>
 
 function scroll() {
@@ -162,6 +164,13 @@ function sc(x) {
 }     else {
             menu.classList.remove("stick");
 }
+}
+
+function h() {
+      var x = window.scrollY;
+      var y = window.pageYOffSet;
+      alert(x);
+      alert(y);
 }
 
 window.addEventListener("scroll", sc(window.pageYOffSet))
