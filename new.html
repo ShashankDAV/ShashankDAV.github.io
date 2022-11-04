@@ -173,7 +173,6 @@ function h() {
       alert(y);
 }
 
-document.body.onscroll = sc(window.scrollY);
-window.onscroll = sc(window.scrollY);
+window.addEventListener('scroll' , sc(window.scrollY) , { passive : true })
 
 </script>
