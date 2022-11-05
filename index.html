@@ -98,7 +98,7 @@ user-select: none;
 }
 
 .about p {
-      font-size: 36;
+      font-size: 37;
       margin: 10;
 }
 
@@ -150,7 +150,7 @@ user-select: none;
 <div class="menu" id="menu">
 <h1>Shashank<span>DAV</span></h1>
 <ul>
-<li><a class="a a2" href="https://davnotes.art.blog">Notes</a></li>
+<li><a class="a a2" onclick="notes()">Notes</a></li>
 <li><a class="a a3" onclick="log()">Login</a></li>
 </ul>
 </div>
@@ -169,6 +169,10 @@ user-select: none;
 </div>
 
 <script>
+
+function notes() {
+        window.open("https://davnotes.art.blog");
+}
 
 function log() {
       var na = localStorage.getItem("name");
