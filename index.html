@@ -144,14 +144,14 @@ user-select: none;
 
 <head>
       <title>ShashankDAV</title>
-      <link rel="icon" href="https://shashankdav.github.io/ligo.png" type="image/x-icon">
+      <link rel="icon" href="https://shashankdav.github.io/logo.png" type="image/x-icon">
 </head>
 
 <div class="menu" id="menu">
 <h1>Shashank<span>DAV</span></h1>
 <ul>
 <li><a class="a a2" href="https://davnotes.art.blog">Notes</a></li>
-<li><a class="a a3" href="https://shashankdav.github.io/login">Login</a></li>
+<li><a class="a a3" onclick="log()">Login</a></li>
 </ul>
 </div>
 <div class="rest" id="rest">
@@ -169,6 +169,15 @@ user-select: none;
 </div>
 
 <script>
+
+function log() {
+      var na = localStorage.getItem("name");
+      if (na == null) {
+         window.open("https://shashankdav.github.io/login","_self");
+}     else {
+         alert("You have already logged in");
+}
+}
 
 function scroll() {
       let u = document.getElementById("menu");
