@@ -1,235 +1,186 @@
-<head>
-<title>
-Shashank
-</title>
-<link rel="icon" href="logo.png" type = "image/x-icon">
-</head>
-
 <style>
 
-a {
-  text-decoration: none;
-  color: lightgrey;
-}
-
-.div1 {
-        position: relative;
-	height: 520px;
-	width: 520px;
-	background: rgba(20,20,54,255);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	border-radius: 15px;
-        margin: 20px 10px;
-}
-
-.div1::before {
-	content: '';
-	position: absolute;
-	height: 800px;
-	width: 250px;
-	background: linear-gradient(magenta,cyan);
-	animation: an 2s linear infinite;
-}
-
-.div1::after {
-	content: "";
-	position: absolute;
-	height: 480px;
-	width: 480px;
-	background: transparent;
-	border-radius: 15px;
-	inset: 4px;
-}
-
-.div1-img {
-	position: relative;
-	z-index: 10;
-        width: 500px;
-        height: 500px;
-        background: transparent;
-}
-
-@keyframes an {
-	0% {transform: rotate(0deg)}
-	100% {transform: rotate(360deg)}
-}
-
-#btn {
-      font-size: 50px;
-      display: block;
-      width: 500px;
-      float: center;
-      height: 150px;
-      background-color: blue;
-      border: 4px solid linear-gradient(90deg,blue,cyan);
-}
-.in {
-              width="25";
-              height="10";
-              background-color:"black";
-              color:"cyan";
-              font-size:56;
-              border=4px solid black;
-}
-
 body {
-      background-image: url('bgg.jpg');
+      background: url("https://shashankdav.github.io/bg1.jpg");
+      padding: 20px 20px;
+}
+.menu {
+width: 99%;
+height: 120px;
+display: flex;
+align-items: center;
+justify-content: inline-block;
+border-radius: 30px;
+margin: 0 -50;
 }
 
-button {
-     color: white;
-     background-color: #000040;
-     border-radius: 20px;
+.menu ul {
+color: white;
+list-style: none;
+text-decoration: none;
+display: flex;
+align-items: center;
+justify-content: inline-block;
 }
 
-input {
-     color: white;
-     background-color: #000040;
-     border-radius: 20px;
-}
-a {
-   text-decoration:none;
-}
-
-.imgg {
-     border-radius:50%;
+.a {
+color: white;
+text-decoration: none;
+margin-left: 30px;
+font-size: 35px;
+font-weight: 800;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
-.ing {
-      border-radius:15%;
+.a3 {
+      margin-right: 30;
 }
 
-.align {
-       text-align: right;
-       position: relative;
-       right: -12px;
-       width: 1000px;
-       height: 6px;
-       border-radius:15px;
-       bottom: -5px;
-       width: auto;
+.a:hover {
+      color: crimson;
+      font-size: 40px;
 }
 
-.ak {
-     margin-right: 45px;
-     font-size: 40px;
-     color: white;
-     position: relative;
-     bottom: -25px;
-     -webkit-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
+.menu h1 {
+      width: 100%;
+      font-size: 60;
+      color: white;
+      margin-left: 50px;
+      font-weight: 500;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 }
 
-.div2-h1 {
-         position: relative;
-         right: -20px;
-         font-size: 50px;
-         width: 350px;
-         text-align: centre;
+.menu h1 span{
+      color: crimson;
+      font-weight: 1000;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 }
 
-.div2-p {
-         font-size: 40px;
-         position: relative;
-         color: lightgrey;
+.sec h1 {
+      font-size: 80;
 }
 
-.apj {
+.sec h2 {
+      font-size: 50;
+      margin: -50 0;
+}
+
+.paragraph {
+      margin: 100 0;
+      display: flex;
+}
+
+.paragraph p{
+      font-size: 35px;
+      padding: 20;
+      background: white;
+      border-radius: 20px;
+      width: 100%;
+}
+
+.about {
+      margin: 100 0;
+      margin-top: 90;
+      background: cyan;
+      padding: 20px;
+      border-radius: 15px;
+}
+
+.about h1 {
+      font-size: 80;
+      margin: 10;
+}
+
+.about p {
+      font-size: 40;
+      margin: 10;
+}
+
+.about .over label {
+      font-size: 40;
+      margin: 10;
+}
+
+.over {
+      overflow: hidden;
+      height: 50;
+      font-size: 50;
+}
+
+.about label ul {
+      color: crimson;
+      font-weight: 800;
       position: relative;
-      right: -7px;
-      height: 600px;
-      width: 975px;
-      border-radius: 3px;
-      border: 2px solid black;
-      margin: 5px 5px;
+      top: -85;
+      right: -220;
+      list-style: none;
+      animation: scroll 20s linear infinite;
 }
 
-hr {
-   font-weight: 10px;
-   font-size: 20px;
-   position: relative;
-   right: -17px;
-}
-
-@keyframes her {
-    0% {left: 975px}
-}
-
-.pg-1 {
-       margin-left: 12px;
-       display: flex;
-       align-items: center;
-       border-radius: 15px;
-       padding: 5px 5px;
-       width: 970px;
-}
-
-.pg-1-p {
-         font-family: 'pacifico', cursive;
-         font-size: 50px;
-         margin: 5px 5px;
-         color: #FFE5B4;
-         position: relative;
-         text-align: center;
-}
-
-.pg-1-a {
-         font-size: 50px;
-         font-family: italic;
-         color: #E18A6D;
-         margin: 5px 5px;
-         position: relative;
-         text-align: center;
-         font-family: 'pacifico', cursive;
+@keyframes scroll {
+            0%,12.61%, 1% {
+                transform: translate3d(0,0,0);
+            }
+            16.66%, 29.32% {
+                transform: translate3d(0,-35%, 0);
+            }
+            33.32%, 45.98% {
+                transform: translate3d(0,-70%, 0);
+            }
+            49.98%, 62.64% {
+                transform: translate3d(0,-35%, 0);
+            }
+            66.64%, 79.30% {
+                transform: translate3d(0,0%, 0);
+            }
 }
 
 </style>
 
-<body style="background-color: #000040; color: white; font-family: monospace">
-<div id="main">
-<h1 style="background-color: black; color: white; height:6%" class="align"><a class="ak" href="https://shashankdav.github.io/hw">HomeWork</a><a class="ak" href="https://davnotes.art.blog">Notes</a><a class="ak" onclick="login()">Login</a></h1>
+<head>
+      <title>ShashankDAV</title>
+      <link rel="icon" href="https://shashankdav.github.io/ligo.png" type="image/x-icon">
+</head>
 
-<br>
+<div class="menu" id="menu">
+<h1>Shashank<span>DAV</span></h1>
+<ul>
+<li><a class="a a2" href="https://davnotes.art.blog">Notes</a></li>
+<li><a class="a a3" href="https://shashankdav.github.io/login">Login</a></li>
+</ul>
+</div>
+<div class="rest" id="rest">
+<section class="sec">
+      <h1>Hi, There</h1>
+      <h2>Welcome to my website</h2>
+</section>
 
-<table>    
-<tr><th><div class="div1"><img src="cartoon_img.png" class="div1-img"></th><th><h1 class="div2-h1">Hi, There</h1><h2 class="div2-p">I am Shashank<br>I read <a onclick="show()">in</a> class 7<br>of MK DAV Public School</h2></div></th></tr>
-</table>
+<div class="about">
+      <h1>About Me</h1>
+      <p>I am Shashank Pathak and I am a student</p>
+      <div class="over"><label>My hobby is<ul><li>Reading.</li><li>Programing.</li><li>Gaming.</li></ul></label></div>
+</div>
 
-<br>
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-<img class="apj" src="apj.jpg">
-
-<br>
-<br>
-<br>
-
-<div class="pg-1">
-<p class="pg-1-p">This is my personal website. If you are from <a class="pg-1-a" href="http://mkdav.in">MK DAV Public School</a> and want notes or homework of class 7E you can get it by clicking link on menu or type <a class="pg-1-a" href="https://davnotes.art.blog">https://davnotes.art.blog</a>(by Yugraj) in your browser for notes and type <a class="pg-1-a" href="https://shashankdav.github.io/hw">https://shashankdav.github.io/hw</a> in your browser for homework.</p></div>
 </div>
 
 <script>
 
-function login() {
-               var log = localStorage.getItem(name);
-               if (log==null) {
-                               window.open("https://shashankdav.github.io/login","_self");
-}
-               else {
-                    alert("You have already logged in");
-}
+function scroll() {
+      let u = document.getElementById("menu");
+      u.style.position = "fixed";
+      u.style.width = "99%";
+      u.style.margin = "0 -23";
+      u.style.background = "black";
+      let v = document.getElementById("rest");
+      v.style.margin = "150 0";
 }
 
-function show() {
-                var l = localStorage.getItem(name);
-                alert(l);
-}
+window.addEventListener('scroll' , scroll())
 </script>
+    
