@@ -1,87 +1,102 @@
 <style>
 
-body {
-      background: url("https://shashankdav.github.io/bg1.jpg");
-      padding: 20px 20px;
-}
 .menu {
-width: 99%;
-height: 120px;
-display: flex;
-align-items: center;
-justify-content: inline-block;
-border-radius: 30px;
-margin: 0 -50;
+      width: 98.5%;
+      height: 130;
+      background: #000;
+      border-radius: 15px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
 }
 
-.menu ul {
-color: white;
-list-style: none;
-text-decoration: none;
-display: flex;
-align-items: center;
-justify-content: inline-block;
+.menu-logo {
+      color: white;
+      font-size: 80;
+      margin-right: 300;
+      font-weight: 500;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+}
+
+.menu-logo span {
+      color: crimson;
+      font-weight: 1000;
+}
+
+.menu-btn {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 80;
+      color: white;
+      font-weight: 800;
+}
+
+.menu-bar {
+      width: 100%;
+      height: auto;
+      background: #000045;
+      position: fixed;
+      left: -101%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      z-index: 2;
+      transition: all 2s;
+}
+
+.menu-bar ul li {
+      list-style: none;
+      margin-top: 100;
+      padding: 5;
 }
 
 .a {
-color: white;
-text-decoration: none;
-margin-left: 30px;
-font-size: 35px;
-font-weight: 800;
--webkit-user-select: none;
--ms-user-select: none;
-user-select: none;
-}
-
-.a3 {
-      margin-right: 30;
+      color: white;
+      font-size: 80;
+      font-weight: 1000;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
 }
 
 .a:hover {
       color: crimson;
-      font-size: 40px;
+      font-size: 90;
 }
 
-.menu h1 {
+.f {
       width: 100%;
-      font-size: 60;
-      color: white;
-      margin-left: 50px;
-      font-weight: 500;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      height: 6000;
+      background: yellow;
 }
 
-.menu h1 span{
-      color: crimson;
-      font-weight: 1000;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+.i {
+      width: 100;
+      height: 100;
+}
+
+#a1 {
+      margin-top: 200;
+}
+
+#a3 {
+      padding-bottom: 50px;
 }
 
 .sec h1 {
+      padding-top: 150;
       font-size: 80;
 }
 
 .sec h2 {
       font-size: 50;
       margin: -50 0;
-}
-
-.paragraph {
-      margin: 100 0;
-      display: flex;
-}
-
-.paragraph p{
-      font-size: 35px;
-      padding: 20;
-      background: white;
-      border-radius: 20px;
-      width: 100%;
 }
 
 .about {
@@ -147,14 +162,23 @@ user-select: none;
       <link rel="icon" href="https://shashankdav.github.io/logo.png" type="image/x-icon">
 </head>
 
-<div class="menu" id="menu">
-<h1>Shashank<span>DAV</span></h1>
+<div class="menu">
+      
+      <h1 class="menu-logo">Shashank<span>DAV</span></h1>
+      
+      <button class="menu-btn" onclick="opn()" id="btn"><img class="i" id="i" src="https://shashankdav.github.io/-.jpg"></button>
+      
+</div>
+
+<div class="menu-bar" id="bar">
+
 <ul>
-<li><a class="a a2" onclick="notes()">Notes</a></li>
-<li><a class="a a3" onclick="log()">Login</a></li>
+<li id="a1"><a onclick="notes()" class="a">Notes</a></li>
+<li id="a2"><a onclick="hw()" class="a">HomeWork</a></li>
+<li id="a3"><a onclick="log()" class="a">Login</a></li>
 </ul>
 </div>
-<div class="rest" id="rest">
+
 <section class="sec">
       <h1>Hi, There</h1>
       <h2>Welcome to my website</h2>
@@ -166,12 +190,16 @@ user-select: none;
       <div class="over"><label class="lab">My hobby is<ul><li>Reading.</li><li>Programing.</li><li>Gaming.</li></ul></label></div>
 </div>
 
-</div>
-
 <script>
+
+var x = true;
 
 function notes() {
         window.open("https://davnotes.art.blog","_self");
+}
+
+function hw() {
+        window.open("https://shashankdav.github.io/hw","_self");
 }
 
 function log() {
@@ -183,16 +211,18 @@ function log() {
 }
 }
 
-function scroll() {
-      let u = document.getElementById("menu");
-      u.style.position = "fixed";
-      u.style.width = "99%";
-      u.style.margin = "0 -23";
-      u.style.background = "black";
-      let v = document.getElementById("rest");
-      v.style.margin = "150 0";
+
+function opn() {
+      if (x) {
+            document.getElementById("bar").style.left = "0";
+            document.getElementById("i").src = "https://shashankdav.github.io/x.png";
+            x = false;
+      }
+      else {
+            document.getElementById("bar").style.left = "-101%";
+            document.getElementById("i").src = "https://shashankdav.github.io/-.jpg"
+            x = true;
+      }
 }
 
-window.addEventListener('scroll' , scroll())
 </script>
-    
