@@ -41,18 +41,17 @@ body {
 }
 
 .menu-bar {
-      width: 106%;
+      width: 100%;
       height: auto;
       background: #000045;
       position: fixed;
-      top: -140%;
-      left: -1%;
+      left: -101%;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 15px;
       z-index: 2;
-      transition: all 2s;
+      transition: all 1s;
 }
 
 .menu-bar ul li {
@@ -219,12 +218,12 @@ function log() {
 
 function opn() {
       if (x) {
-            document.getElementById("bar").style.top = "0";
+            document.getElementById("bar").style.left = "0";
             document.getElementById("i").src = "https://shashankdav.github.io/x.png";
             x = false;
       }
       else {
-            document.getElementById("bar").style.top = "-140%";
+            document.getElementById("bar").style.left = "-101%";
             document.getElementById("i").src = "https://shashankdav.github.io/-.jpg"
             x = true;
       }
