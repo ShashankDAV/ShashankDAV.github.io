@@ -1,47 +1,47 @@
-
 <style>
 
 .app {
-	width: 1000px;
-	height: 1800px;
-	border: 2px solid blue;
-	border-radius: 5px;
-	display: fixed;
+width: 1000px;
+height: 1800px;
+border: 2px solid blue;
+border-radius: 5px;
+display: fixed;
 }
 
 .message_input {
-	width: 800px;
-	outline: none;
-	font-size: 30px;
-	height: 100px;
-	border-bottom: 0px solid blue;
-	border-right: 0px blue;
-	border-left: 0px transparent;
-	border-radius: 5px;
+width: 800px;
+outline: none;
+font-size: 90px;
+height: 100px;
+border-bottom: 0px solid blue;
+border-right: 0px blue;
+border-left: 0px transparent;
+border-radius: 5px;
+position: relative;
 }
 
 .send {
-	background: blue;
-	border: none;
-	outline: none;
-	width: 200px;
-	margin-left: 80%;
-	height: 145px;
-	color: white;
-	border-radius: 5px;
-	margin-top: -10%;
-	font-size: 30px;
-	font-weight: bolder;
+background: blue;
+border: none;
+outline: none;
+width: 200px;
+margin-left: 80%;
+height: 145px;
+color: white;
+border-radius: 5px;
+margin-top: -10%;
+font-size: 70px;
+font-weight: bolder;
 }
 
 .chatbox {
-	outline: none;
-	width: 100%;
-	height: 92%;
-	border-radius: 5px;
-	border: 2px transparent;
-	font-size: 15px;
-	font-weight: bolder;
+outline: none;
+width: 100%;
+height: 92%;
+border-radius: 5px;
+border: 2px transparent;
+font-size: 80px;
+font-weight: bolder;
 }
 
 </style>
@@ -50,7 +50,7 @@
 
 <textarea class="chatbox" id="chatbox" readonly>Bot: Welcome to this website</textarea>
 
-<input type="text" id="message" class="message_input" placeholder="Type a message here" onmouseover="resize()">
+<input type="text" id="message" class="message_input" placeholder="Type message here" onmouseover="resize()">
 <button class="send" onclick="send()" id="send">Send</button>
 
 </div>
@@ -61,47 +61,53 @@
 var cb = document.getElementById("chatbox");
 
 function send() {
-	var message = document.getElementById("message");
-	var mess = document.getElementById("message").value;
-	var me = mess.toLowerCase();
-	
-	/*var array = mess.split(" ");
-	alert(array);
-	if (array.includes("kutta") {
-		var i = array.indexOf("kutta");
-		var op = array.slice(i-1,i);
-		alert(i);
-		alert(op);
-	}
-	alert(array);*/
-	
-	cb.value = cb.value + "\n" + "You: " + mess;
-	if (me.includes("hi")) {
-		cb.value = cb.value + "\nBot: Hello, How may I help you?";
-		message.value = "";
-	}
-	else if (me.includes("who created you")) {
-		cb.value = cb.value + "\nBot: Shashank Pathak created me.";
-		message.value = "";
-	}
-	else if (me.includes("hello")) {
-		cb.value = cb.value + "\nBot: Hello, How may I help you?";
-		message.value = "";
-	}
-	else if (me.includes("what is this website")) {
+var message = document.getElementById("message");
+var mess = document.getElementById("message").value;
+var me = mess.toLowerCase();
+
+cb.value = cb.value + "\n" + "You: " + mess;
+if (me.includes("hey")) {
+cb.value = cb.value + "\nBot: Hello, How may I help you?";
+message.value = "";
+}
+      else if (me.includes("who created you")) {
+           cb.value = cb.value + "\nBot: Shashank Pathak created me.";
+           message.value = "";
+}
+      else if (me.includes("hello")) {
+            cb.value = cb.value + "\nBot: Hello, How may I help you?";
+            message.value = "";
+}
+      else if (me.includes("what is this website")) {
             cb.value = cb.value + "Error 404";
-		message.value = "";
-	}
-	
-        else if (me.includes("minecraft download link")) {
+            message.value = "";
+}
+
+      else if (me.includes("minecraft download link")) {
             cb.value = cb.value + "Bot: link = https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file"
             window.open("https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file" , "_self");
             message.value = "";
-        }
-	else {
-		cb.value = cb.value + "\nBot: Sorry, I can't understand what are you trying to say!"
-		message.value = "";
-	}
 }
+      else if (me.includes("hlo")) {
+            cb.value = cb.value + "\nBot: Hi , how may I help you";
+            message.value = "";
+      }
+      else if (me.includes("hi")) {
+            cb.value = cb.value + "\nBot: Hi , how may I help you";
+            message.value = "";
+      }
+      else if (me.includes("notes")) {
+            window.open("https://davnotes.art.blog" , "_self");
+            message.value = "";
+      }
+      else if (me.includes("fuck")) {
+            cb.value = cb.value + "\nBot : Fuck you ben stokes";
+      }
+      else {
+           cb.value = cb.value + "\nBot: Sorry, I can't understand what are you trying to say!"
+           message.value = "";
+}
+}
+message.value = "";
 
 </script>
