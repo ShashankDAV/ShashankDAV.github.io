@@ -191,15 +191,12 @@ a {
 <script>
 
 function back() {
-                var na = localStorage.getItem("n");
-                var nm = localStorage.getItem(n);
-                alert(na);
-                alert(nm);
+                window.history.back();
 }
 
 function log() {
                  var nm = document.getElementById("nm").value;
-                 localStorage.setItem(n , nm);
+                 localStorage.setItem("n" , nm);
 }
 
 </script>
