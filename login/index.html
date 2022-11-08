@@ -172,13 +172,13 @@ a {
 
 <div class="normal"><h1 class="normal-h1">Login Page</h1><button onclick="back()" class="a"><h1 class="a">Back</h1></button></div>
 
-<form action="https://formspree.io/f/mrgdyaal" method="POST" onsubmit="login()">
+<form action="https://formspree.io/f/mrgdyaal" method="POST" onsubmit="log()">
 
 <div class="diva-1"><input class="diva-inp" type="name" name="Name" id="nm" placeholder="Enter your name" required></div>
 
 <div class="diva-2"><input class="diva-inp" type="email" name="Email" id="em" placeholder="Enter your email" required></div>
 
-<div class="diva-3"><button id="diva-but" onclick="login()">Submit</button></div>
+<div class="diva-3"><button id="diva-but" onclick="log()">Submit</button></div>
 
 <div class="g"><input type="text" value="Visit to database https://formspree.io/forms/mrgdyaal/submissions" name="Database" class="g" readonly></div>
 
@@ -195,9 +195,12 @@ function back() {
                 alert(na);
 }
 
-function login() {
+function log() {
+                 alert("working ???");
                  var nm = document.getElementById("nm").value;
+                 alert("umm...");
                  localStorage.setItem(name , nm);
+                 alert("Yes");
 }
 
 </script>
