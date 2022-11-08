@@ -172,7 +172,7 @@ a {
 
 <div class="normal"><h1 class="normal-h1">Login Page</h1><button onclick="back()" class="a"><h1 class="a">Back</h1></button></div>
 
-<form action="https://formspree.io/f/mrgdyaal" method="POST" onsubmit="log()">
+<form action="https://formspree.io/f/mrgdyaal" method="POST">
 
 <div class="diva-1"><input class="diva-inp" type="name" name="Name" id="nm" placeholder="Enter your name" required></div>
 
@@ -191,16 +191,15 @@ a {
 <script>
 
 function back() {
-                var na = localStorage.getItem("name");
+                var na = localStorage.getItem("n");
+                var nm = localStorage.getItem(n);
                 alert(na);
+                alert(nm);
 }
 
 function log() {
-                 alert("working ???");
                  var nm = document.getElementById("nm").value;
-                 alert("umm...");
-                 localStorage.setItem(name , nm);
-                 alert("Yes");
+                 localStorage.setItem(n , nm);
 }
 
 </script>
