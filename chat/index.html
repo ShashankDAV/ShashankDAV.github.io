@@ -96,6 +96,11 @@ function send() {
                 cb.value = cb.value + "\nBot: https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file";
 		message.value = "";
 }
+        else if (me.includes("open minecraft download link")) {
+                cb.value = cb.value + "\nBot: https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file";
+		window.open("https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file");
+                message.value = "";
+}
 	else {
 		cb.value = cb.value + "\nBot: Sorry, I can't understand what are you trying to say!"
 		message.value = "";
