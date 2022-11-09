@@ -100,9 +100,15 @@ message.value = "";
             window.open("https://davnotes.art.blog" , "_self");
             message.value = "";
       }
-      else if (me.includes("fuck")) {
-            cb.value = cb.value + "\nBot : Fuck you ben stokes";
+      else if (me.includes("help")) {
+            cb.value = cb.value + "\nBot : Here is the command list:";
+            cb.value = cb.value + "\n1. For minecraft link type = minecraft download link\n2. For minecraft server type = minecraft server\n3. For clearing the chat type= clear";
+            message.value = "";
       }
+      else if (me.includes("clear")) {
+            cb.value = "";
+            message.value = "";
+}
       else {
            cb.value = cb.value + "\nBot: Sorry, I can't understand what are you trying to say!"
            message.value = "";
