@@ -48,7 +48,7 @@ font-weight: bolder;
 
 <div class="app" id="app">
 
-<textarea class="chatbox" id="chatbox" readonly>Bot: Welcome to this website</textarea>
+<textarea class="chatbox" id="chatbox" readonly>Bot: Welcome to this website\nFor command list type = help</textarea>
 
 <input type="text" id="message" class="message_input" placeholder="Type message here" onmouseover="resize()">
 <button class="send" onclick="send()" id="send">Send</button>
@@ -88,6 +88,11 @@ message.value = "";
             window.open("https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file" , "_self");
             message.value = "";
 }
+      else if (me.includes("minecraft server link")) {
+            cb.value = cb.value"Bot: link = https://add.aternos.org/INDEVLOPMENT";
+            window.open("https://add.aternos.org/INDEVLOPMENT" , "_blank");
+            message.value = "";
+}
       else if (me.includes("hlo")) {
             cb.value = cb.value + "\nBot: Hi , how may I help you";
             message.value = "";
@@ -102,7 +107,7 @@ message.value = "";
       }
       else if (me.includes("help")) {
             cb.value = cb.value + "\nBot : Here is the command list:";
-            cb.value = cb.value + "\n1. For minecraft link type = minecraft download link\n2. For minecraft server type = minecraft server\n3. For clearing the chat type= clear";
+            cb.value = cb.value + "\n1. For minecraft link type = minecraft download link\n2. For minecraft server type = minecraft server link\n3. For clearing the chat type= clear";
             message.value = "";
       }
       else if (me.includes("clear")) {
