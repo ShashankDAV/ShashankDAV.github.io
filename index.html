@@ -93,7 +93,7 @@ body {
       margin-top: 200;
 }
 
-#a3 {
+#a4 {
       padding-bottom: 50px;
 }
 
@@ -239,6 +239,7 @@ p {
 <li id="a1"><a onclick="notes()" class="a">Notes</a></li>
 <li id="a2"><a onclick="hw()" class="a">HomeWork</a></li>
 <li id="a3"><a onclick="log()" class="a">Login</a></li>
+<li id="a4"><a onclick="chat()" class="a">Chatbot</a></li>
 </ul>
 </div>
 
@@ -280,6 +281,10 @@ function notes() {
         window.open("https://davnotes.art.blog","_self");
 }
 
+function chat() {
+        window.open("https://shashankdav.github.io/chat","_self");
+}
+
 function hw() {
         window.open("https://shashankdav.github.io/hw","_self");
 }
@@ -316,6 +321,7 @@ function dark() {
       document.querySelector(".h").style.background = "black";
       document.querySelector("body").style.background = "linear-gradient(135deg , #00203FFF , #ADEFD1FF)";
       document.querySelector("#i2").style.animation = "rota 1.5s linear";
+      document.querySelector(".about").style.background = "#000045";
       drk = false;
 }
       else {
@@ -324,6 +330,7 @@ function dark() {
       document.querySelector(".h").style.background = "white";
       document.querySelector("body").style.background= "linear-gradient(135deg , #ADEFD1FF , #00203FFF)";
       document.querySelector("#i2").style.animation = "ator 1.5s linear";
+      document.querySelector(".about").style.background = "cyan";
       drk = true;
 }
 }
