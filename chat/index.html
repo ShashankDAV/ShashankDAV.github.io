@@ -48,7 +48,7 @@ font-weight: bolder;
 
 <div class="app" id="app">
 
-<textarea class="chatbox" id="chatbox" readonly>Bot: Welcome to this website\nFor command list type = help</textarea>
+<textarea class="chatbox" id="chatbox" readonly>Bot: Welcome to this website. For command list type = help</textarea>
 
 <input type="text" id="message" class="message_input" placeholder="Type message here" onmouseover="resize()">
 <button class="send" onclick="send()" id="send">Send</button>
@@ -107,11 +107,15 @@ message.value = "";
       }
       else if (me.includes("help")) {
             cb.value = cb.value + "\nBot : Here is the command list:";
-            cb.value = cb.value + "\n1. For minecraft link type = minecraft download link\n2. For minecraft server type = minecraft server link\n3. For clearing the chat type= clear";
+            cb.value = cb.value + "\n1. For minecraft link type = minecraft download link\n2. For minecraft server type = minecraft server link\n3.For server registration type = server registration\n4. For clearing the chat type= clear";
             message.value = "";
       }
       else if (me.includes("clear")) {
             cb.value = "";
+            message.value = "";
+}
+      else if (me.includes("server registration")) {
+            window.open("https://shashankdav.github.io/server","_self");
             message.value = "";
 }
       else {
