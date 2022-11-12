@@ -3,11 +3,12 @@
             height: 100%;
             border: 5px solid darkblue;
             border-radius: 15px;
+            overflow: hidden;
       }
       .txt {
             font-family: fantasy;
             width: 100%;
-            height: 85%;
+            height: 93%;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
             border: none;
@@ -15,15 +16,15 @@
             font-size: 50;
       }
       .msg {
-            font-family: fantasy;
             width: 80%;
-            height: 15%;
             font-size: 75px;
             border: none;
             outline: none;
             border-top: 5px solid darkblue;
             border-bottom-left-radius: 15px;
             border-right: 5px solid darkblue;
+            position: relative;
+            top: -8;
       }
       .btn {
             background: darkblue;
@@ -31,16 +32,24 @@
             outline: none;
             color: white;
             font-size: 78px;
-            height: 15.5%;
+            height: 15%;
             position: relative;
-            border-bottom-right-radius: 15px;
+            top: -8;
+            width: 21%;
+            }
+            .ms {
+                  display: flex;
+                  position: relative;
+                  bottom: -45px;
             }
 </style>
 
 <div class="chat">
       <textarea class="txt" id="txt" readonly>Bot: Hi, type help for command list.</textarea>
+<div class="ms">
       <input id="msg" class="msg">
       <button id="butt" class="btn" onclick="sen()">Send</button>
+</div>
 </div>
 
 <script>
