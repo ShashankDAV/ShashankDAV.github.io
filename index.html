@@ -165,7 +165,7 @@ body {
 
 .notice {
       width: 99%;
-      height: 1000;
+      height: 770;
       background: #ffffff;
       position: relative;
       top: -80;
@@ -218,6 +218,59 @@ p {
       100% {transform: rotate(-360deg);}
 }
 
+.comment-section {
+      width: 100%;
+      height: 250;
+}
+
+.comment-section textarea {
+      position: relative;
+      top: -50;
+      font-size: 40;
+      font-family: fantasy;
+      width: 98%;
+      height: 350;
+      border-radius: 10px;
+      margin: 1%;
+      outline: none;
+}
+
+.comment-section button {
+      position: relative;
+      top: -50;
+      background: rgb(1,150,1);
+      height: 80;
+      width: 30%;
+      margin: 1%;
+      border: none;
+      margin-left: 69%;
+      font-size: 60;
+      font-family: fantasy;
+      border-radius: 25px;
+      outline: none;
+      font-weight: 800;
+}
+
+#co {
+      margin: 1%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      z-index: -1;
+}
+
+.cs {
+      margin-left: 150;
+      font-size: 75;
+      color: cyan;
+}
+
+#vvv {
+      margin-top: 250;
+      border: 10px solid cyan;
+      border-radius: 15px;
+}
+
 </style>
 
 <head>
@@ -261,16 +314,22 @@ p {
       <h2>Date: 6/11/22</h2>
       <p>Homework site is under maintenance so homework will not be uploaded. I am extremely sorry for this inconvenience.</p>
 </div>
-
-<div class="n1">
-      <h2>Date : 7/11/22</h2>
-      <p>There is result on 12/11/22(Monday)</p>
-</div>
 <div class="n1">
       <h2>Date : 8/11/22</h2>
       <p>If you want daily homework you can get it by clicking <a href="https://shashankdav.github.io/hw">here</a> but for that you have to log in to my website.</p>
 </div>
 
+</div>
+
+<div class="comment-section">
+      <textarea placeholder="Enter your comment here" id="txt"></textarea>
+      <button class="comment" id="comm" onclick="comment()">Post</button>
+</div>
+<div id="vvv">
+      <h1 class="cs">Comments Section</h1>
+      <div id="co" class="ci"><h1>Shashank: Hello guys</h1></div>
+      <div id="co" class="ci"><h1>Yugraj: Hi</h1></div>
+      <div id="co" class="ci"><h1>Ishant: Hi , nice website.</h1></div>
 </div>
 
 <script>
@@ -290,7 +349,7 @@ function hw() {
 }
 
 function log() {
-      var na = localStorage.getItem("eman");
+      var na = localStorage.getItem("n");
       if (na == null) {
          window.open("https://shashankdav.github.io/login","_self");
 }     else {
@@ -319,20 +378,98 @@ function dark() {
       document.querySelector("body").style.color = "white";
       document.querySelector(".notice").style.background = "black";
       document.querySelector(".h").style.background = "black";
-      document.querySelector("body").style.background = "linear-gradient(135deg , #00203FFF , #ADEFD1FF)";
+      document.querySelector("body").style.background = 'linear-gradient(135deg , #00203FFF , #ADEFD1FF)';
       document.querySelector("#i2").style.animation = "rota 1.5s linear";
       document.querySelector(".about").style.background = "#000045";
+      document.querySelector("#txt").style.background = "black";
+      document.querySelector("#txt").style.color = "white";
+      document.querySelector("#comm").style.color = "white";
+      var zyx = document.querySelectorAll("#co");
+      for (let i=0; i<zyx.length;i++) {
+            zyx[i].style.background = "black";
+            zyx[i].style.color = "white";
+      }
       drk = false;
 }
       else {
       document.querySelector("body").style.color = "black";
       document.querySelector(".notice").style.background = "white";
       document.querySelector(".h").style.background = "white";
-      document.querySelector("body").style.background= "linear-gradient(135deg , #ADEFD1FF , #00203FFF)";
+      document.querySelector("body").style.background= 'linear-gradient(135deg , #ADEFD1FF, #00203FFF)';
       document.querySelector("#i2").style.animation = "ator 1.5s linear";
       document.querySelector(".about").style.background = "cyan";
+      document.querySelector("#txt").style.background = "white";
+      document.querySelector("#txt").style.color = "black";
+      document.querySelector("#comm").style.color = "black";   
+      var zyx = document.querySelectorAll("#co");
+      for (let i=0; i<zyx.length;i++) {
+            zyx[i].style.background = "white";
+            zyx[i].style.color = "black";
+      }
       drk = true;
 }
 }
+
+function save(key,value){
+      localStorage.setItem(key,value);
+}
+
+var com = localStorage.getItem("comm");
+var cont = [];
+
+function comment() {
+      var nam = localStorage.getItem("eman");
+      if (nam==null) {
+            alert("Log In first");
+      }
+      else {
+           var g = document.querySelector("#txt").value;
+           if (g==" " || g=="") {
+                 alert("Write Comment First")
+           }
+           else {
+                cont.push(g);
+                final_comment = com.concat(cont);
+      
+                save("comm", final_comment);
+      
+                asian_power();
+}
+}
+}
+
+function asian_power() {
+      no = localStorage.getItem("comm");
+      name= localStorage.getItem("eman");
+      arr = no.split(",");
+      numb = arr.length;
+      num = numb-1;
+      div = document.createElement("div");
+      var h1 = document.createElement("h1");
+      div.id = "co";
+      div.className = "ci";
+      h1.innerHTML = name + ": " + arr[num];
+      div.appendChild(h1);
+      document.querySelector("#vvv").appendChild(div);
+}
+
+function show_comments() {
+      no = localStorage.getItem("comm");
+      name = localStorage.getItem("eman");
+      arr = no.split(",");
+      numb = arr.length;
+      num = numb-1;
+      for (let i=0;i<numb; i++) {
+            div = document.createElement("div");
+            var h1 = document.createElement("h1");
+            div.id = "co";
+            div.className = "ci";
+            h1.innerHTML = "\n" +name + ": " + arr[i];
+            div.appendChild(h1);
+            document.querySelector("#vvv").appendChild(div);
+}
+}
+
+document.body.addEventListener("scroll", show_comments())
 
 </script>
