@@ -350,7 +350,7 @@ function hw() {
 
 function log() {
       var na = localStorage.getItem("eman");
-      if (na == null) {
+      if (na == null || na == "") {
          window.open("https://shashankdav.github.io/login","_self");
 }     else {
          alert("You have already logged in");
@@ -413,7 +413,7 @@ function dark() {
 function save(key,value){
       localStorage.setItem(key,value);
 }
-save("comm","");
+
 var com = localStorage.getItem("comm");
 var cont = [];
 
@@ -427,6 +427,9 @@ function comment() {
            if (g==" " || g=="") {
                  alert("Write Comment First")
            }
+           else if (g == "clear") {
+                 save("eman","")
+}
            else {
                 cont.push(g);
                 final_comment = com.concat(cont);
