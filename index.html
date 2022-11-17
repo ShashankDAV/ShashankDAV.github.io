@@ -419,7 +419,7 @@ var cont = [];
 
 function comment() {
       var nam = localStorage.getItem("eman");
-      if (nam==null) {
+      if (nam==null || nam=="") {
             alert("Log In first");
       }
       else {
@@ -429,7 +429,7 @@ function comment() {
            }
            else if (g == "clear") {
                  save("eman","");
-}          else if (g=="comments_clear") {
+}          else if (g == "comments_clear") {
                  save("comm","");
 }
            else {
