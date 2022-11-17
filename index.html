@@ -428,7 +428,9 @@ function comment() {
                  alert("Write Comment First")
            }
            else if (g == "clear") {
-                 save("eman","")
+                 save("eman","");
+}          else if (g=="comments_clear") {
+                 save("comm","");
 }
            else {
                 cont.push(g);
@@ -451,7 +453,7 @@ function asian_power() {
       var h1 = document.createElement("h1");
       div.id = "co";
       div.className = "ci";
-      h1.innerHTML = name + ": " + arr[num];
+      h1.innerHTML = name + ": " + "\n" + arr[num];
       div.appendChild(h1);
       document.querySelector("#vvv").appendChild(div);
 }
