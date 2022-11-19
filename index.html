@@ -65,13 +65,7 @@ body {
       font-size: 70;
       font-weight: 1000;
       user-select: none;
-      -ms-user-select: none;
-      -webkit-user-select: none;
-}
-
-.a:hover {
-      color: crimson;
-      font-size: 80;
+      transition: 0.5s all;
 }
 
 .f {
@@ -93,7 +87,92 @@ body {
       margin-top: 200;
 }
 
-#a4 {
+#a1:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: orange;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a1:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a2:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: pink;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a2:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a3:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: cyan;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a3:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a4:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: lightgreen;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a4:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a5:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: magenta;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a5:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a5 {
       padding-bottom: 50px;
 }
 
@@ -290,9 +369,10 @@ p {
 
 <ul>
 <li id="a1"><a onclick="notes()" class="a">Notes</a></li>
-<li id="a2"><a onclick="hw()" class="a">HomeWork</a></li>
+<li id="a2"><a onclick="alert('Under Development')" class="a">HomeWork</a></li>
 <li id="a3"><a onclick="log()" class="a">Login</a></li>
 <li id="a4"><a onclick="chat()" class="a">Chatbot</a></li>
+<li id="a5"><a onclick="alert('Under Development')" class="a">Blog</a></li>
 </ul>
 </div>
 
