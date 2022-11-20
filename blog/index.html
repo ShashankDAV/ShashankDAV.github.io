@@ -1,0 +1,85 @@
+<style>
+      .head {
+            background: rgb(1,250,255);
+            height: 150;
+            font-size: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin: 10;
+      }
+      
+      .python-blog {
+            height: auto;
+            background: #000045;
+            border-radius: 5px;
+            margin-left: 10;
+            margin-right: 10;
+      }
+      
+      .python-blog .h1 {
+            background: #009099;
+            border-radius: 5px;
+            height: 80;
+            font-size: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+      }
+      
+      ul {
+            list-style: none;
+      }
+      
+      .py h1 {
+            color: white;
+            font-size: 40;
+            height: 120;
+            margin-left: 30;
+            margin-top: 90;
+      }
+      
+      .py{
+            background: lightpink;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            width: 930;
+            margin-top: 10;
+            border-radius: 5px;
+      }
+      
+      .py:nth-child(1){
+            position: relative;
+            top: -25;
+            left: -33;
+      }
+      
+      .py img {
+            height: 250;
+            border-radius: 5px;
+      }
+      
+</style>
+
+<head>
+      <title>Blogs</title>
+      <link rel="icon" href="https://shashankdav.github.io/logo.png" type="image/x-icon">
+</head>
+
+<div class="head"><h1>Blogs</h1></div>
+<div class="python-blog">
+      <h1 class="h1">Python 30 Days Crash Course</h1>
+      <ul>
+            <li><div class="py" onclick="opn('PythonBlog01.html')"><img src="https://shashankdav.github.io/python.jpeg"><h1>Print , Variables and Input</h1></div></li>
+      </ul>
+</div>
+
+<script>
+      function opn(y) {
+            var x = "https://shashankdav.github.io";
+            var z = x+"/"+y;
+            window.open(z,"_self");
+      }
+</script>
