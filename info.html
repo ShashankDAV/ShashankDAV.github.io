@@ -1,15 +1,847 @@
-<body style="background-color:black; color:cyan">
-<h1>Game Info Page</h1>
-<p>Game will release in 2023</p><br>
-<p>Game is based on pokemon but no pokemons are used</p><br>
-<p>Fake pokemons from different artists have been used</p><br>
-<p>The game is made using python</p><br>
-<p>Registration site will be made till December 2022</p><br><br>
+<style>
+
+body {
+     background: linear-gradient(135deg , #ADEFD1FF, #00203FFF);
+}
+
+.menu {
+      width: 98.5%;
+      height: 130;
+      background: black;
+      border-radius: 15px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+}
+
+.menu-logo {
+      color: white;
+      font-size: 75;
+      margin-right: 190;
+      font-weight: 500;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+}
+
+.menu-logo span {
+      color: crimson;
+      font-weight: 1000;
+}
+
+.menu-btn {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 80;
+      color: white;
+      font-weight: 800;
+}
+
+.menu-bar {
+      width: 100%;
+      height: auto;
+      background: #000045;
+      position: fixed;
+      left: -101%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      z-index: 2;
+      transition: all 1s;
+}
+
+.menu-bar ul li {
+      list-style: none;
+      margin-top: 100;
+      padding: 5;
+}
+
+.a {
+      color: white;
+      font-size: 70;
+      font-weight: 1000;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+}
+
+.f {
+      width: 100%;
+      height: 6000;
+      background: yellow;
+}
+
+.i {
+      width: 100;
+      height: 100;
+}
+
+#i2 {
+      height: 120;
+}
+
+#a1 {
+      margin-top: 200;
+}
+
+#a1:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: orange;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a1:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a2:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: pink;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a2:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a3:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: cyan;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a3:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a4:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: lightgreen;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a4:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a5:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: magenta;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a5:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a5 {
+      padding-bottom: 50px;
+}
+
+.sec h1 {
+      padding-top: 180;
+      font-size: 80;
+}
+
+.sec h2 {
+      font-size: 50;
+      margin: -50 0;
+}
+
+.about {
+      margin: 100 0;
+      margin-top: 90;
+      background: cyan;
+      padding: 20px;
+      border-radius: 15px;
+}
+
+.about h1 {
+      font-size: 80;
+      margin: 10;
+}
+
+.about p {
+      font-size: 30;
+      margin: 10;
+}
+
+.lab {
+     font-size: 40;
+     margin: 10;
+}
+
+.over {
+      overflow: hidden;
+      height: 50;
+}
+
+.about label ul {
+      color: crimson;
+      font-weight: 800;
+      position: relative;
+      top: -85;
+      right: -220;
+      list-style: none;
+      animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+            0%,12.61%, 1% {
+                transform: translate3d(0,0,0);
+            }
+            16.66%, 29.32% {
+                transform: translate3d(0,-35%, 0);
+            }
+            33.32%, 45.98% {
+                transform: translate3d(0,-69%, 0);
+            }
+            49.98%, 62.64% {
+                transform: translate3d(0,-35%, 0);
+            }
+            66.64%, 79.30% {
+                transform: translate3d(0,0%, 0);
+            }
+}
+
+.notice {
+      width: 99%;
+      height: 770;
+      background: #ffffff;
+      position: relative;
+      top: -80;
+      border-radius: 15px;
+      justify-content: center;
+      margin: 0 5;
+      overflow: hidden;
+}
+
+.h {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      margin-top: 0;
+      height: 250;
+      font-size: 100;
+      background: white;
+      margin: 0;
+      border-radius: 5px;
+      z-index: 1;
+}
+
+.n1 {
+      position: relative;
+      bottom: -230;
+      border-bottom: 5px solid;
+      padding: 10px;
+      height: auto;
+      width: 94%;
+      height: auto;
+      margin-left: 13;
+      margin-top: 5;
+}
+
+h2 {
+      font-size: 50;
+}
+
+p {
+      font-size: 25;
+}
+
+@keyframes rota {
+      100% {transform: rotate(360deg);}
+}
+
+@keyframes ator {
+      100% {transform: rotate(-360deg);}
+}
+
+.comment-section {
+      width: 100%;
+      height: 250;
+}
+
+.comment-section textarea {
+      position: relative;
+      top: -50;
+      font-size: 40;
+      font-family: fantasy;
+      width: 98%;
+      height: 350;
+      border-radius: 10px;
+      margin: 1%;
+      outline: none;
+}
+
+.comment-section button {
+      position: relative;
+      top: -50;
+      background: rgb(1,150,1);
+      height: 80;
+      width: 30%;
+      margin: 1%;
+      border: none;
+      margin-left: 69%;
+      font-size: 60;
+      font-family: fantasy;
+      border-radius: 25px;
+      outline: none;
+      font-weight: 800;
+}
+
+#co {
+      margin: 1%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      z-index: -1;
+}
+
+.cs {
+      margin-left: 150;
+      font-size: 75;
+      color: cyan;
+}
+
+#vvv {
+      margin-top: 250;
+      border: 10px solid cyan;
+      border-radius: 15px;
+}
+@media (max-width: 979px) {
+body {
+     background: linear-gradient(135deg , #ADEFD1FF, #00203FFF);
+     min-width: 100%;
+     min-height: 100%;
+     width: 999px;
+     background-size: 999px;
+}
+
+.menu {
+      width: 98.5%;
+      height: 130;
+      background: #000;
+      border-radius: 15px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+}
+
+.menu-logo {
+      color: white;
+      font-size: 75;
+      margin-right: 190;
+      font-weight: 500;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+}
+
+.menu-logo span {
+      color: crimson;
+      font-weight: 1000;
+}
+
+.menu-btn {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 80;
+      color: white;
+      font-weight: 800;
+}
+
+.menu-bar {
+      width: 100%;
+      height: auto;
+      background: #000045;
+      position: fixed;
+      left: -101%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      z-index: 2;
+      transition: all 1s;
+}
+
+.menu-bar ul li {
+      list-style: none;
+      margin-top: 100;
+      padding: 5;
+}
+
+.a {
+      color: white;
+      font-size: 70;
+      font-weight: 1000;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+}
+
+.f {
+      width: 100%;
+      height: 6000;
+      background: yellow;
+}
+
+.i {
+      width: 100;
+      height: 100;
+}
+
+#i2 {
+      height: 120;
+}
+
+#a1 {
+      margin-top: 200;
+}
+
+#a5 {
+      padding-bottom: 50px;
+}
+
+.sec h1 {
+      padding-top: 180;
+      font-size: 70;
+      margin-bottom: 30;
+}
+
+.about {
+      margin: 100 0;
+      margin-top: 0;
+      background: cyan;
+      padding: 20px;
+      border-radius: 15px;
+      height: 400;
+}
+
+.about h1 {
+      font-size: 80;
+      margin: 50;
+      margin-left: 300;
+}
+
+.about p {
+      font-size: 38;
+      margin: 30;
+      font-weight: 600;
+      margin-left: 120;
+}
+
+.lab {
+     font-size: 40;
+     margin: 30;
+     font-weight: 600;
+     margin-left: 120;
+}
+
+.over {
+      overflow: hidden;
+      height: 50;
+}
+
+.about label ul {
+      color: crimson;
+      font-weight: 800;
+      position: relative;
+      top: -85;
+      right: -330;
+      list-style: none;
+      animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+            0%,12.61%, 1% {
+                transform: translate3d(0,0,0);
+            }
+            16.66%, 29.32% {
+                transform: translate3d(0,-35%, 0);
+            }
+            33.32%, 45.98% {
+                transform: translate3d(0,-69%, 0);
+            }
+            49.98%, 62.64% {
+                transform: translate3d(0,-35%, 0);
+            }
+            66.64%, 79.30% {
+                transform: translate3d(0,0%, 0);
+            }
+}
+
+.notice {
+      width: 99%;
+      height: 770;
+      background: #ffffff;
+      position: relative;
+      top: -80;
+      border-radius: 15px;
+      justify-content: center;
+      margin: 0 5;
+      overflow: hidden;
+}
+
+.h {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      margin-top: 0;
+      height: 250;
+      font-size: 100;
+      background: white;
+      margin: 0;
+      border-radius: 5px;
+      z-index: 1;
+}
+
+.n1 {
+      position: relative;
+      bottom: -230;
+      border-bottom: 5px solid;
+      padding: 10px;
+      height: auto;
+      width: 94%;
+      height: auto;
+      margin-left: 13;
+      margin-top: 5;
+}
+
+h2 {
+      font-size: 50;
+}
+
+p {
+      font-size: 25;
+}
+
+@keyframes rota {
+      100% {transform: rotate(360deg);}
+}
+
+@keyframes ator {
+      100% {transform: rotate(-360deg);}
+}
+
+.comment-section {
+      width: 100%;
+      height: 250;
+}
+
+.comment-section textarea {
+      position: relative;
+      top: -50;
+      font-size: 40;
+      font-family: fantasy;
+      width: 98%;
+      height: 200;
+      border-radius: 10px;
+      margin: 1%;
+      outline: none;
+}
+
+.comment-section button {
+      position: relative;
+      top: -50;
+      background: rgb(1,150,1);
+      height: 80;
+      width: 30%;
+      margin: 1%;
+      border: none;
+      margin-left: 69%;
+      font-size: 60;
+      font-family: fantasy;
+      border-radius: 25px;
+      outline: none;
+      font-weight: 800;
+}
+
+#co {
+      margin: 1%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      z-index: -1;
+}
+
+.cs {
+      margin-left: 150;
+      font-size: 75;
+      color: cyan;
+}
+
+#vvv {
+      margin-top: 50;
+      border: 10px solid cyan;
+      border-radius: 15px;
+}
+}
+
+</style>
+
+<head>
+      <title>ShashankDAV</title>
+      <link rel="icon" href="https://shashankdav.github.io/logo.png" type="image/x-icon">
+</head>
+<body>
+<div class="menu">
+      
+      <h1 class="menu-logo">Shashank<span>DAV</span></h1>
+      <button class="menu-btn idd" id="mode" onclick="dark()"><img src="https://shashankdav.github.io/img2.png" id="i2"></button>
+      <button class="menu-btn" onclick="opn()" id="btn"><img class="i" id="i" src="https://shashankdav.github.io/-.png"></button>
+      
+</div>
+
+<div class="menu-bar" id="bar">
+
+<ul>
+<li id="a1"><a onclick="notes()" class="a">Notes</a></li>
+<li id="a2"><a onclick="hw()" class="a">HomeWork</a></li>
+<li id="a3"><a onclick="log()" class="a">Login</a></li>
+<li id="a4"><a onclick="chat()" class="a">Chatbot</a></li>
+<li id="a5"><a onclick="blg('')" class="a">Blogs</a></li>
+</ul>
+</div>
+
+<section class="sec">
+      <h1>Welcome to my website</h1>
+</section>
+
+<div class="about">
+      <h1>About Me</h1>
+      <p>I am Shashank Pathak and I am a student</p>
+      <div class="over"><label class="lab">My hobby is<ul><li>Reading.</li><li>Programing.</li><li>Gaming.</li></ul></label></div>
+</div>
+
+<div class="notice">
+      
+<h1 class="h">Notice</h1>
+<div class="n1">
+      <h2>Date: 6/11/22</h2>
+      <p>Homework site is under maintenance so homework will not be uploaded. I am extremely sorry for this inconvenience.</p>
+</div>
+<div class="n1">
+      <h2>Date : 8/11/22</h2>
+      <p>If you want daily homework you can get it by clicking <a href="https://shashankdav.github.io/hw">here</a> but for that you have to log in to my website.</p>
+</div>
+
+</div>
+
+<div class="comment-section">
+      <textarea placeholder="Enter your comment here" id="txt"></textarea>
+      <button class="comment" id="comm" onclick="comment()">Post</button>
+</div>
+<div id="vvv">
+      <h1 class="cs">Comments Section</h1>
+      <div id="co" class="ci"><h1>Shashank: Hello guys</h1></div>
+      <div id="co" class="ci"><h1>Yugraj: Hi</h1></div>
+      <div id="co" class="ci"><h1>Ishant: Hi , nice website.</h1></div>
+</div>
+</body>
+
+<script>
+
+var x = true;
+
+function notes() {
+        window.open("https://davnotes.art.blog","_self");
+}
+
+function chat() {
+        window.open("https://shashankdav.github.io/chat","_self");
+}
+
+function hw() {
+        window.open("https://shashankdav.github.io/hw","_self");
+}
+
+function log() {
+      var na = localStorage.getItem("eman");
+      if (na == null || na == "") {
+         window.open("https://shashankdav.github.io/login","_self");
+}     else {
+         alert("You have already logged in");
+}
+}
 
 
-<h1>Game 1st look</h1><br>
-<h2>Image:</h2>
-<img src="game.jpg" width="600" height="1300"><br><br>
-<h2>Video:</h2>
-<video width="600" height="1300" autoplay><source type="video/mp4" src="video.mp4"></video>
-<h2>Inspiration : Dynamons World</h2>
+function opn() {
+      if (x) {
+            document.getElementById("bar").style.left = "0";
+            document.getElementById("i").src = "https://shashankdav.github.io/x.png";
+            x = false;
+      }
+      else {
+            document.getElementById("bar").style.left = "-101%";
+            document.getElementById("i").src = "https://shashankdav.github.io/-.png"
+            x = true;
+      }
+}
+
+drk = true;
+
+function dark() {
+      if (drk) {
+      document.querySelector("body").style.color = "white";
+      document.querySelector(".notice").style.background = "black";
+      document.querySelector(".h").style.background = "black";
+      document.querySelector("body").style.background = 'linear-gradient(135deg , #00203FFF , #ADEFD1FF)';
+      document.querySelector("#i2").style.animation = "rota 1.5s linear";
+      document.querySelector(".about").style.background = "#000045";
+      document.querySelector("#txt").style.background = "black";
+      document.querySelector("#txt").style.color = "white";
+      document.querySelector("#comm").style.color = "white";
+      document.querySelector("body").style.backgroundSize = '1000px auto';
+      var zyx = document.querySelectorAll("#co");
+      for (let i=0; i<zyx.length;i++) {
+            zyx[i].style.background = "black";
+            zyx[i].style.color = "white";
+      }
+      drk = false;
+}
+      else {
+      document.querySelector("body").style.color = "black";
+      document.querySelector(".notice").style.background = "white";
+      document.querySelector(".h").style.background = "white";
+      document.querySelector("body").style.background= 'linear-gradient(135deg , #ADEFD1FF, #00203FFF)';
+      document.querySelector("body").style.backgroundSize = '1000px auto';
+      document.querySelector("#i2").style.animation = "ator 1.5s linear";
+      document.querySelector(".about").style.background = "cyan";
+      document.querySelector("#txt").style.background = "white";
+      document.querySelector("#txt").style.color = "black";
+      document.querySelector("#comm").style.color = "black";   
+      var zyx = document.querySelectorAll("#co");
+      for (let i=0; i<zyx.length;i++) {
+            zyx[i].style.background = "white";
+            zyx[i].style.color = "black";
+      }
+      drk = true;
+}
+}
+
+function save(key,value){
+      localStorage.setItem(key,value);
+}
+
+var com = localStorage.getItem("comm");
+var cont = [];
+
+function comment() {
+      var nam = localStorage.getItem("eman");
+      if (nam==null) {
+            alert("Log In first");
+      }
+      else {
+           var g = document.querySelector("#txt").value;
+           if (g==" " || g=="") {
+                 alert("Write Comment First")
+           }
+           else if (g == "clear") {
+                 save("eman","")
+}
+           else {
+                 gg= g+"\n";
+                cont.push(gg);
+                final_comment = com.concat(cont);
+      
+                save("comm", final_comment);
+      
+                asian_power();
+}
+}
+}
+
+function asian_power() {
+      no = localStorage.getItem("comm");
+      name= localStorage.getItem("eman");
+      arr = no.split(",");
+      numb = arr.length;
+      num = numb-1;
+      div = document.createElement("div");
+      var h1 = document.createElement("h1");
+      div.id = "co";
+      div.className = "ci";
+      h1.innerHTML = name + ": " + arr[num];
+      div.appendChild(h1);
+      document.querySelector("#vvv").appendChild(div);
+}
+
+function show_comments() {
+      no = localStorage.getItem("comm");
+      name = localStorage.getItem("eman");
+      arr = no.split(",");
+      numb = arr.length;
+      num = numb-1;
+      for (let i=0;i<numb; i++) {
+            div = document.createElement("div");
+            var h1 = document.createElement("h1");
+            div.id = "co";
+            div.className = "ci";
+            h1.innerHTML = "\n" +name + ": " +"\n"+ arr[i];
+            div.appendChild(h1);
+            document.querySelector("#vvv").appendChild(div);
+}
+}
+
+function zoomout() { 
+      var GFG = document.querySelector("body"); 
+      var currHeight = GFG.clientHeight;
+      GFG.style.height = (currHeight - 400) + "px"; 
+}
+
+function blg(y) {
+     window.open("https://shashankdav.github.io/blog","_self")
+}
+        
+//window.addEventListener("scroll",zoomout())
+
+document.body.addEventListener("scroll", show_comments())
+
+</script>
