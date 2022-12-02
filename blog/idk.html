@@ -55,8 +55,10 @@
             document.querySelector(".r").style.height = "180px";
             document.querySelector(".l").style.width = "180px";
             document.querySelector(".l").style.height = "180px";
+            document.querySelector(".r").style.transform = "translate3d(20px , -20px , 0px)";
+            document.querySelector(".l").style.transform = "translate3d(20px , -20px , 0px)";
 
-            if (transcript.toLowerCase()=="hi"){
+            if (transcript == "hi"){
                   alert("Hi");
                   speak("Hi");
             }
