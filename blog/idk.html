@@ -55,11 +55,7 @@
             document.querySelector(".r").style.height = "180px";
             document.querySelector(".l").style.width = "180px";
             document.querySelector(".l").style.height = "180px";
-            document.querySelector(".r").style.marginLeft = "180px";
-            document.querySelector(".l").style.marginLeft = "20px";  
-            document.querySelector(".r").style.marginBottom = "16px";
-            document.querySelector(".l").style.marginBottom = "16px";
-            alert("working");
+
             if (transcript.toLowerCase()=="hi"){
                   alert("Hi");
                   speak("Hi");
@@ -73,7 +69,9 @@
       
       function speak(text) {
             let idk = new SpeechSynthesisUtterance(text);
-            speechSynthesis.speak(idk);
+            function sp(){
+                   speechSynthesis.speak(idk);
+      }
       }
       
 
