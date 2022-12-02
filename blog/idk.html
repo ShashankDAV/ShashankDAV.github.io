@@ -66,11 +66,12 @@
             document.querySelector(".l").style.transform = "translate3d(20px , -20px , 0px)";
             var pp = document.querySelector(".p").innerHTML;
             document.querySelector(".p").innerHTML = pp + transcript;
+            alert(transcript);
         });
 
         if (speech == true) { 
             recognition.start(); 
-            recognition.addEventListener('end', start());
+            recognition.addEventListener('end', start);
         } 
 
       function start() {
