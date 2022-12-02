@@ -12,7 +12,7 @@
       <h1>JavaScript Text-to-Speech App</h1>
       <form id="form">
         <input type="text" id="text-input" placeholder="Enter Text" />
-        <button type="submit" id="submit-button">Submit</button>
+        <button type="submit" id="submit-button" onclick="speak()">Submit</button>
       </form>
     </div>
     <script src="script.js"></script>
@@ -20,8 +20,11 @@
 </html>
 <script>
 const synth = window.speechSynthesis
-let ourText = "Hey there what's up!!!!"
-const utterThis = new SpeechSynthesisUtterance(ourText)
 
-synth.speak(utterThis)
+function speak() {
+      let x = document.querySelector("#text-input").innerHTML;
+      const utterThis = new SpeechSynthesisUtterance(x)
+      synth.speak(utterThis)
+}
+
 </script>
