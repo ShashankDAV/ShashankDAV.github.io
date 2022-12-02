@@ -5,16 +5,16 @@
 }
 </style>
 
-<button onclick="hulk()">Speak</button>
+<button onclick="speak('hemlo hemlo')">Speak</button>
 
 <script>
 
-let t = "I am Shashank's AI";
 
-let idk = new SpeechSynthesisUtterance(t);
-
-function hulk() {
-       speechSynthesis.speak(idk);
-}
+function speak(text) {
+            let idk = new SpeechSynthesisUtterance(text);
+            function sp(){
+                   speechSynthesis.speak(idk);
+      }
+      }
 
 </script>
