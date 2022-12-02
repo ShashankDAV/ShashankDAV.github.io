@@ -67,10 +67,9 @@
             document.querySelector(".p").innerHTML = transcript;
 
             if (transcript == "hi") {
-                         text = "Hello , there";
-                         so = new SpeechSynthesisUtterance(text);
-                         SpeechSynthesis.speak(so);
-                         alert("It worked");
+                         let txt = new SpeechSynthesisUtterance("Hello world!");
+                         speechSynthesis.speak(txt);
+}
         });
 
         if (speech == true) { 
