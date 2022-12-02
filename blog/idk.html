@@ -43,12 +43,11 @@
       
 </style>
 <body>
-      <div class="eyelid"></div>
+      <div class="eyelid"><p class="p">Text:- </p></div>
       <div class="sai">
             <div class="eye l"></div>
             <div class="eye r"></div>
       </div>
-      <p class="p"></p>
 </body>
 <script> 
         var speech = true; 
@@ -66,7 +65,6 @@
             document.querySelector(".l").style.transform = "translate3d(20px , -20px , 0px)";
             var pp = document.querySelector(".p").innerHTML;
             document.querySelector(".p").innerHTML = pp + transcript;
-            alert(transcript);
         });
 
         if (speech == true) { 
