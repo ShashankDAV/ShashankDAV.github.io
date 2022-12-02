@@ -66,8 +66,18 @@
 
         if (speech == true) { 
             recognition.start(); 
-            recognition.addEventListener('end', recognition.start);
+            recognition.addEventListener('end', start);
         } 
+
+      function start() {
+            document.querySelector(".r").style.width = "200px";
+            document.querySelector(".r").style.height = "200px";
+            document.querySelector(".l").style.width = "200px";
+            document.querySelector(".l").style.height = "200px";
+            document.querySelector(".r").style.transform = "translate3d(-20px , 20px , 0px)";
+            document.querySelector(".l").style.transform = "translate3d(-20px , 20px , 0px)";
+            recognition.start();
+}
       
       function speak(text) {
             let idk = new SpeechSynthesisUtterance(text);
