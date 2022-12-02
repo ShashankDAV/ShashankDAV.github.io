@@ -66,7 +66,7 @@
             var pp = document.querySelector(".p").innerHTML;
             document.querySelector(".p").innerHTML = transcript;
 
-            if (transcript == "hi") {
+            if (transcript.toLowerCase() == "hello") {
                          let txt = new SpeechSynthesisUtterance("Hello world!");
                          speechSynthesis.speak(txt);
 }
