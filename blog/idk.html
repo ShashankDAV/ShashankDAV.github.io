@@ -59,11 +59,11 @@
             document.querySelector(".l").style.transform = "translate3d(20px , -20px , 0px)";
 
             if (transcript.toLowerCase() == "hi"){
-                  alert("Hi");
-                  speak("Hi");
+                  x = "Hello there";
+                  speak();
             }
             elif (transcript.toLowerCase() == "hello"){
-                  speak("Hi");
+                  alert("hi");
             }
         });
 
@@ -81,12 +81,12 @@
             document.querySelector(".l").style.transform = "translate3d(-20px , 20px , 0px)";
             recognition.start();
 }
+
+      var x = "Hello welcome here"
+      let idk = new SpeechSynthesisUtterance(text);
       
-      function speak(text) {
-            let idk = new SpeechSynthesisUtterance(text);
-            function sp(){
-                   speechSynthesis.speak(idk);
-      }
+      function speak() {
+            speechSynthesis.speak(idk)
       }
       
 
