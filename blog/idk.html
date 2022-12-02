@@ -19,11 +19,10 @@
   </body>
 </html>
 <script>
-const synth = window.speechSynthesis
 
 function speak() {
-      let x = document.querySelector("#text-input").innerHTML;
-      const utterThis = new SpeechSynthesisUtterance(x)
+      const synth = window.speechSynthesis
+      const utterThis = new SpeechSynthesisUtterance("Hi there")
       synth.speak(utterThis)
 }
 
