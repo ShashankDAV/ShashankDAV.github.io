@@ -1,11 +1,20 @@
+<style>
+   button {
+          height: 500;
+          width: 800;
+}
+</style>
+
+<button onclick="hulk()">Speak</button>
+
 <script>
 
 let t = "I am Shashank's AI";
 
 let idk = new SpeechSynthesisUtterance(t);
 
-document.addEventListener("click" , hulk());
 function hulk() {
        speechSynthesis.speak(idk);
 }
+
 </script>
