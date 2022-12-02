@@ -1,29 +1,46 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>JavaScript Text-to-Speech App</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+<!DOCTYPE html> 
 
-  <body>
-    <div class="wrapper">
-      <h1>JavaScript Text-to-Speech App</h1>
-      <form id="form">
-        <input type="text" id="text-input" placeholder="Enter Text" />
-        <button type="submit" id="submit-button" onclick="speak()">Submit</button>
-      </form>
-    </div>
-    <script src="script.js"></script>
-  </body>
+<html lang="en">
+
+<body> 
+
+    <div class="words" contenteditable> 
+        <p id="p">h</p> 
+    </div> 
+
+  
+
+    <script> 
+
+        var speech = true; 
+
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
+
+        const recognition = new SpeechRecognition(); 
+
+        recognition.interimResults = true; 
+        
+        const words = document.querySelector('.words'); 
+
+        words.appendChild(p); 
+
+        recognition.addEventListener('result', e => { 
+
+            const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('') 
+            document.getElementById("p").innerHTML = transcript; 
+            alert(transcript); 
+            
+        }); 
+
+          
+
+        if (speech == true) { 
+            recognition.start(); 
+            recognition.addEventListener('end', recognition.start);
+        } 
+
+    </script> 
+
+</body> 
+
 </html>
-<script>
-
-function speak() {
-      const synth = window.speechSynthesis
-      const utterThis = new SpeechSynthesisUtterance("Hi there")
-      synth.speak(utterThis)
-}
-
-</script>
