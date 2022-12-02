@@ -1,46 +1,78 @@
-<!DOCTYPE html> 
-
-<html lang="en">
-
-<body> 
-
-    <div class="words" contenteditable> 
-        <p id="p">h</p> 
-    </div> 
-
-  
-
-    <script> 
-
+<style>
+      body {
+            background: black;
+      }
+      
+      .sai {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+      }
+      
+      .eye {
+            width: 200;
+            height: 200;
+            position: relative;
+            background: rgb(12, 186, 235);
+            border-radius: 25px;
+            transition: 0.5s all;
+      }
+      
+      
+      
+      .r {
+            margin-left: 160;
+      }
+      
+      .eyelid {
+            z-index: 1;
+            position: fixed;
+            height: 150;
+            background: black;
+            left: 0;
+            right: 0;
+            transition: 2s all;
+      }
+      
+</style>
+<body>
+      <div class="eyelid"></div>
+      <div class="sai">
+            <div class="eye l"></div>
+            <div class="eye r"></div>
+      </div>
+</body>
+<script> 
         var speech = true; 
-
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
-
         const recognition = new SpeechRecognition(); 
-
-        recognition.interimResults = true; 
-        
-        const words = document.querySelector('.words'); 
-
-        words.appendChild(p); 
+        recognition.interimResults = true;
 
         recognition.addEventListener('result', e => { 
-
-            const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('') 
-            document.getElementById("p").innerHTML = transcript; 
-            alert(transcript); 
-            
-        }); 
-
-          
+            const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
+            document.querySelector(".eye").style.width = "180px";
+            document.querySelector(".eye").style.height = "180px";
+            document.querySelector(".r").style.marginLeft = "180px";
+            document.querySelector(".l").style.marginLeft = "20px";  
+            document.querySelector(".r").style.marginBottom = "16px";
+            document.querySelector(".l").style.marginBottom = "16px";
+            if (transcript.toLowerCase()=="hi"){
+                  alert("Hi");
+                  speak("Hi");
+            }
+        });
 
         if (speech == true) { 
             recognition.start(); 
             recognition.addEventListener('end', recognition.start);
         } 
+      
+      function speak(text) {
+            let idk = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(idk);
+      }
+      
 
-    </script> 
 
-</body> 
-
-</html>
+</script> 
