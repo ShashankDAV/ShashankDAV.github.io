@@ -40,7 +40,14 @@
          font-weight: 1000;
          color: white;
 }
-      
+      .mouth {
+            height: 50;
+            transform: translateY(-200px);
+            background: rgb(12, 186, 235);
+            width: 70%;
+            border-radius: 15px;
+            margin: 0 15%;
+      }
 </style>
 <body>
       <div class="eyelid"><p class="p"></p></div>
@@ -48,6 +55,7 @@
             <div class="eye l"></div>
             <div class="eye r"></div>
       </div>
+      <div class="mouth" onclick="blink()"></div>
 </body>
 <script> 
         var speech = true; 
