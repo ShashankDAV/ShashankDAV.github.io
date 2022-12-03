@@ -73,6 +73,12 @@
             document.querySelector(".l").style.height = "180px";
             document.querySelector(".r").style.transform = "translate3d(20px , -20px , 0px)";
             document.querySelector(".l").style.transform = "translate3d(20px , -20px , 0px)";
+            
+            if (transcript.toLowerCase() == "hello"){
+               document.querySelector(".p").innerHTML = "Hello , there!";
+}           else if (transcript.toLowerCase() == "open youtube"){
+               window.open("https://www.youtube.com");
+}
         });
 
         if (speech == true) { 
