@@ -51,6 +51,14 @@
             border-radius: 15px;
             margin: 0 15%;
       }
+      
+      .book {
+            font-size: 300;
+            transform: translateY(-500px);
+            margin-left: 30%;
+            display: none;
+      }
+      
 </style>
 <body>
       <div class="eyelid"><p class="p"></p></div>
@@ -58,6 +66,7 @@
             <div class="eye l"></div>
             <div class="eye r"></div>
       </div>
+      <div class="book">📖</div>
 </body>
 <script> 
         var speech = true; 
@@ -81,6 +90,8 @@
 }
             else if (transcript.toLowerCase() == "back"){
                window.open("https://ShashankDAV.github.io","_self");
+}           else if (transcript.toLowerCase() == "book"){
+               document.querySelector(".book").style.display = "";
 }
         });
 
