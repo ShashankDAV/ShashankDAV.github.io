@@ -54,8 +54,8 @@
       
       .book {
             font-size: 300;
-            transform: translateY(-500px);
-            margin-left: 30%;
+            transform: translateY(-550px);
+            margin-left: 33%;
             display: none;
       }
       
@@ -66,7 +66,7 @@
             <div class="eye l"></div>
             <div class="eye r"></div>
       </div>
-      <div class="book">📖</div>
+      <div class="book"></div>
 </body>
 <script> 
         var speech = true; 
@@ -91,7 +91,13 @@
             else if (transcript.toLowerCase() == "back"){
                window.open("https://ShashankDAV.github.io","_self");
 }           else if (transcript.toLowerCase() == "book"){
-               document.querySelector(".book").style.display = "block";
+               icon("📖");
+}           else if (transcript.toLowerCase() == "alien"){
+               icon("👽");
+}           else if (transcript.toLowerCase() == "dhoni"){
+               icon("GOAT 🐐");
+}           else if (transcript.toLowerCase() == "MSD"){
+               icon("GOAT 🐐");
 }
         });
 
@@ -108,6 +114,9 @@
             document.querySelector(".r").style.transform = "translate3d(-20px , 20px , 0px)";
             document.querySelector(".l").style.transform = "translate3d(-20px , 20px , 0px)";
             recognition.start();
+}     function icon(x) {
+            document.querySelector(".book").innerHTML = x;
+            document.querySelector(".book").style.display = "block";
 }
 
 </script> 
