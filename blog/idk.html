@@ -57,6 +57,7 @@
             transform: translateY(-550px);
             margin-left: 33%;
             display: none;
+            display: fixed;
       }
       
 </style>
@@ -95,9 +96,12 @@
 }           else if (transcript.toLowerCase() == "alien"){
                icon("👽");
 }           else if (transcript.toLowerCase() == "dhoni"){
-               icon("GOAT 🐐");
+               icon("🐐");
 }           else if (transcript.toLowerCase() == "MSD"){
-               icon("GOAT 🐐");
+               icon("🐐");
+}           else if (transcript.toLowerCase() == "sunai nhi diya"){
+               document.querySelector(".p").innerHTML = "Nhi";
+               icon("🤦");
 }
         });
 
