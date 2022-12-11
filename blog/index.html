@@ -1,85 +1,84 @@
 <style>
-      .head {
-            background: rgb(1,250,255);
-            height: 150;
-            font-size: 50;
+      .search {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            margin: 10;
-      }
-      
-      .python-blog {
-            height: auto;
-            background: #000045;
-            border-radius: 5px;
-            margin-left: 10;
-            margin-right: 10;
-      }
-      
-      .python-blog .h1 {
-            background: #009099;
-            border-radius: 5px;
-            height: 80;
-            font-size: 50;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-      }
-      
-      ul {
-            list-style: none;
-      }
-      
-      .py h1 {
-            color: white;
-            font-size: 40;
-            height: 120;
-            margin-left: 30;
-            margin-top: 90;
-      }
-      
-      .py{
-            background: lightpink;
-            display: flex;
-            position: relative;
+            width: 100%;
+            border: 5px solid orange;
+            border-radius: 75px;
             overflow: hidden;
-            width: 930;
+      }
+      
+      .search_img {
+            height: 75;
+            margin: 13 10;
+      }
+      
+      .question {
+            margin-left: 30;
+            border: none;
+            outline: none;
+            font-size: 60;
+            height: 100px;
+            background: transparent;
+            color: black;
+      }
+      
+      .blogs {
+            margin-top: 20;
+            padding: 30;
+      }
+      
+      .blg {
+            display: flex;
+            padding: 10px;
+            padding-bottom: 0;
+            border: 3px solid;
+            border-radius: 5px;
             margin-top: 10;
-            border-radius: 5px;
       }
       
-      .py:nth-child(1){
-            position: relative;
-            top: -25;
-            left: -33;
+      .blg img {
+            height: 200;
+            border-radius: 15px;
       }
       
-      .py img {
-            height: 250;
-            border-radius: 5px;
+      .blg h1 {
+            margin: 80;
+      }
+    
+      body {
+            background: none;
       }
       
 </style>
-
-<head>
-      <title>Blogs</title>
-      <link rel="icon" href="https://shashankdav.github.io/logo.png" type="image/x-icon">
-</head>
-
-<div class="head"><h1>Blogs</h1></div>
-<div class="python-blog">
-      <h1 class="h1">Python 30 Days Crash Course</h1>
-      <ul>
-            <li><div class="py" onclick="opn('PythonBlog01.html')"><img src="https://shashankdav.github.io/python.jpeg"><h1>Print , Variables and Input</h1></div></li>
-      </ul>
-</div>
-
+<body>
+      <div class="search">
+            <input class="question" placeholder="Search..." onkeyup="srch(this.value.toLowerCase())">
+            <img class="search_img" src="https://shashankdav.github.io/search.png">
+      </div>
+      <div class="blogs">
+            <div class="blg" onclick="opn('PythonBlog01')"><img src="https://shashankdav.github.io/python.jpeg"><h1>Print , Input and Variables in Python.</h1></div>
+            <div class="blg" onclick="opn('PythonBlog02')"><img src="https://shashankdav.github.io/python.jpeg"><h1>Operators in Python.</h1></div>
+      </div>
+</body>
 <script>
-      function opn(y) {
-            var x = "https://shashankdav.github.io/blog";
-            var z = x+"/"+y;
-            window.open(z,"_self");
+
+      function srch(x) {
+            var y = document.querySelectorAll(".blg")
+            
+            for (let i=0;i<y.length;i++) {
+                  var z = y[i].innerHTML.toLowerCase();
+                  if (z.includes(x)) {
+                        y[i].style.display = "";
+                  }
+                  else {
+                        y[i].style.display = "none";
+                  }
+            }
       }
+      
+      function opn(x) {
+            var y = "https://shashankdav.github.io/blog" + "/" + x + ".html"
+            window.open(y , "_self")
+      }
+      
 </script>
