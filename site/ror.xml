@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://shashankdav.github.io/</title>
+  <link>https://shashankdav.github.io/</link>
+
+<item>
+     <link>https://shashankdav.github.io/</link>
+     <title>ShashankDAV</title>
+     <description>ShashankDAV</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://shashankdav.github.io/hw/</link>
+     <title>
+Homework Site
+</title>
+     <description>
+Homework Site
+</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
