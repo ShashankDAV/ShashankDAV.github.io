@@ -86,7 +86,6 @@
 
 views = geet("v");
 new_view = "";
-save("v","");
       function add(x){
             x = x + " ";
             x = x.toString();
@@ -119,6 +118,9 @@ save("v","");
                        }
                        else if (h1.innerHTML.includes("/")){
                              op = 3;
+                       }
+                       else if (h1.innerHTML.includes(null)){
+                             op = 4;
                        }
                        else{
                        var ran = Math.floor(Math.random() * 4);
