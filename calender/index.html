@@ -1,0 +1,146 @@
+<style>
+      #calen-1 {
+            background: url("https://shashankdav.github.io/calender/5.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+      }
+      #calen-2 {
+            background: url("https://shashankdav.github.io/calender/4.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+      }
+      #calen-3 {
+            background: url("https://shashankdav.github.io/calender/6.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+      }
+      #calen-4 {
+            background: url("https://shashankdav.github.io/calender/1.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+      }
+      #date {
+            font-size: 100;
+      }
+      
+      #txt {
+            width: 80%;
+            height: 100;
+            font-size: 80;
+            font-family: Monospace;
+            border-radius: 15px;
+            border: 5px solid orange;
+            outline: none;
+      }
+      
+      #bu {
+            width: 19%;
+            height: 100;
+            background: none;
+            border: 5px solid;
+            border-radius: 15px;
+            font-size: 80;
+      }
+      
+</style>
+<body>
+      <input id="txt" type="number" placeholder="Enter Views">
+      <button id="bu" onclick="add(document.querySelector('#txt').value)">Add</button>
+      <div id="calen-1"><h1>Fri Dec 2 2022: 95</h1></div>
+      <div id="calen-3"><h1>Wed Dec 14 2022: 203</h1></div>
+      <div id="calen-4"><h1>Thu Dec 15 2022: 153</h1></div>
+      <div id="calen-2"><h1>Fri Dec 16 2022: 49</h1></div>     
+</body>
+<script>
+      function save(key,value){
+      localStorage.setItem(key,value);
+      }
+      function geet(key){
+            var value = localStorage.getItem(key);
+            return value;
+      }
+
+views = geet("v");
+new_view = "";
+
+      function add(x){
+            x = x + " ";
+            x = x.toString();
+            if (x=="") {
+                  console.log("Enter Views");
+            }
+            else {
+                new_view = new_view + " " + x;
+                alert(new_view);
+                final_view = views + new_view;
+                save("v",JSON.stringify(final_view));
+            }
+      }
+      
+      function show() {
+            let op = 0;
+            let xx = JSON.parse(geet("v"));
+            var xy = xx.split(" ");
+            for (let i=0;i<xy.length;i++){
+                       let div = document.createElement("div");
+                       let h1 = document.createElement("h1");
+                       h1.id = "date";
+                       div.id = "calen-1";
+                       date = new Date().toDateString();
+                       h1.innerHTML = date + ": " + xy[i];
+                       if (h1.innerHTML==date+": "){
+                             op = 1;
+                       }
+                       else if (h1.innerHTML.includes('"')){
+                             op = 2;
+                       }
+                       else if (h1.innerHTML.includes("/")){
+                             op = 3;
+                       }
+                       else{
+                       var ran = Math.floor(Math.random() * 4);
+                       if (ran==1) {
+                             div.id="calen-1";
+                       }
+                       else if (ran==2) {
+                             div.id="calen-2";
+                       }
+                       else if (ran==3) {
+                             div.id = "calen-3";
+                       }
+                       else {
+                             div.id="calen-4";
+                       }
+                       div.appendChild(h1);
+                       document.querySelector("body").appendChild(div);
+                       }
+            }
+      }
+      
+      window.addEventListener("scroll",show())
+      
+</script>
