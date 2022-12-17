@@ -86,7 +86,7 @@
 
 views = geet("v");
 new_view = "";
-
+save("v","");
       function add(x){
             x = x + " ";
             x = x.toString();
@@ -95,7 +95,6 @@ new_view = "";
             }
             else {
                 new_view = new_view + " " + x;
-                alert(new_view);
                 final_view = views + new_view;
                 save("v",JSON.stringify(final_view));
             }
