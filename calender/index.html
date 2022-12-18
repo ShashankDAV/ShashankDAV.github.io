@@ -66,14 +66,43 @@
             font-size: 80;
       }
       
+      #da {
+            width: 55%;
+            font-size: 80;
+            border-radius: 15px;
+            border: 5px solid;
+            background: none;
+            outline: none;
+      }
+      
+      label {
+            font-size: 80;
+      }
+      
+      .td {
+      position: fixed;
+      right: 0;
+      transform: translate3d(-23px,50px,0px);
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 30px solid black;
+}
+      
 </style>
 <body>
-      <input id="txt" type="number" placeholder="Enter Views">
+      <div>
+      <div class="td"></div>
+      <label for="da">Select Date:</label>
+      <input id="da" type="date" placeholder="Select Date">
+      </div>
+      <input id="txt" placeholder="Enter Views">
       <button id="bu" onclick="add(document.querySelector('#txt').value)">Add</button>
-      <div id="calen-1"><h1>Fri Dec 2 2022: 95</h1></div>
-      <div id="calen-3"><h1>Wed Dec 14 2022: 203</h1></div>
-      <div id="calen-4"><h1>Thu Dec 15 2022: 153</h1></div>
-      <div id="calen-2"><h1>Fri Dec 16 2022: 68</h1></div>     
+      <div id="calen-1"><h1>2022-12-2:- 95</h1></div>
+      <div id="calen-3"><h1>2022-12-14:- 203</h1></div>
+      <div id="calen-4"><h1>2022-12-15:- 153</h1></div>
+      <div id="calen-2"><h1>2022-12-26:- 68</h1></div>     
 </body>
 <script>
       function save(key,value){
@@ -93,9 +122,12 @@ new_view = "";
                   console.log("Enter Views");
             }
             else {
-                new_view = new_view + " " + x;
+                dae = document.querySelector("#da").value;
+                new_view = new_view + " " + dae + ":-" + x;
                 final_view = views + new_view;
                 save("v",JSON.stringify(final_view));
+                alert("Saved");
+                show();
             }
       }
       
@@ -107,12 +139,8 @@ new_view = "";
                        let div = document.createElement("div");
                        let h1 = document.createElement("h1");
                        div.id = "calen-1";
-                       date = new Date().toDateString();
-                       h1.innerHTML = date + ": " + xy[i];
-                       if (h1.innerHTML==date+": "){
-                             op = 1;
-                       }
-                       else if (h1.innerHTML.includes('"')){
+                       h1.innerHTML = xy[i];
+                       if (h1.innerHTML.includes('"')){
                              op = 2;
                        }
                        else if (h1.innerHTML.includes("/")){
@@ -120,6 +148,9 @@ new_view = "";
                        }
                        else if (h1.innerHTML.includes(null)){
                              op = 4;
+                       }
+                       else if (h1.innerHTML == ""){
+                             op = 5;
                        }
                        else{
                        var ran = Math.floor(Math.random() * 4);
