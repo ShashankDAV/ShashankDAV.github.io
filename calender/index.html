@@ -165,13 +165,18 @@
       views = geet("v");
       new_view = "";
       
+      function sote(str,index,chr) {
+            if(index > str.length-1) return str;
+            return str.substring(0,index) + chr + str.substring(index+1);
+}
+      
       function add(x){
             x = x + "∆";
             x = x.toString();
             if (x==" ") {
                   console.log("Enter Views");
             }
-            else if (x=="shashankdav-admin-clear") {
+            else if (x=="shashankdav-admin-clear∆") {
                   save("v","");
                   show();
             }
@@ -194,17 +199,69 @@
                        let h1 = document.createElement("h1");
                        div.className = "calen";
                        h1.innerHTML = xy[i];
-                       if (h1.innerHTML.includes('"')){
+                       if (h1.innerHTML == "" ){
                              op = 2;
                        }
-                       else if (h1.innerHTML.includes("/")){
-                             op = 3;
+                       else if (h1.innerHTML == "" ){
+                             op = 2;
                        }
-                       else if (h1.innerHTML.includes(null)){
+                      //**********************************************************************
+                      
+                      if (h1.innerHTML.includes('\\')){
+                             for (let i=0;i<xy[i].length;i++) {
+                             if (h1.innerHTML.includes('\\')){
+                                   xp = h1.innerHTML.indexOf('\\');
+                                   gg = h1.innerHTML;
+                                   gg[xp] = " ";
+                                   h1.innerHTML = sote(gg,xp,"")
+                             }
+                             }
+                             var ran = Math.floor(Math.random() * 4);
+                       if (ran==1) {
+                             div.id="calen-1";
+                       }
+                       else if (ran==2) {
+                             div.id="calen-2";
+                       }
+                       else if (ran==3) {
+                             div.id = "calen-3";
+                       }
+                       else {
+                             div.id="calen-4";
+                       }
+                       div.appendChild(h1);
+                       document.querySelector("body").appendChild(div);
+                 }      
+                       
+                      //**********************************************************************
+                       if (h1.innerHTML.includes('"')){
+                             for (let i=0;i<xy[i].length;i++) {
+                             if (h1.innerHTML.includes('"')){
+                                   xp = h1.innerHTML.indexOf('"');
+                                   gg = h1.innerHTML;
+                                   gg[xp] = " ";
+                                   h1.innerHTML = sote(gg,xp,"")
+                             }
+                             }
+                             var ran = Math.floor(Math.random() * 4);
+                       if (ran==1) {
+                             div.id="calen-1";
+                       }
+                       else if (ran==2) {
+                             div.id="calen-2";
+                       }
+                       else if (ran==3) {
+                             div.id = "calen-3";
+                       }
+                       else {
+                             div.id="calen-4";
+                       }
+                       div.appendChild(h1);
+                       document.querySelector("body").appendChild(div);
+                       }
+                      //**********************************************************************
+                      else if (h1.innerHTML.includes(null)){
                              op = 4;
-                       }
-                       else if (h1.innerHTML == ""){
-                             op = 5;
                        }
                        else if (h1.innerHTML == ":-"){
                              op = 6;
