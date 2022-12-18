@@ -166,12 +166,12 @@
       new_view = "";
       
       function add(x){
-            x = x + " ";
+            x = x + "∆";
             x = x.toString();
             if (x==" ") {
                   console.log("Enter Views");
             }
-            else if (x=="shashankdav-admin-clear ") {
+            else if (x=="shashankdav-admin-clear") {
                   save("v","");
                   show();
             }
@@ -188,7 +188,7 @@
       function show() {
             let op = 0;
             let xx = JSON.parse(geet("v"));
-            var xy = xx.split(" ");
+            var xy = xx.split("∆");
             for (let i=0;i<xy.length;i++){
                        let div = document.createElement("div");
                        let h1 = document.createElement("h1");
