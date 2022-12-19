@@ -178,15 +178,24 @@
             }
             else if (x=="shashankdav-admin-clear∆") {
                   save("v","");
-                  show();
+                  window.location.reload()
             }
             else {
                 dae = document.querySelector("#da").value;
                 new_view = new_view + " " + dae + ":-" + x;
+                if (views.includes('\\')){
+                      for (let i=0;i<views.length;i++) {
+                             if (views.includes('\\')){
+                                   xp = views.indexOf('\\');
+                                   gg = views;
+                                   views = sote(gg,xp,"")
+                             }
+                        }
+                }
                 final_view = views + new_view;
                 save("v",JSON.stringify(final_view));
                 alert("Saved");
-                show();
+                window.location.reload()
             }
       }
       
@@ -197,8 +206,11 @@
             for (let i=0;i<xy.length;i++){
                        let div = document.createElement("div");
                        let h1 = document.createElement("h1");
+                       let h2 = document.createElement("h1");
                        div.className = "calen";
                        h1.innerHTML = xy[i];
+                      // zyx = xy[i].split(":");
+                     //  h2.
                        if (h1.innerHTML == "" ){
                              op = 2;
                        }
