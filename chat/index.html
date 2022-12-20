@@ -68,7 +68,7 @@
                   mes.value="";
             }
             else if (me.includes("help")) {
-                  cb.value = cb.value + "\nBot: Hi , here is the command's list :\n1.Type {minecraft download link} for minecraft download link.\n2.Type {minecraft server link} for my minecraft server link.\n3.Type {clear} to clear conversation.";
+                  cb.value = cb.value + "\nBot: Hi , here is the command's list :\n1.Type {minecraft download link} for minecraft download link.\n2.Type {minecraft server link} for my minecraft server link.\n3.Type {clear} to clear conversation.\n4.Type {diary} to open online diary.";
                   mes.value="";
             }    
             else if (me.includes("minecraft download link")) {
@@ -79,6 +79,9 @@
             }
             else if (me.includes("calender")) {
                   window.open("https://shashankdav.github.io/calender","_self");
+            }
+            else if (me.includes("diary")) {
+                  window.open("https://shashankdav.github.io/diary","_self");
             }
             else if (me.includes("clear")) {
                   cb.value = "";
