@@ -1,190 +1,76 @@
+<style>
+      .back {
+            background: #000045;
+            display: flex;
+            color: white;
+            border-radius: 15px;
+      }
+      
+      .back button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30;
+            margin-left: 250;
+      }
+      
+      .back h1 {
+            font-size: 50;
+      }
+      
+      .normal-h1 {
+            font-weight: 1000;
+            margin-left: 25%;
+      }
+      
+      .diva-inp {
+            width: 80%;
+            height: 25%;
+            margin: 25 10%;
+            border: none;
+            font-size: 60;
+            border-bottom: 5px solid #000045;
+            outline: none;
+      }
+      
+      .g {
+            display: none;
+      }
+      
+      #diva-but {
+            font-size: 60;
+            margin-left: 38%;
+            margin-top: 20;
+            background: #000045;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            font-weight: 1000;
+            color: white;
+            padding: 20;
+      }
+      
+</style>
 <head>
 <title>
 Login Page
 </title>
 <link rel="icon" href="logo.png" type = "image/x-icon">
 </head>
-<style>
 
-a {
-   z-index: 10;
-   text-decoration: none;
-}
+<body>
 
-.a {
-    color: red;
-    position: relative;
-    right: -150px;
-    font-size: 60px;
-    border: none;
-    background-color: white;
-    outline: none;
-}
-
-.a:hover {
-         border: none;
-}
-
-#main-div {
-	background: linear-gradient(135deg,black,blue);
-	height: 1500px;
-	border-radius: 25px;
-        position: relative;
-        bottom: -150px;
-}
-
-.diva-1 {
-	width: 800px;
-	height: 200px;
-	background: black;
-	border-radius: 5px;
-	position: relative;
-        right: -75px;
-        bottom: -250px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-}
-
-.diva-2 {
-	width: 800px;
-	height: 200px;
-	background: black;
-	border-radius: 5px;
-	position: relative;
-        right: -75px;
-        bottom: -450px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-}
-
-.diva-3 {
-	width: 800px;
-	height: 200px;
-	background: black;
-	border-radius: 5px;
-	position: relative;
-        right: -75px;
-        bottom: -650px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-}
-
-.diva-1::before {
-	content: '';
-	width: 60px;
-	height: 900px;
-	position: absolute;
-	background: linear-gradient(red,blue);
-	animation: an 2s linear infinite;
-}
-
-.diva-2::before {
-	content: '';
-	width: 60px;
-	height: 990px;
-	position: absolute;
-	background: linear-gradient(red,blue);
-	animation: an 2s linear infinite;
-}
-
-
-.diva-3::before {
-	content: '';
-	width: 60px;
-	height: 990px;
-	position: absolute;
-	background: linear-gradient(red,blue);
-	animation: an 2s linear infinite;
-}
-
-@keyframes an {
-	0% {transform: rotate(0deg)}
-	100% {transform: rotate(360deg)}
-}
-
-.diva-inp {
-	font-size: 80px;
-	width:  700px;
-	height: 140px;
-	border-radius: 5px;
-	z-index: 10;
-        border: none;
-        outline: none;
-}
-
-.diva-inp:hover {
-                border: none;
-}
-
-#diva-but {
-	font-size: 100px;
-	width: 700px;
-	height: 140px;
-	border-radius: 5px;
-	z-index: 10;
-	background: black;
-	border: 1px solid black;
-	color: white;
-	font-weight: bold;
-        outline: none;
-}
-
-#diva-but:hover {
-                 border: none;
-}
-
-.normal {
-	display: flex;
-	width: 800px;
-	position: relative;
-        right: -75px;
-	background: white;
-	border-radius: 25px;
-        bottom: -50px;
-}
-
-.normal-h1 {
-        position: relative;
-        right: -10px;
-	font-size: 60px;
-	color: rgb(25,25,75);
-}
-
-.g {
-    height: 1px;
-    width: 1px;
-    border: 0px transparent;
-    outline: none;
-    background: transparent;
-}
-
-</style>
-
-<body style="background-color: #000040; color: white">
-
-<div id="main-div">
-
-<div class="normal"><h1 class="normal-h1">Login Page</h1><button onclick="back()" class="a"><h1 class="a">Back</h1></button></div>
+<div class="back"><h1 class="normal-h1">Login Page</h1><button onclick="back()" class="a"><h1 class="a">Back</h1></button></div>
 
 <form action="https://formspree.io/f/xjvzlagv" method="POST">
 
-<div class="diva-1"><input class="diva-inp" type="name" name="Name" id="nm" placeholder="Enter your name" required></div>
-
-<div class="diva-2"><input class="diva-inp" type="email" name="Email" id="em" placeholder="Enter your email" required></div>
-
-<div class="diva-3"><button id="diva-but" onclick="log()">Submit</button></div>
+<input class="diva-inp" type="name" name="Name" id="nm" placeholder="Enter your name" required>
+<input class="diva-inp" type="email" name="Email" id="em" placeholder="Enter your email" required>
+<button id="diva-but" onclick="log()">Submit</button>
 
 <div class="g"><input type="text" value="Visit to database https://formspree.io/forms/mrgdyaal/submissions" name="Database" class="g" readonly></div>
 
 </form>
-
-</div>
 
 </body>
 
