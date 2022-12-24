@@ -1,90 +1,100 @@
 <style>
-      .back {
-            background: #000045;
-            display: flex;
-            color: white;
-            border-radius: 15px;
-      }
-      
-      .back button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 30;
-            margin-left: 250;
-      }
-      
-      .back h1 {
-            font-size: 50;
-      }
-      
-      .normal-h1 {
-            font-weight: 1000;
-            margin-left: 25%;
-      }
-      
-      .diva-inp {
-            width: 80%;
-            height: 25%;
-            margin: 25 10%;
-            border: none;
-            font-size: 60;
-            border-bottom: 5px solid #000045;
-            outline: none;
-            height: 100px
-      }
-      
-      .g {
-            display: none;
-      }
-      
-      #diva-but {
-            font-size: 60;
-            margin-left: 38%;
-            margin-top: 20;
-            background: #000045;
-            border-radius: 15px;
-            border: none;
-            outline: none;
-            font-weight: 1000;
-            color: white;
-            padding: 20;
-      }
-      
+
+#v {
+      height: 100%;
+      border-radius: 20px;
+      margin-left: 130;
+}
+
+.inp-1 {
+      position: relative;
+      right: -100;
+      margin-top: 200;
+      width: 100%;
+}
+
+.inp-2 {
+      position: relative;
+      margin-top: 200;
+      right: -100;
+      width: 100%;
+}
+
+#us {
+      width: 80%;
+      height: auto;
+      border: none;
+      outline: none;
+      border-bottom: 5px solid #000045;
+      font-size: 80;
+      font-weight: 500;
+      background: none;
+}
+
+label {
+      font-size: 60;
+      font-weight: 500;
+      position: relative;
+      bottom: -90;
+      transition: all 0.3s linear;
+      color: black;
+}
+
+h1 {
+      font-size: 85;
+      position: relative;
+      right: -85;
+}
+
+#sub {
+      margin-left: 40%;
+      margin-top: 100;
+      padding: 20;
+      background: #000045;
+      color: white;
+      font-weight: 1000;
+      font-size: 50;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+}
+
 </style>
-<head>
-<title>
-Login Page
-</title>
-<link rel="icon" href="logo.png" type = "image/x-icon">
-</head>
+<head><title>Login</title></head>
+<div id="v">
+<h1 style="margin-left: 25%">Login</h1>
+<form action="https://formsubmit.co/ShashankWebsiteEmail@gmail.com" method="POST">
+<div class="inp-1">
+      <label id="ll" for="us" onmouseover="n()" onmouseout="m()">Your Name</label>
+      <input id="us" name="Name" onmouseover="n()" onmouseout="m()">
+</div>
 
-<body>
-
-<div class="back"><h1 class="normal-h1">Login Page</h1><button onclick="back()" class="a"><h1 class="a">Back</h1></button></div>
-
-<form action="https://formspree.io/f/xjvzlagv" method="POST">
-
-<input class="diva-inp" type="name" name="Name" id="nm" placeholder="Enter your name" required>
-<input class="diva-inp" type="email" name="Email" id="em" placeholder="Enter your email" required>
-<button id="diva-but" onclick="log()">Submit</button>
-
-<div class="g"><input type="text" value="Visit to database https://formspree.io/forms/mrgdyaal/submissions" name="Database" class="g" readonly></div>
-
+<div class="inp-2">
+      <label id="lll" for="us" onmouseover="i()" onmouseout="j()">Your Email</label>
+      <input id="us" type="email" name="Email" onmouseover="i()" onmouseout="j()">
+</div>
+<button id="sub">Submit</button>
 </form>
-
-</body>
-
+</div>
 <script>
-
-function back() {
-                window.history.back();
-}
-
-function log() {
-                 var nm = document.getElementById("nm").value;
-                 localStorage.setItem("eman" , nm);
-                 localStorage.setItem("comm","");
-}
-
+      function n() {
+            document.querySelector("#ll").style.bottom = "0";
+            document.querySelector("#ll").style.fontSize = "40";
+            document.querySelector("#ll").style.color = "#5A5A5A";
+      }
+      function m() {
+            document.querySelector("#ll").style.bottom = "-90";
+            document.querySelector("#ll").style.fontSize = "60";
+            document.querySelector("#ll").style.color = "black";
+      }
+      function i() {
+            document.querySelector("#lll").style.bottom = "0";
+            document.querySelector("#lll").style.fontSize = "40";
+            document.querySelector("#lll").style.color = "#5A5A5A";
+      }
+      function j() {
+            document.querySelector("#lll").style.bottom = "-90";
+            document.querySelector("#lll").style.fontSize = "60";
+            document.querySelector("#lll").style.color = "black";
+      }
 </script>
