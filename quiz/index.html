@@ -3,7 +3,7 @@
            margin-left: 60;
            font-size: 80;
      }
-      .ques {
+      #ques {
             padding: 25;
             border: 3px solid;
             border-radius: 5px;
@@ -85,35 +85,35 @@
 </style>
 <body>
       <h1>Quiz Website Example</h1>
-      <div class="ques">
+      <div class="ques1" id="ques">
             <h2 class="head">1.√(5(5+6-72/12)) * 9</h2>
-            <div id="opt"><input name="op1" type="radio" value="y" id="op"><label for="op">45</label></div>
-            <div id="opt"><input name="op1" type="radio" value="n" id="op"><label for="op">47</label></div>
-            <div id="opt"><input name="op1" type="radio" value="n" id="op"><label for="op">49</label></div>
+            <div id="opt"><input name="op 1" type="radio" value="y" id="op"><label for="op">45</label></div>
+            <div id="opt"><input name="op 1" type="radio" value="n" id="op"><label for="op">47</label></div>
+            <div id="opt"><input name="op 1" type="radio" value="n" id="op"><label for="op">49</label></div>
       </div>
-      <div class="ques">
+      <div class="ques2" id="ques">
             <h2 class="head">2.(((√162/2 + 9)/9)/4)*18</h2>
-            <div id="opt"><input name="op2" type="radio" value="n" id="op"><label for="op">7</label></div>
-            <div id="opt"><input name="op2" type="radio" value="y" id="op"><label for="op">9</label></div>
-            <div id="opt"><input name="op2" type="radio" value="n" id="op"><label for="op">11</label></div>
+            <div id="opt"><input name="op 2" type="radio" value="n" id="op"><label for="op">7</label></div>
+            <div id="opt"><input name="op 2" type="radio" value="y" id="op"><label for="op">9</label></div>
+            <div id="opt"><input name="op 2" type="radio" value="n" id="op"><label for="op">11</label></div>
       </div>
-      <div class="ques">
+      <div class="ques3" id="ques">
             <h2 class="head">3.√81(81/9*1/9) + 10 - 2(4/2 * 5)</h2>
-            <div id="opt"><input name="op3" type="radio" value="n" id="op"><label for="op">2</label></div>
-            <div id="opt"><input name="op3" type="radio" value="y" id="op"><label for="op">-1</label></div>
-            <div id="opt"><input name="op3" type="radio" value="n" id="op"><label for="op">1</label></div>
+            <div id="opt"><input name="op 3" type="radio" value="n" id="op"><label for="op">2</label></div>
+            <div id="opt"><input name="op 3" type="radio" value="y" id="op"><label for="op">-1</label></div>
+            <div id="opt"><input name="op 3" type="radio" value="n" id="op"><label for="op">1</label></div>
       </div>
-      <div class="ques">
-            <h2 class="head">4.If √49x²(72/8) - √36x²(63/7) + 9 = 18 , then find the value of 9(10-x).</h2>
-            <div id="opt"><input name="op4" type="radio" value="n" id="op"><label for="op">78</label></div>
-            <div id="opt"><input name="op4" type="radio" value="n" id="op"><label for="op">89</label></div>
-            <div id="opt"><input name="op4" type="radio" value="y" id="op"><label for="op">81</label></div>
+      <div class="ques4" id="ques">
+            <h2 class="head">4.If √49x²|(72/8) - √36x²|(63/7) + 9 = 18 , then find the value of 9(10-x).</h2>
+            <div id="opt"><input name="op 4" type="radio" value="n" id="op"><label for="op">78</label></div>
+            <div id="opt"><input name="op 4" type="radio" value="n" id="op"><label for="op">89</label></div>
+            <div id="opt"><input name="op 4" type="radio" value="y" id="op"><label for="op">81</label></div>
       </div>
-      <div class="ques">
+      <div class="ques5" id="ques">
             <h2 class="head">5.If 0.5(x-2) + 2(7/2+x) = 21 , then find the value of x.</h2>
-            <div id="opt"><input name="op5" type="radio" value="y" id="op"><label for="op">6</label></div>
-            <div id="opt"><input name="op5" type="radio" value="n" id="op"><label for="op">12</label></div>
-            <div id="opt"><input name="op5" type="radio" value="n" id="op"><label for="op">14</label></div>
+            <div id="opt"><input name="op 5" type="radio" value="y" id="op"><label for="op">6</label></div>
+            <div id="opt"><input name="op 5" type="radio" value="n" id="op"><label for="op">12</label></div>
+            <div id="opt"><input name="op 5" type="radio" value="n" id="op"><label for="op">14</label></div>
       </div>
       <button onclick="submit()" id="submit">Submit</button>
       <div class="result">
@@ -129,12 +129,21 @@
            c = 0;
            var x = document.querySelectorAll("#op");
            for (let i=0;i<x.length;i++){
-                 console.log(x[i].checked)
                  if (x[i].checked == true){
                        if (x[i].value=="y"){
                              cor+=2;
+                             var name = x[i].name;
+                             var sp = name.split(" ");
+                             var no = sp[1];
+                             var doc = ".ques"+no;
+                             document.querySelector(doc).style.background = "#3bf76a";
                        }
                        else{
+                             var name = x[i].name;
+                             var sp = name.split(" ");
+                             var no = sp[1];
+                             var doc = ".ques"+no;
+                             document.querySelector(doc).style.background = "#f73b3b";
                              wro+=2;
                        }
                  }
