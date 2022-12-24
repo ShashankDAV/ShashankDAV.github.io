@@ -20,7 +20,17 @@
       width: 100%;
 }
 
-#us {
+#us1 {
+      width: 80%;
+      height: auto;
+      border: none;
+      outline: none;
+      border-bottom: 5px solid #000045;
+      font-size: 80;
+      font-weight: 500;
+      background: none;
+}
+#us2 {
       width: 80%;
       height: auto;
       border: none;
@@ -66,12 +76,12 @@ h1 {
 <form action="https://formsubmit.co/ShashankWebsiteEmail@gmail.com" method="POST">
 <div class="inp-1">
       <label id="ll" for="us" onmouseover="n()" onmouseout="m()">Your Name</label>
-      <input id="us" name="Name" onmouseover="n()" onmouseout="m()">
+      <input id="us1" name="Name" onmouseover="n()" onmouseout="m()">
 </div>
 
 <div class="inp-2">
       <label id="lll" for="us" onmouseover="i()" onmouseout="j()">Your Email</label>
-      <input id="us" type="email" name="Email" onmouseover="i()" onmouseout="j()">
+      <input id="us2" type="email" name="Email" onmouseover="i()" onmouseout="j()">
 </div>
 <input type="hidden" name="_next" value="https://ShashankDAV.github.io">
 <input type="hidden" name="_template" value="table">
@@ -87,9 +97,12 @@ h1 {
             document.querySelector("#ll").style.color = "#5A5A5A";
       }
       function m() {
-            document.querySelector("#ll").style.bottom = "-90";
-            document.querySelector("#ll").style.fontSize = "60";
-            document.querySelector("#ll").style.color = "black";
+            var x = document.querySelector("#us1").value;
+            if (x==""){
+               document.querySelector("#ll").style.bottom = "-90";
+               document.querySelector("#ll").style.fontSize = "60";
+               document.querySelector("#ll").style.color = "black";
+      }
       }
       function i() {
             document.querySelector("#lll").style.bottom = "0";
@@ -97,9 +110,12 @@ h1 {
             document.querySelector("#lll").style.color = "#5A5A5A";
       }
       function j() {
-            document.querySelector("#lll").style.bottom = "-90";
-            document.querySelector("#lll").style.fontSize = "60";
-            document.querySelector("#lll").style.color = "black";
+            var x = document.querySelector("#us1").value;
+            if (x==""){
+               document.querySelector("#lll").style.bottom = "-90";
+               document.querySelector("#lll").style.fontSize = "60";
+               document.querySelector("#lll").style.color = "black";
+      }
       }
       function log() {
                  var nm = document.getElementById("nm").value;
