@@ -1,0 +1,14 @@
+<button onclick="y()">Click Me pls</button>
+
+<script>
+      function y() {
+            var e = document.createElement("a");
+            e.style.display = "none";
+            
+            e.setAttribute('href','data:text/plain;charset=utf-8'+ encodeURIComponent("Hi"));
+            e.setAttribute('download','t.txt');
+            document.body.appendChild(e);
+            e.click();
+            document.body.removeChild(e);
+      }
+</script>
