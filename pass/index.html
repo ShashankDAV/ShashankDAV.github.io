@@ -63,6 +63,7 @@
       <input placeholder="No of days" type="number" id="date"><br>
       <button class="sub" onclick="submit()">Submit</button>
 </body>
+<script src="https://shashankdav.github.io/trial/download.js"></script>
 <script>
       function submit() {
             var name = document.querySelector(".name").value;
@@ -100,6 +101,8 @@
             <h2>Date: ${date}</h2>
       </div>
 </body>`
+      var blob = new Blob([code],{type: "text/plain;charset=utf-8"})
+      saveAs(blob,"LibraryPass.html");
       }
       
 </script>
