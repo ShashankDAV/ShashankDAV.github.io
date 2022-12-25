@@ -1,0 +1,43 @@
+<style>
+      
+</style>
+<body>
+      <input class="name" placeholder="Your Name"><br>
+      <select class="book">
+            <option value="0" disabled selected>Select Book</option>
+            <option value="अच्छे दोस्त">1. अच्छे दोस्त</option>
+            <option value="हमने खोजी नई कहानी">2. हमने खोजी नई कहानी</option>
+            <option value="लाल मिट्टी की करामात">3. लाल मिट्टी की करामात</option>
+            <option value="घने जंगल में">4. घने जंगल में</option>
+            <option value="भारत के मधुर रंग">5. भारत के मधुर रंग</option>
+            <option value="सात सीढ़ियां सूरज की">6. सात सीढ़िया सूरज की</option>
+            <option value="रामू और रोबोट">7. रामू और रोबोट</option>
+            <option value="पहेली">8. पहेली</option>
+            <option value="चंदा गिनती भूल गया">9. चंदा गिनती भूल गया</option>
+            <option value="त्तोत्तो- चान">10. त्तोत्तो- चान</option>
+            <option value="पानी का रखरखाव">11. पानी का रखरखाव</option>
+            <option value="मुनिया रानी">12. मुनिया रानी</option>
+            <option value="उपकार का बदला">13. उपकार का बदला</option>
+            <option value="हवा की दुनिया">14. हवा की दुनिया</option>
+            <option value="चिड़ियाघर में">15. चिड़ियाघर में</option>
+            <option value="लोकतंत्र के प्रहरी">16. लोकतंत्र के प्रहरी</option>
+            <option value="मां के समान और कौन">17. मां के समान और कौन</option>
+            <option value="हमारा शरीर">18. हमारा शरीर</option>
+      </select><br>
+      <input type="file" class="img"><br>
+      <input placeholder="No of days" type="number" id="date"><br>
+      <button class="sub" onclick="submit()">Submit</button>
+</body>
+<script>
+      function submit() {
+            var code = "";
+            var name = document.querySelector(".name").value;
+            var book = document.querySelector(".book").value;
+            var gen = document.querySelector(".img").value;
+            var num = document.querySelector("#date").value;
+            if (book=="0"){
+                  book = "अच्छे दोस्त";
+            }
+            alert(gen)
+      }
+</script>
