@@ -42,8 +42,29 @@
                   position: relative;
                   bottom: -45px;
             }
+            select{
+                  width: 80%;
+                  font-size: 50;
+                  border: none;
+                  outline: none;
+                  background: cyan;
+            }
+            button{
+                  width: 19%;
+                  font-size: 50;
+                  border: none;
+                  outline: none;
+                  background: red;
+            }
 </style>
-
+<select id="h">
+      <option selected value="chat">Chatbot</option>
+      <option value="diary">Diary</option>
+      <option value="pass">Library Pass</option>
+      <option value="portfolio_maker">Portfolio Maker</option>
+      <option value="quiz">Quiz</option>
+</select>
+<button onclick="go()">Submit</button>
 <div class="chat">
       <textarea class="txt" id="txt" readonly>Bot: Hi, type help for command list.</textarea>
 <div class="ms">
@@ -87,5 +108,10 @@
                   cb.value = "";
                   mes.value="";
             }
+      }
+      function go(){
+            var x = document.querySelector("#h").value;
+            var loc = "https://shashankdav.github.io/"+x;
+            window.open(loc,"_self");
       }
 </script>
