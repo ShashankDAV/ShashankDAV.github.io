@@ -49,24 +49,25 @@
       <input class="name" placeholder="Your Name"><br>
       <select class="book">
             <option value="0" disabled selected>Select Book</option>
-            <option value="1">1. अच्छे दोस्त</option>
-            <option value="2">2. हमने खोजी नई कहानी</option>
-            <option value="3">3. लाल मिट्टी की करामात</option>
-            <option value="4">4. घने जंगल में</option>
-            <option value="5">5. भारत के मधुर रंग</option>
-            <option value="6">6. सात सीढ़िया सूरज की</option>
-            <option value="7">7. रामू और रोबोट</option>
-            <option value="8">8. पहेली</option>
-            <option value="9">9. चंदा गिनती भूल गया</option>
-            <option value="10">10. त्तोत्तो- चान</option>
-            <option value="11">11. पानी का रखरखाव</option>
-            <option value="12">12. मुनिया रानी</option>
-            <option value="13">13. उपकार का बदला</option>
-            <option value="14">14. हवा की दुनिया</option>
-            <option value="15">15. चिड़ियाघर में</option>
-            <option value="16">16. लोकतंत्र के प्रहरी</option>
-            <option value="17">17. मां के समान और कौन</option>
-            <option value="18">18. हमारा शरीर</option>
+            <option value="1">अच्छे दोस्त</option>
+            <option value="2">हमने खोजी नई कहानी</option>
+            <option value="3">लाल मिट्टी की करामात</option>
+            <option value="4">घने जंगल में</option>
+            <option value="5">भारत के मधुर रंग</option>
+            <option value="6">सात सीढ़िया सूरज की</option>
+            <option value="7">रामू और रोबोट</option>
+            <option value="8">पहेली</option>
+            <option value="9">चंदा गिनती भूल गया</option>
+            <option value="10">त्तोत्तो- चान</option>
+            <option value="11">पानी का रखरखाव</option>
+            <option value="12">मुनिया रानी</option>
+            <option value="13">उपकार का बदला</option>
+            <option value="14">हवा की दुनिया</option>
+            <option value="15">चिड़ियाघर में</option>
+            <option value="16">लोकतंत्र के प्रहरी</option>
+            <option value="17">मां के समान और कौन</option>
+            <option value="18">हमारा शरीर</option>
+            <option value="19">पंच परमेशवर</option>
       </select><br>
       <input placeholder="No of days" type="number" id="date"><br>
       <select class="gen">
@@ -81,7 +82,7 @@
 <script>
       function submit() {
             var name = document.querySelector(".name").value;
-            var book = "Book No." + document.querySelector(".book").value;
+            var book = "EbookNo-" + document.querySelector(".book").value;
             var num = document.querySelector("#date").value;
             var date = new Date().toDateString();
             var gen = document.querySelector(".gen").value;
@@ -111,6 +112,10 @@
       img{
             width: 900;
       }
+      iframe {
+            width: 100%;
+            height: 400;
+      }
 </style>
 <body>
       <div>
@@ -118,6 +123,10 @@
             <img src="https://shashankdav.github.io/pp.png">
             <h2>This pass is for ${name} who has took ${book} for ${num} days.</h2>
             <h2>Date: ${date}</h2>
+      </div>
+      <div>
+            <h2>${book} PDF:</h2>
+            <iframe src="https://Shashankdav.github.io/pdf/${book}.pdf"></iframe>
       </div>
 </body>`
 }
@@ -140,6 +149,10 @@
       img{
             width: 900;
       }
+      iframe {
+            width: 100%;
+            height: 400;
+      }
 </style>
 <body>
       <div>
@@ -147,6 +160,10 @@
             <img src="https://shashankdav.github.io/pp.png">
             <h2>This pass is for ${name} who has took ${book} for ${num} days.</h2>
             <h2>Date: ${date}</h2>
+      </div>
+      <div>
+            <h2>${book} PDF:</h2>
+            <iframe src="https://Shashankdav.github.io/pdf/${book}.pdf"></iframe>
       </div>
 </body>`
 }
