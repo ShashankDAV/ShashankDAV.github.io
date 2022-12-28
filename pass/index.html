@@ -1,7 +1,4 @@
 <style>
-      body {
-            background: rgb(1,180,250);
-      }
       .name {
             margin: 10 10%;
             width: 80%;
@@ -10,7 +7,7 @@
             border-radius: 5px;
             border: none;
       }
-      .book {
+      select {
             width: 80%;
             font-size: 70;
             margin: 10 10%;
@@ -36,8 +33,19 @@
             border-radius: 5px;
             margin-left: 375;
       }
+      img {
+            position: fixed;
+            z-index: -1;
+            width: 960;
+            height: 100%;
+      }
+      .form {
+            transform: translateY(450px);
+      }
 </style>
 <body>
+      <img src="https://shashankdav.github.io/calender/1.jpg">
+      <div class="form">
       <input class="name" placeholder="Your Name"><br>
       <select class="book">
             <option value="0" disabled selected>Select Book</option>
@@ -61,7 +69,13 @@
             <option value="18">18. हमारा शरीर</option>
       </select><br>
       <input placeholder="No of days" type="number" id="date"><br>
+      <select class="gen">
+            <option disabled="true" selected>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+      </select>
       <button class="sub" onclick="submit()">Submit</button>
+      </div>
 </body>
 <script src="https://shashankdav.github.io/trial/download.js"></script>
 <script>
@@ -70,11 +84,16 @@
             var book = "Book No." + document.querySelector(".book").value;
             var num = document.querySelector("#date").value;
             var date = new Date().toDateString();
+            var gen = document.querySelector(".gen").value;
             if (book=="0"){
                   book = "अच्छे दोस्त";
             }
+            if (gen=="Select gender"){
+                  gen = "Male";
+            }
             var loc="https://shashankdav.github.io/pp.png"
-            var code = `<style>
+            if (gen=="Male"){
+                  var code = `<style>
       div{
             background: cyan;
             margin: 20;
@@ -101,8 +120,38 @@
             <h2>Date: ${date}</h2>
       </div>
 </body>`
-      var blob = new Blob([code],{type: "text/plain;charset=utf-8"})
-      saveAs(blob,"LibraryPass.html");
+}
+            else if (gen=="Female"){
+                  var code = `<style>
+      div{
+            background: pink;
+            margin: 20;
+            border-radius: 15px;
+            padding: 10;
+      }
+      h2{
+            font-size: 50;
+            margin-left: 30;
+            font-family: monospace;
+      }
+      h1{
+            font-family: monospace;
+      }
+      img{
+            width: 900;
+      }
+</style>
+<body>
+      <div>
+            <h1 style="margin-left: 100;font-size: 80">Library Pass</h1>
+            <img src="https://shashankdav.github.io/pp.png">
+            <h2>This pass is for ${name} who has took ${book} for ${num} days.</h2>
+            <h2>Date: ${date}</h2>
+      </div>
+</body>`
+}
+            var blob = new Blob([code],{type: "text/plain;charset=utf-8"})
+            saveAs(blob,"LibraryPass.html");
       }
       
 </script>
