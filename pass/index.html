@@ -166,9 +166,12 @@
             <iframe src="https://Shashankdav.github.io/pdf/${book}.pdf"></iframe>
       </div>
 </body>`
+}           if (confirm("Do you want to download the pass?")==true){
+                var blob = new Blob([code],{type: "text/plain;charset=utf-8"});
+                saveAs(blob,"LibraryPass.html");
+}           else{
+                alert("You Cancelled");
 }
-            var blob = new Blob([code],{type: "text/plain;charset=utf-8"})
-            saveAs(blob,"LibraryPass.html");
       }
       
 </script>
