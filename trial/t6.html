@@ -1,5 +1,7 @@
 <style>
-
+body{
+     color: white;
+}
 #v {
       height: 100%;
       border-radius: 20px;
@@ -72,7 +74,7 @@ h1 {
 </style>
 <head><title>Login</title></head>
 <div id="v">
-<h1 style="margin-left: 25%">Login</h1>
+<h1 style="margin-left: 25%;color:#000045">Login</h1>
 <form method="POST">
 <div class="inp-1">
       <label id="ll" for="us" onmouseover="n()" onmouseout="m()">Your Name</label>
@@ -130,10 +132,11 @@ $conn = mysqli($servername, $username, $password, $db);
 
 if($_POST['submit'])
 {
+    <script>alert("You pressed the button")</script>
     $name = $_POST['name'];
     $email = $_POST['email'];
     
-    $query = "INSERT INTO form VALUES ('$name','$email')";
+    $query = "INSERT INTO form (name ,email) VALUES ('$name','$email')";
     $data = mysqli_query($conn, $query);
     
     if($data)
