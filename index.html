@@ -451,7 +451,10 @@ p {
 </div>
 <div class="commentbox"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>commentBox('5705557675606016-proj')</script>
+<script>commentBox('5705557675606016-proj',{
+    backgroundColor: '#fff',
+    textColor: '#000'
+})</script>
 </body>
 
 <script>
@@ -608,10 +611,6 @@ function pp() {
             document.querySelector(".pp").style.display = "block";
       }
 }
-commentBox('5705557675606016-proj', {
-    backgroundColor: '#fff',
-    textColor: '#000'
-});
 
 document.body.addEventListener("scroll", show_comments());
 
