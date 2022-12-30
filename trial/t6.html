@@ -73,7 +73,7 @@ h1 {
 <head><title>Login</title></head>
 <div id="v">
 <h1 style="margin-left: 25%">Login</h1>
-<form action="#" method="POST">
+<form action="" method="POST">
 <div class="inp-1">
       <label id="ll" for="us" onmouseover="n()" onmouseout="m()">Your Name</label>
       <input id="us1" name="name" onmouseover="n()" onmouseout="m()">
@@ -133,8 +133,16 @@ if($_POST['submit'])
     $name = $_POST['name'];
     $email = $_POST['email'];
     
-    $query = INSERT INTO form values('$name','$email');
+    $query = "INSERT INTO form values('$name','$email')";
     $data = mysqli_query($conn, $query);
     
+    if($data)
+    {
+       echo "Successful";
+}
+    else 
+    {
+    echo "Not successful";
+}
 }
 ?>
