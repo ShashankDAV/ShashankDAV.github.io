@@ -124,11 +124,11 @@ h1 {
 </script>
 <?php
 $servername = "sql6.freesqldatabase.com";
-$username = "";
-$password = "";
+$username = "root";
+$password = "eTghpWCSJ8";
 $db = "sql6587096";
 
-$conn = mysqli($servername, $username, $password, $db);
+$conn = mysqli_connect($servername, $username, $password, $db);
 
 if($_POST['submit'])
 {
