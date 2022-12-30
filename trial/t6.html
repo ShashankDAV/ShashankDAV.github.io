@@ -132,7 +132,6 @@ $conn = mysqli($servername, $username, $password, $db);
 
 if($_POST['submit'])
 {
-    <script>alert("You pressed the button")</script>
     $name = $_POST['name'];
     $email = $_POST['email'];
     
@@ -141,12 +140,10 @@ if($_POST['submit'])
     
     if($data)
     {
-       <script>alert("Pass")</script>
        echo "Successful";
 }
     else
     {
-      <script>alert("Fail")</script>
       echo "Not successful";
 }
 }
