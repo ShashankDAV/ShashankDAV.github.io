@@ -1,1 +1,149 @@
+<style>
+
+#v {
+      height: 100%;
+      border-radius: 20px;
+      margin-left: 130;
+}
+
+.inp-1 {
+      position: relative;
+      right: -100;
+      margin-top: 200;
+      width: 100%;
+}
+
+.inp-2 {
+      position: relative;
+      margin-top: 200;
+      right: -100;
+      width: 100%;
+}
+
+#us1 {
+      width: 80%;
+      height: auto;
+      border: none;
+      outline: none;
+      border-bottom: 5px solid #000045;
+      font-size: 80;
+      font-weight: 500;
+      background: none;
+}
+#us2 {
+      width: 80%;
+      height: auto;
+      border: none;
+      outline: none;
+      border-bottom: 5px solid #000045;
+      font-size: 80;
+      font-weight: 500;
+      background: none;
+}
+
+label {
+      font-size: 60;
+      font-weight: 500;
+      position: relative;
+      bottom: -90;
+      transition: all 0.3s linear;
+      color: black;
+}
+
+h1 {
+      font-size: 85;
+      position: relative;
+      right: -85;
+}
+
+#sub {
+      margin-left: 40%;
+      margin-top: 100;
+      padding: 20;
+      background: #000045;
+      color: white;
+      font-weight: 1000;
+      font-size: 50;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+}
+
+</style>
+<head><title>Login</title></head>
+<div id="v">
+<h1 style="margin-left: 25%">Login</h1>
+<form action="#" method="POST">
+<div class="inp-1">
+      <label id="ll" for="us" onmouseover="n()" onmouseout="m()">Your Name</label>
+      <input id="us1" name="name" onmouseover="n()" onmouseout="m()">
+</div>
+
+<div class="inp-2">
+      <label id="lll" for="us" onmouseover="i()" onmouseout="j()">Your Email</label>
+      <input id="us2" type="email" name="email" onmouseover="i()" onmouseout="j()">
+</div>
+<button name="submit" id="sub" onclick="log()">Submit</button>
+</form>
+</div>
+<script>
+      function n() {
+            document.querySelector("#ll").style.bottom = "0";
+            document.querySelector("#ll").style.fontSize = "40";
+            document.querySelector("#ll").style.color = "#5A5A5A";
+      }
+      function m() {
+            var x = document.querySelector("#us1").value;
+            if (x==""){
+               document.querySelector("#ll").style.bottom = "-90";
+               document.querySelector("#ll").style.fontSize = "60";
+               document.querySelector("#ll").style.color = "black";
+      }
+      }
+      function i() {
+            document.querySelector("#lll").style.bottom = "0";
+            document.querySelector("#lll").style.fontSize = "40";
+            document.querySelector("#lll").style.color = "#5A5A5A";
+      }
+      function j() {
+            var x = document.querySelector("#us1").value;
+            if (x==""){
+               document.querySelector("#lll").style.bottom = "-90";
+               document.querySelector("#lll").style.fontSize = "60";
+               document.querySelector("#lll").style.color = "black";
+      }
+      }
+      function log() {
+                 var nm = document.getElementById("us1").value;
+                 localStorage.setItem("eman" , nm);
+                 localStorage.setItem("comm","");
+                 alert("Login Successful");
+}
+</script>
+<?php
+$servername = "sql6.freesqldatabase.com";
+$username = "sql6587096";
+$password = "eTghpWCSJ8";
+$db = "sql6587096";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
+<?php
+if($_POST['submit'])
+{
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    
+    $query = INSERT INTO form values('$name','$email');
+    $data = mysqli_query($conn, $query);
+    
+}
+?>
 
