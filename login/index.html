@@ -73,7 +73,7 @@ h1 {
 <head><title>Login</title></head>
 <div id="v">
 <h1 style="margin-left: 25%">Login</h1>
-<form action="https://formspree.io/f/xjvzlagv" method="POST">
+<form method="POST">
 <div class="inp-1">
       <label id="ll" for="us" onmouseover="n()" onmouseout="m()">Your Name</label>
       <input id="us1" name="Name" onmouseover="n()" onmouseout="m()">
@@ -83,10 +83,6 @@ h1 {
       <label id="lll" for="us" onmouseover="i()" onmouseout="j()">Your Email</label>
       <input id="us2" type="email" name="Email" onmouseover="i()" onmouseout="j()">
 </div>
-<input type="hidden" name="_next" value="https://ShashankDAV.github.io">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_autoresponse" value="Hello! Thank you for logging on to my website.">
 <button id="sub" onclick="log()">Submit</button>
 </form>
 </div>
@@ -118,7 +114,7 @@ h1 {
       }
       }
       function log() {
-                 var nm = document.getElementById("nm").value;
+                 var nm = document.getElementById("us1").value;
                  localStorage.setItem("eman" , nm);
                  localStorage.setItem("comm","");
                  alert("Login Successful");
