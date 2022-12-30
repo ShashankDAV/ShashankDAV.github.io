@@ -4,6 +4,10 @@
        font-size: 80px;
 }
 
+#com {
+     font-size: 75px;
+}
+
 body {
      background: linear-gradient(135deg , #ADEFD1FF, #00203FFF);
 }
@@ -422,7 +426,7 @@ p {
 <ul>
 <li id="a1"><a onclick="notes()" class="a">Notes</a></li>
 <li id="a2"><a onclick="alert('Under Development')" class="a">HomeWork</a></li>
-<li id="a3"><a onclick="log()" class="a">Login</a></li>
+<li id="a3"><a onclick="log()" class="a">Diary</a></li>
 <li id="a4"><a onclick="blogs()" class="a">Blog</a></li>
 </ul>
 </div>
@@ -453,12 +457,11 @@ p {
       <p>Login site is now fixed which was not working as supposed to work earlier.</p>
 </div>
 </div>
-<div class="commentbox"></div>
+<div class="commentbox" id="com"></div>
 <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
 <script>commentBox('5705557675606016-proj',{
     backgroundColor: '#fff',
     textColor: '#000',
-    fontSize: '80px'
 })</script>
 </body>
 
@@ -483,12 +486,7 @@ function hw() {
 }
 
 function log() {
-      var na = localStorage.getItem("eman");
-      if (na == null || na == "") {
-         window.open("https://shashankdav.github.io/login","_self");
-}     else {
-         alert("You have already logged in");
-}
+        window.open("https://shashankdav.github.io/diary","_self");
 }
 
 
