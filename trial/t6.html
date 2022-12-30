@@ -138,11 +138,13 @@ if($_POST['submit'])
     
     if($data)
     {
+       <script>alert("Pass")</script>
        echo "Successful";
 }
     else 
     {
-    echo "Not successful";
+      <script>alert("Fail")</script>
+      echo "Not successful";
 }
 }
 ?>
