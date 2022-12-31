@@ -1,1 +1,74 @@
-
+<style>
+      .search {
+            display: flex;
+            width: 100%;
+            border: 5px solid orange;
+            border-radius: 75px;
+            overflow: hidden;
+            height: 100px;
+            margin: 0;
+      }
+      
+      .search_img {
+            height: 75;
+            margin: 13 -80;
+            margin-left: 5;
+      }
+      
+      .question {
+            margin-left: 30;
+            border: none;
+            outline: none;
+            font-size: 60;
+            height: 100px;
+            background: transparent;
+            color: black;
+            width: 87%;
+      }
+      .blog{
+            display: flex;
+            align-items: center;
+            height: 250;
+            margin-top: 15;
+            padding: 15;
+            background: #000045;
+            border-radius: 5px;
+      }
+      .blog img{
+            height: 250;
+            border-radius: 5px;
+            width: 400;
+      }
+      .blog h1{
+            color: white;
+            font-size: 50;
+            margin-left: 120;
+      }
+</style>
+<div class="search">
+      <input class="question" placeholder="Search..." onkeyup="srch(this.value.toLowerCase())">
+      <img class="search_img" src="https://shashankdav.github.io/search.png" alt="O">
+</div>
+<div class="blogs">
+      <div class="blog" onclick="opn('PythonBlog01')"><img src="https://shashankdav.github.io/python.jpeg"><h1>PythonBlog01</h1></div>
+      <div class="blog" onclick="opn('idk')"><img src="https://shashankdav.github.io/ai.jpg"><h1>AI Robot 🤖</h1></div>
+</div>
+<script>
+function srch(x) {
+            var y = document.querySelectorAll(".blog")
+            
+            for (let i=0;i<y.length;i++) {
+                  var z = y[i].innerHTML.toLowerCase();
+                  if (z.includes(x)) {
+                        y[i].style.display = "";
+                  }
+                  else {
+                        y[i].style.display = "none";
+                  }
+            }
+      }
+      function opn(x){
+            var y = "https://shashankdav.github.io/blog/"+x+".html";
+            window.open(y,"_self")
+      }
+</script>
