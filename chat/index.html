@@ -115,9 +115,8 @@ function reply(text){
 }
 function sreply(text){
       let y = document.createElement("div");
-      y.innerHTML = "Here are some links which might help you:<br>"
+      y.innerHTML = "Here are some message you can send which are like command:<br>"
       let bu1 = document.createElement("button");
-      bu1.setAttribute("href", "https://shashankdav.github.io");
       bu1.id = "link";
       bu1.innerHTML = "Login";
       let bu2 = document.createElement("button");
@@ -153,11 +152,23 @@ function send() {
             reply("Hello! there 👋");
       }
       if (xy.includes("help")){
-            sreply("Nothing Here");
+            sreply("This feature is under development.");
       }
       if (xy.includes("fuck")){
             reply("Chla ja bsdk 🖕.");
       }
+      if (xy.includes("login")){
+            window.open("https://shashankdav.github.io/login","_self")
+      }
+      if (xy.includes("diary")){
+            window.open("https://shashankdav.github.io/diary","_self")
+      }
+      if (xy.includes("pass")){
+            window.open("https://shashankdav.github.io/pass","_self")
+      }
+      if (xy.includes("library")){
+            window.open("https://shashankdav.github.io/pass","_self")
+      }
 }
 
-</script>
+</script>   
