@@ -1,117 +1,129 @@
 <style>
-      .chat {
-            height: 100%;
-            border: 5px solid darkblue;
-            border-radius: 15px;
-            overflow: hidden;
-      }
-      .txt {
-            font-family: fantasy;
+      .mes {
             width: 100%;
-            height: 93%;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            display: flex;
+            position: relative;
+            margin: 5 5;
+      }
+      
+      body {
+            background: #000045;
+      }
+      .chat {
+            height: 94%;
+            overflow: hidden;
+            overflow-y: scroll;
+      }
+      .send img{
+            height: 100px;
+            width: 100%;
+      }
+      .send {
+            width: 15%;
+            background: rgb(0,143,250);
             border: none;
             outline: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            position: relative;
+      }
+      .message {
+            height: 105px;
+            width: 85%;
             font-size: 50;
-      }
-      .msg {
-            width: 80%;
-            font-size: 75px;
-            border: none;
-            outline: none;
-            border-top: 5px solid darkblue;
-            border-bottom-left-radius: 15px;
-            border-right: 5px solid darkblue;
+            border: 5px solid rgb(0,143,250);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
             position: relative;
-            top: -8;
       }
-      .btn {
-            background: darkblue;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 78px;
-            height: 15%;
+      #txt {
+            background: white;
+            padding: 20 50;
+            width: 400;
+            font-size: 35;
+            margin: 15;
+            border-radius: 25px;
+            font-weight: 1000;
             position: relative;
-            top: -8;
-            width: 21%;
-            }
-            .ms {
-                  display: flex;
-                  position: relative;
-                  bottom: -45px;
-            }
-            select{
-                  width: 80%;
-                  font-size: 50;
-                  border: none;
-                  outline: none;
-                  background: cyan;
-            }
-            button{
-                  width: 19%;
-                  font-size: 50;
-                  border: none;
-                  outline: none;
-                  background: red;
-            }
+      }
+      #txt:after {
+            content: '';
+            position: absolute;
+            left: -10;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-bottom: 50px solid #fff;
+            border-right: 25px solid transparent;
+      }
+      #pxt {
+            background: white;
+            padding: 20 50;
+            width: 350;
+            font-size: 35;
+            margin: 15;
+            margin-left: 50%;
+            border-radius: 25px;
+            font-weight: 1000;
+            position: relative;
+      }
+      #pxt:after {
+            content: '';
+            position: absolute;
+            right: -10;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-bottom: 50px solid #fff;
+            border-right: 25px solid transparent;
+      }
 </style>
-<select id="h">
-      <option selected value="chat">Chatbot</option>
-      <option value="diary">Diary</option>
-      <option value="pass">Library Pass</option>
-      <option value="portfolio_maker">Portfolio Maker</option>
-      <option value="quiz">Quiz</option>
-</select>
-<button onclick="go()">Submit</button>
-<div class="chat">
-      <textarea class="txt" id="txt" readonly>Bot: Hi, type help for command list.</textarea>
-<div class="ms">
-      <input id="msg" class="msg">
-      <button id="butt" class="btn" onclick="sen()">Send</button>
-</div>
-</div>
-
+<body>
+      <div class="body">
+      <div class="chat">
+            <div id="txt">Hello there 👀, Welcome here type {help} for list of options.</div>
+      </div>
+      <div class="mes">
+            <textarea class="message" placeholder="Enter your message.." onclick="func()" onmouseout="nofunc()"></textarea>
+            <button class="send" onclick="send()"><img src="https://shashankdav.github.io/send.png"></button>
+      </div>
+      </div>
+</body>
 <script>
-      function sen() {
-            var mes = document.querySelector("#msg")
-            var mess = mes.value;
-            var me = mess.toLowerCase();
-            var cb = document.querySelector("#txt");
-            cb.value = cb.value + "\nYou: " + mess
-            if (me.includes("hi")){
-                  cb.value = cb.value + "\nBot: Hi , how may I help you?";
-                  mes.value="";
-            }
-            else if (me.includes("hello")) {
-                  cb.value = cb.value + "\nBot: Hi , how may I help you?";
-                  mes.value="";
-            }
-            else if (me.includes("help")) {
-                  cb.value = cb.value + "\nBot: Hi , here is the command's list :\n1.Type {minecraft download link} for minecraft download link.\n2.Type {minecraft server link} for my minecraft server link.\n3.Type {clear} to clear conversation.\n4.Type {diary} to open online diary.";
-                  mes.value="";
-            }    
-            else if (me.includes("minecraft download link")) {
-                  window.open("https://www.mediafire.com/file/w4rgvbl9u7ro5v7/MCPE_1.19.40_Official.apk/file","_self");
-            }
-            else if (me.includes("minecraft server link")) {
-                  window.open("https://add.aternos.org/INDEVLOPMENT","_self");
-            }
-            else if (me.includes("calender")) {
-                  window.open("https://shashankdav.github.io/calender","_self");
-            }
-            else if (me.includes("diary")) {
-                  window.open("https://shashankdav.github.io/diary","_self");
-            }
-            else if (me.includes("clear")) {
-                  cb.value = "";
-                  mes.value="";
-            }
+
+let chat = document.querySelector(".chat");
+
+function reply(text){
+      let y = document.createElement("div");
+      y.innerHTML = text;
+      y.id = "txt";
+      chat.appendChild(y);
+}
+
+function send() {
+      var x = document.querySelector(".message");
+      var xy = x.value.toLowerCase();
+      if (xy=="" || xy==" "){
+            x.value = "Write something..."
+}
+      else{ 
+            let y = document.createElement("div");
+            y.innerHTML = x.value;
+            y.id = "pxt";
+            chat.appendChild(y);
       }
-      function go(){
-            var x = document.querySelector("#h").value;
-            var loc = "https://shashankdav.github.io/"+x;
-            window.open(loc,"_self");
+      
+      if (xy.includes("hi")){
+            reply("Hello! there 👋");
       }
+      if (xy.includes("hello")){
+            reply("Hello! there 👋");
+      }
+      if (xy.includes("help")){
+            reply("This feature is under development.");
+      }
+}
+
 </script>
