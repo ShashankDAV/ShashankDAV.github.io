@@ -79,6 +79,18 @@
             border-bottom: 50px solid #fff;
             border-right: 25px solid transparent;
       }
+      #link {
+            font-size: 35;
+            font-weight: 1000;
+            color: #000045;
+            outline: none;
+            border: 5px solid #000045;
+            background: white;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+            padding: 5 0;
+      }
 </style>
 <body>
       <div class="body">
@@ -98,6 +110,25 @@ let chat = document.querySelector(".chat");
 function reply(text){
       let y = document.createElement("div");
       y.innerHTML = text;
+      y.id = "txt";
+      chat.appendChild(y);
+}
+function sreply(text){
+      let y = document.createElement("div");
+      y.innerHTML = "Here are some links which might help you:<br>"
+      let bu1 = document.createElement("button");
+      bu1.setAttribute("href", "https://shashankdav.github.io");
+      bu1.id = "link";
+      bu1.innerHTML = "Login";
+      let bu2 = document.createElement("button");
+      bu2.id = "link";
+      bu2.innerHTML = "Diary";
+      let bu3 = document.createElement("button");
+      bu3.id = "link";
+      bu3.innerHTML = "Library Pass";
+      y.appendChild(bu1);
+      y.appendChild(bu2);
+      y.appendChild(bu3);
       y.id = "txt";
       chat.appendChild(y);
 }
@@ -122,7 +153,7 @@ function send() {
             reply("Hello! there 👋");
       }
       if (xy.includes("help")){
-            reply("This feature is under development.");
+            sreply("Nothing Here");
       }
       if (xy.includes("fuck")){
             reply("Chla ja bsdk 🖕.");
