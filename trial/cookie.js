@@ -18,6 +18,7 @@ function toast(div , mes , link , text) {
            var heading = document.createElement("p");
            heading.innerHTML = mes;
            heading.style.marginLeft = "25px";
+           heading.style.fontSize = "35";
            ele.appendChild(heading);
            var button = document.createElement("button");
            button.innerHTML = "Accept all cookies";
