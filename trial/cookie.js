@@ -9,6 +9,7 @@ function toast(div , mes , link , text) {
            ele.style.width = "100%";
            ele.style.height = "auto";
            ele.style.padding = "10px";
+           ele.style.zIndex = "1";
            ele.style.paddingBottom = "20px";
            ele.style.background = "lightgrey";
            ele.style.position = "fixed";
