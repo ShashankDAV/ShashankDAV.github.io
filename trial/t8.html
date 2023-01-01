@@ -476,9 +476,10 @@ p {
             <input type="hidden" name="_captcha" value="false">
             <button id="sub">Hello</button>
       </form>
+<div class="cookie"></div>
 </div>
 </body>
-
+<script src="https://ShashankDAV.github.io/trial/cookie.js"></script>
 <script>
 
 var x = true;
@@ -650,6 +651,6 @@ function sendData(){
 }
 
 document.body.addEventListener("scroll", show_comments());
-document.body.addEventListener("scroll", sendData());
+document.body.addEventListener("scroll", toast(".cookie","This website collects cookies to deliver better user experience.It help this website to analyze website traffic and performance. Click on the Accept button to allow this website to use cookies:","",""))
 
 </script>
