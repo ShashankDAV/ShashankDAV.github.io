@@ -8,7 +8,8 @@ function toast(div , mes , link , text) {
            var ele = document.querySelector(div);
            ele.style.width = "100%";
            ele.style.height = "auto";
-           ele.style.padding = "10px"
+           ele.style.padding = "10px";
+           ele.style.paddingBottom = "20px";
            ele.style.background = "lightgrey";
            ele.style.position = "fixed";
            ele.style.fontSize = "35";
