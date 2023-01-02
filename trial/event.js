@@ -13,6 +13,8 @@
             div.style.marginLeft = '180';
             div.style.transition = "all 2s";
             div.style.top = "-180%";
+            div.style.zIndex = "100";
+            
             div.id = "wish";
             
             var p = document.createElement("p");
@@ -38,6 +40,8 @@
             p.style.padding = "25";
             p.style.border = "10px solid";
             p.style.borderRadius = "15px";
+            p.style.boxShadow = "10px 10px 10px black";
+            p.style.textShadow = "10px 10px 10px black";
             
             if (wish){
                     div.appendChild(rope);
