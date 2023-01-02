@@ -13,7 +13,7 @@
             div.style.marginLeft = '180';
             div.style.transition = "all 2s";
             div.style.top = "-180%";
-            div.style.zIndex = "100";
+            div.style.zIndex = "1";
             
             div.id = "wish";
             
