@@ -5,7 +5,7 @@
             
             var div = document.createElement("div");
             div.style.height = "700";
-            div.style.background = "transparent";
+            div.style.background = "white";
             div.style.display = "flex";
             div.style.justifyContent = "center";
             div.style.alignItems = "center";
