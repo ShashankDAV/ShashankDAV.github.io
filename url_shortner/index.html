@@ -1,0 +1,61 @@
+<style>
+      *{
+            font-family: fantasy;
+      }
+      h1{
+            font-size: 100;
+            margin-left: 50;
+      }
+      .inp{
+            width: 80%;
+            font-size: 75;
+            margin-left: 10%;
+            margin-top: 70;
+            border-radius: 15px;
+            border: 3px solid #000045;
+            padding: 10;
+            outline: none;
+      }
+      button{
+            border-radius: 15px;
+            background: cyan;
+            border: 5px solid #000045;
+            font-size: 50;
+            margin-left: 300;
+            margin-top: 75;
+            outline: none;
+      }
+      #url{
+            background: rgb(0,200,250);
+            padding: 25;
+            font-size: 50;
+            border-radius: 15px;
+            text-align: center;
+            width: 50%;
+            margin-left: 25%;
+      }
+</style>
+<body>
+      <h1>Short Url Maker</h1>
+      <input class="inp" placeholder="Enter URL"><br>
+      <button onclick="shortenUrl()">Make Short Link</button>
+</body>
+<script>
+async function shortenUrl() {
+    var url = document.querySelector(".inp").value;
+    if (url==""){
+          alert("Wrong url")
+    }
+    else{
+            const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
+            const data = await res.json();
+            const short_link = data.result.short_link;
+    
+            var p = document.createElement("p");
+            p.id = "url";
+            p.innerHTML = short_link;
+            document.querySelector("body").appendChild(p);
+            document.querySelector(".inp").innerHTML = "";
+}
+}
+</script>
