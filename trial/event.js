@@ -5,7 +5,7 @@
             
             var div = document.createElement("div");
             div.style.height = "700";
-            div.style.background = "white";
+            div.style.background = "transparent";
             div.style.display = "flex";
             div.style.justifyContent = "center";
             div.style.alignItems = "center";
@@ -42,7 +42,8 @@
             p.style.borderRadius = "15px";
             p.style.boxShadow = "10px 10px 10px black";
             p.style.textShadow = "10px 10px 10px black";
-            
+            p.style.background = "white";
+
             if (wish){
                     div.appendChild(rope);
                     div.appendChild(p);
