@@ -70,7 +70,6 @@
             <option value="19">पंच परमेशवर</option>
             <option value="20">Sanskrit Grammar</option>
       </select><br>
-      <input placeholder="No of days" type="number" id="date"><br>
       <select class="gen">
             <option disabled="true" selected>Select gender</option>
             <option value="Male">Male</option>
@@ -84,7 +83,6 @@
       function submit() {
             var name = document.querySelector(".name").value;
             var book = "EbookNo-" + document.querySelector(".book").value;
-            var num = document.querySelector("#date").value;
             var date = new Date().toDateString();
             var gen = document.querySelector(".gen").value;
             if (book=="0"){
@@ -122,7 +120,7 @@
       <div>
             <h1 style="margin-left: 100;font-size: 80">Library Pass</h1>
             <img src="https://shashankdav.github.io/pp.png">
-            <h2>This pass is for ${name} who has took ${book} for ${num} days.</h2>
+            <h2>Name: ${name}</h2>
             <h2>Date: ${date}</h2>
       </div>
       <div>
@@ -159,7 +157,7 @@
       <div>
             <h1 style="margin-left: 100;font-size: 80">Library Pass</h1>
             <img src="https://shashankdav.github.io/pp.png">
-            <h2>This pass is for ${name} who has took ${book} for ${num} days.</h2>
+            <h2>Name: ${name}</h2>
             <h2>Date: ${date}</h2>
       </div>
       <div>
