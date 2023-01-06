@@ -106,15 +106,19 @@
 </body>
 <script>
 
+var term = {hi:"Hello! there 👋", bye: "Ok byee 👋" , 'i am fine' : "Nice to hear that!",'how are you': 'I am absolutely fine what about you.','who created you':'Shashank Pathak also known as ShashankDAV created me.\nVisit his website at https://shashankdav.github.io','sui':'I am also a fan of Ronaldo.','favourite footballer': 'The GOAT Ronaldo','favourite cricketer':'MS Dhoni(Captain Cool) or Virat the King Kohli'}
 let chat = document.querySelector(".chat");
+
 
 function reply(text){
       let y = document.createElement("div");
+      document.querySelector(".message").value = "";
       y.innerHTML = text;
       y.id = "txt";
       chat.appendChild(y);
 }
 function sreply(text){
+      document.querySelector(".message").value = "";
       let y = document.createElement("div");
       y.innerHTML = "Here are some message you can send which are like command:<br>"
       let bu1 = document.createElement("button");
@@ -146,17 +150,18 @@ function send() {
             chat.appendChild(y);
       }
       
-      if (xy.includes("hi")){
-            reply("Hello! there 👋");
+      if (xy in term){
+            reply(term[xy])
       }
-      if (xy.includes("hello")){
-            reply("Hello! there 👋");
+      else{
+            for (let word in term){
+                  if (xy.includes(word)){
+                        reply(term[word])
+                  }
+            }
       }
       if (xy.includes("help")){
             sreply("This feature is under development.");
-      }
-      if (xy.includes("fuck")){
-            reply("Chla ja bsdk 🖕.");
       }
       if (xy.includes("login")){
             window.open("https://shashankdav.github.io/login","_self")
