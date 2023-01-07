@@ -1,4 +1,54 @@
+<style>
+      input {
+            width: 90%;
+            margin: 5%;
+            font-size: 70;
+            padding: 10 20;
+            border-radius: 20px;
+            border: 3px solid #000045;
+            font-weight: 500;
+            outline: none;
+      }
+      button {
+            width: auto;
+            font-size: 70;
+            font-weight: 500;
+            background: #000045;
+            color: white;
+            border-radius: 20px;
+            margin-left: 35%;
+            padding: 10;
+      }
+      form {
+            padding: 25;
+            margin: 500 10;
+            border-radius: 25px;
+            box-shadow: 10px 10px 50px 0px black;
+      }
+</style>
 
-<div style="font-size:80px">
-<script src="https://sheetdb.io/s/f/icqu1o5axrqsz.js"></script>
-</div>
+<head>
+      <title>ShashankDAV-SignIn</title>
+</head>
+<form action="https://sheetdb.io/api/v1/ciman6lqr2fhs" method="POST" id="sheetdb-form">
+  <input name="data[Name]" id="name" placeholder="Enter your Name here...">
+  <input name="data[Email]" id="email" placeholder="Enter your Email here...">
+  <button type="submit">Sign In</button>
+</form>
+
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+          var name = document.querySelector('#name').value;
+          localStorage.setItem("eman",name);
+          alert("Sign In Successful");
+    });
+  });
+</script>
