@@ -29,12 +29,36 @@
       }
 </style>
 <body>
-      <h1>API Key Generator</h1>
+      <h1>Database API </h1>
       <div class="api-db">
-      <form action='https://formsubmit.co/shashankwebsitecomments@gmail.com' method="POST">
-      <input name="mail" type="mail" id="inp" required placeholder="Enter your e-mail">
-      <input type="password" id="inp" name="password" required placeholder="Enter password">
-      <button type="submit">Create API Key</button>
-      </form>
+            <input name="Username" type="name" class="uname" id="inp" required placeholder="Enter your Username">
+            <input type="Password" id="inp" name="password" class="pass" required placeholder="Enter your Password">
+            <button onclick="log()" type="submit">Go To Database</button>
       </div>
 </body>
+<script>
+function log(){
+      fetch('https://sheetdb.io/api/v1/n9346e122modg')
+      .then(response => response.json())
+      .then(data => {
+          var name = document.querySelector(".uname").value;
+          var pass = 0;
+          var password = document.querySelector(".pass").value;
+          for (let i=0; i<data.length;i++){
+                if (data[i]['Username'] == name){
+                      pass = i;
+                }
+          }
+          
+          if (data[pass]["Password"] == password){
+                alert("Login Successful")
+                var js = "https://shashankdav.github.io" data[pass]["Js"];
+                window.open(js,"_self")
+          }
+          else{
+                alert("Wrong Password")
+          }
+         
+})
+}
+</script>
