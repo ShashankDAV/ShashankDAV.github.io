@@ -19,7 +19,7 @@ body {
 .menu-logo {
       color: white;
       font-size: 75;
-      margin-right: 190;
+      margin-right: 170;
       font-weight: 500;
       user-select: none;
       -ms-user-select: none;
@@ -187,7 +187,7 @@ body {
 }
 
 .about {
-      margin: 100 0;
+      margin: 25 0;
       margin-top: 90;
       background: cyan;
       padding: 20px;
@@ -224,30 +224,11 @@ body {
       animation: scroll 20s linear infinite;
 }
 
-@keyframes scroll {
-            0%,12.61%, 1% {
-                transform: translate3d(0,0,0);
-            }
-            16.66%, 29.32% {
-                transform: translate3d(0,-35%, 0);
-            }
-            33.32%, 45.98% {
-                transform: translate3d(0,-69%, 0);
-            }
-            49.98%, 62.64% {
-                transform: translate3d(0,-35%, 0);
-            }
-            66.64%, 79.30% {
-                transform: translate3d(0,0%, 0);
-            }
-}
-
 .notice {
       width: 99%;
       height: 770;
       background: #ffffff;
       position: relative;
-      top: -80;
       border-radius: 15px;
       justify-content: center;
       margin: 0 5;
@@ -289,47 +270,6 @@ p {
       font-size: 25;
 }
 
-@keyframes rota {
-      100% {transform: rotate(360deg);}
-}
-
-@keyframes ator {
-      100% {transform: rotate(-360deg);}
-}
-
-.comment-section {
-      width: 100%;
-      height: 250;
-}
-
-.comment-section textarea {
-      position: relative;
-      top: -50;
-      font-size: 40;
-      font-family: fantasy;
-      width: 98%;
-      height: 350;
-      border-radius: 10px;
-      margin: 1%;
-      outline: none;
-}
-
-.comment-section button {
-      position: relative;
-      top: -50;
-      background: rgb(1,150,1);
-      height: 80;
-      width: 30%;
-      margin: 1%;
-      border: none;
-      margin-left: 69%;
-      font-size: 60;
-      font-family: fantasy;
-      border-radius: 25px;
-      outline: none;
-      font-weight: 800;
-}
-
 #co {
       margin: 1%;
       background: white;
@@ -342,12 +282,6 @@ p {
       margin-left: 150;
       font-size: 75;
       color: cyan;
-}
-
-#vvv {
-      margin-top: 250;
-      border: 10px solid cyan;
-      border-radius: 15px;
 }
 
 .pp {
@@ -375,7 +309,6 @@ p {
       border: none;
       background: white;
       box-shadow: 0px 0px 30px 10px rgb(1,200,200);
-      /*0px 0px 0px 40px rgb(200,200,200);*/
 }
 
 .pp:before {
@@ -397,6 +330,38 @@ p {
       display: block;
 }
 
+.copyright {
+      margin-top: 0;
+      background: rgb(40,40,40);
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500;
+      width: 101.9%;
+      transform: translate3d(-10px,10px,0px);
+}
+.copyright p{
+      color: white;
+      padding: 50;
+      font-size: 30;
+}
+.copyright img{
+      border-radius: 50%;
+      height: 100;
+      width: 100;
+}
+
+.menu-txt{
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 45;
+      font-weight: 1000;
+      color: white;
+      transform: translateX(-20px);
+}
+
 </style>
 
 <head>
@@ -408,7 +373,7 @@ p {
 <div class="menu">
       
       <h1 class="menu-logo">Shashank<span>DAV</span></h1>
-      <button class="menu-btn idd" id="mode" onclick="dark()"><img src="https://shashankdav.github.io/img2.png" id="i2"></button>
+      <button class="menu-txt" onclick="log()">Sign In</button>
       <button class="menu-btn" onclick="opn()" id="btn"><img class="i" id="i" src="https://shashankdav.github.io/-.png"></button>
       
 </div>
@@ -418,7 +383,7 @@ p {
 <ul>
 <li id="a1"><a onclick="notes()" class="a">Notes</a></li>
 <li id="a2"><a onclick="alert('Under Development')" class="a">HomeWork</a></li>
-<li id="a3"><a onclick="log()" class="a">Sign in</a></li>
+<li id="a3"><a onclick="api()" class="a">APIs</a></li>
 <li id="a4"><a onclick="blogs()" class="a">Blog</a></li>
 </ul>
 </div>
@@ -432,7 +397,6 @@ p {
 
 <div class="about">
       <h1>ShashankDAV</h1>
-      <p>ShashankDAV</p>
       <p>I am Shashank Pathak and I am a student.</p>
       <p>My hobbies are Reading , Programming and Gaming.</p>
 </div>
@@ -449,20 +413,8 @@ p {
       <p>Login site is now fixed which was not working as supposed to work earlier.</p>
 </div>
 </div>
-<form action="https://formsubmit.co/shashankwebsitecomments@gmail.com" method="POST">
-<div class="comment-section">
-      <textarea name="Comment" placeholder="Enter your comment here" id="txt" required></textarea>
-      <button class="comment" id="comm" onclick="comment()">Post</button>
-      <input type="hidden" name="_next" value="https://ShashankDAV.github.io">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-</div>
-</form>
-<div id="vvv">
-      <h1 class="cs">Comments Section</h1>
-      <div id="co" class="ci"><h1>Shashank: Hello guys</h1></div>
-      <div id="co" class="ci"><h1>Yugraj: Hi</h1></div>
-      <div id="co" class="ci"><h1>Ishant: Hi , nice website.</h1></div>
+<div class="copyright">
+      <p>© Copyright ShashankDAV.github.io</p><img src='https://shashankdav.github.io/logo.png'>
 </div>
 </body>
 
@@ -490,8 +442,8 @@ function hw() {
 
 function log() {
       var c = localStorage.getItem("eman");
-      if (c == null || c == ""){
-             window.open("https://shashankdav.github.io/login","_self");
+      if (c == null || c == "" || c == " "){
+            window.open("https://shashankdav.github.io/login","_self");
       }
       else {
             alert("You have already signed in.");
@@ -512,107 +464,8 @@ function opn() {
       }
 }
 
-drk = true;
-
-function dark() {
-      if (drk) {
-      document.querySelector("body").style.color = "white";
-      document.querySelector(".notice").style.background = "black";
-      document.querySelector(".h").style.background = "black";
-      document.querySelector("body").style.background = 'linear-gradient(135deg , #00203FFF , #ADEFD1FF)';
-      document.querySelector("#i2").style.animation = "rota 1.5s linear";
-      document.querySelector(".about").style.background = "#000045";
-      document.querySelector("#txt").style.background = "black";
-      document.querySelector("#txt").style.color = "white";
-      document.querySelector("#comm").style.color = "white";
-      var zyx = document.querySelectorAll("#co");
-      for (let i=0; i<zyx.length;i++) {
-            zyx[i].style.background = "black";
-            zyx[i].style.color = "white";
-      }
-      drk = false;
-}
-      else {
-      document.querySelector("body").style.color = "black";
-      document.querySelector(".notice").style.background = "white";
-      document.querySelector(".h").style.background = "white";
-      document.querySelector("body").style.background= 'linear-gradient(135deg , #ADEFD1FF, #00203FFF)';
-      document.querySelector("#i2").style.animation = "ator 1.5s linear";
-      document.querySelector(".about").style.background = "cyan";
-      document.querySelector("#txt").style.background = "white";
-      document.querySelector("#txt").style.color = "black";
-      document.querySelector("#comm").style.color = "black";   
-      var zyx = document.querySelectorAll("#co");
-      for (let i=0; i<zyx.length;i++) {
-            zyx[i].style.background = "white";
-            zyx[i].style.color = "black";
-      }
-      drk = true;
-}
-}
-
 function save(key,value){
       localStorage.setItem(key,value);
-}
-
-var com = localStorage.getItem("comm");
-var cont = [];
-
-function comment() {
-      var nam = localStorage.getItem("eman");
-      if (nam==null || nam=="") {
-            alert("Sign In first");
-      }
-      else {
-           var g = document.querySelector("#txt").value;
-           if (g==" " || g=="") {
-                 alert("Write Comment First")
-           }
-           else if (g == "clear") {
-                 save("eman","");
-}          else if (g == "comments_clear") {
-                 save("comm","");
-}          else {
-                cont.push(g);
-                final_comment = com.concat(cont);
-      
-                save("comm", final_comment);
-      
-                asian_power();
-}
-}
-}
-
-function asian_power() {
-      no = localStorage.getItem("comm");
-      name= localStorage.getItem("eman");
-      arr = no.split(",");
-      numb = arr.length;
-      num = numb-1;
-      div = document.createElement("div");
-      var h1 = document.createElement("h1");
-      div.id = "co";
-      div.className = "ci";
-      h1.innerHTML = name + ": " + "\n" + arr[num];
-      div.appendChild(h1);
-      document.querySelector("#vvv").appendChild(div);
-}
-
-function show_comments() {
-      no = localStorage.getItem("comm");
-      name = localStorage.getItem("eman");
-      arr = no.split(",");
-      numb = arr.length;
-      num = numb-1;
-      for (let i=0;i<numb; i++) {
-            div = document.createElement("div");
-            var h1 = document.createElement("h1");
-            div.id = "co";
-            div.className = "ci";
-            h1.innerHTML = "\n" +name + ": " + arr[i];
-            div.appendChild(h1);
-            document.querySelector("#vvv").appendChild(div);
-}
 }
 
 setInterval(pp, 1000)
@@ -624,7 +477,6 @@ function pp() {
       }
 }
 
-document.body.addEventListener("scroll", show_comments());
 add_event_calender()
 
 </script>
