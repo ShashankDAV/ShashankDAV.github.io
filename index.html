@@ -399,29 +399,35 @@ p {
       z-index: -1;
 }
 
-.cs {
-      margin-left: 150;
-      font-size: 75;
-      color: cyan;
-}
-
 #vvv {
       margin-top: 250;
-      border: 10px solid cyan;
-      border-radius: 15px;
+      border-left: 5px solid;
+      border-right: 5px solid;
+      border-top: 5px solid;
+      //border-radius: 15px;
+      overflow: hidden;
 }
 #com {
-      width: 100%;
+      overflow: hidden;
+      width: 104%;
       font-size: 40;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px 0;
-      background: rgb(250,255,255);
+      background: rgb(247, 247, 247);
       color: black;
+      border-bottom: 3px solid white;
+      margin-left: -2;
 }
-#tim{
-      transform: translateX(-10px);
+#nam {
+      font-size: 45;
+      font-family: fantasy;
+      transform: translate3d(20px,-75px,0px);
+}
+#commen {
+      transform: translate3d(-200px,25px,0px);
+      display: flex;
 }
 
 </style>
@@ -483,7 +489,7 @@ p {
       </form>
 </div>
 <div id="vvv">
-      <h1 class="cs">Comments Section</h1>
+
 </div>
 <div class="copyright">
       <p>© Copyright ShashankDAV.github.io</p><img src='https://shashankdav.github.io/logo.png'>
@@ -570,9 +576,15 @@ add_event_calender()
              for (var i=0;i<data.length;i++){
                   var name = data[i]["Name"];
                   var comment = data[i]["Comment"];
+                  var nam = document.createElement("h1");
+                  nam.innerHTML = name;
+                  nam.id = "nam";
+                  var comm = document.createElement("p");
+                  comm.innerHTML = comment;
+                  comm.id="commen";
                   var div = document.createElement("div");
-                  var final = name + ":    ㅤ" + comment;
-                  div.innerHTML = final;
+                  div.appendChild(nam);
+                  div.appendChild(comm);
                   div.id = "com";
                   document.querySelector("#vvv").appendChild(div);
              };
