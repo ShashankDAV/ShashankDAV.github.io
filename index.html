@@ -596,6 +596,10 @@ add_event_calender()
 })
 }
 var name = localStorage.getItem("eman");
+if (name == "" || name == null || name == " " ){
+          document.querySelector("#txt").disabled = true;
+          document.querySelector("#txt").placeholder = "Sign In first..";
+}
 document.querySelector("#name").value = name;
 
 show_comments()
