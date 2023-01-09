@@ -361,6 +361,68 @@ p {
       color: white;
       transform: translateX(-20px);
 }
+      
+.comment-section {
+      width: 100%;
+      height: 250;
+}
+
+.comment-section textarea {
+      font-size: 40;
+      font-family: fantasy;
+      width: 98%;
+      height: 350;
+      border-radius: 10px;
+      margin: 1%;
+      outline: none;
+}
+
+.comment-section button {
+      background: rgb(1,150,1);
+      height: 80;
+      width: 30%;
+      margin: 1%;
+      border: none;
+      margin-left: 69%;
+      font-size: 60;
+      font-family: fantasy;
+      border-radius: 25px;
+      outline: none;
+      font-weight: 800;
+}
+
+#co {
+      margin: 1%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      z-index: -1;
+}
+
+.cs {
+      margin-left: 150;
+      font-size: 75;
+      color: cyan;
+}
+
+#vvv {
+      margin-top: 250;
+      border: 10px solid cyan;
+      border-radius: 15px;
+}
+#com {
+      width: 100%;
+      font-size: 40;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      background: rgb(250,255,255);
+      color: black;
+}
+#tim{
+      transform: translateX(-10px);
+}
 
 </style>
 
@@ -412,6 +474,16 @@ p {
       <h2>Date : 30/12/22</h2>
       <p>Login site is now fixed which was not working as supposed to work earlier.</p>
 </div>
+</div>
+<div class="comment-section">
+      <form id="sheetdb-form" action='https://sheetdb.io/api/v1/ftxzphgynmqwl' method="POST">
+      <input id="name" name="data[Name]" type="hidden">
+      <textarea name="data[Comment]" placeholder="Enter your comment here" id="txt" required></textarea>
+      <button class="comment" id="comm">Post</button>
+      </form>
+</div>
+<div id="vvv">
+      <h1 class="cs">Comments Section</h1>
 </div>
 <div class="copyright">
       <p>© Copyright ShashankDAV.github.io</p><img src='https://shashankdav.github.io/logo.png'>
@@ -478,5 +550,37 @@ function pp() {
 }
 
 add_event_calender()
+      var com = 0;
+      var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+          com+=1;
+          document.querySelector("#txt").innerHTML = "";
+    });
+  });
+  
+  function show_comments(){
+       fetch('https://sheetdb.io/api/v1/ftxzphgynmqwl').then(response => response.json()).then(data => {
+             for (var i=0;i<data.length;i++){
+                  var name = data[i]["Name"];
+                  var comment = data[i]["Comment"];
+                  var div = document.createElement("div");
+                  var final = name + ":    ㅤ" + comment;
+                  div.innerHTML = final;
+                  div.id = "com";
+                  document.querySelector("#vvv").appendChild(div);
+             };
+})
+}
+var name = localStorage.getItem("eman");
+document.querySelector("#name").value = name;
+
+show_comments()
 
 </script>
