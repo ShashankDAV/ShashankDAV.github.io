@@ -1,60 +1,19 @@
-<body></body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 <script>
-      function add_event_calender(){
-            var message = "";
-            var wish = false;
-            var color = "";
-            
-            var div = document.createElement("div");
-            div.style.height = "700";
-            div.style.background = "transparent";
-            div.style.display = "flex";
-            div.style.justifyContent = "center";
-            div.style.alignItems = "center";
-            div.style.position = "fixed";
-            div.style.marginLeft = '180';
-            div.style.transition = "all 2s";
-            div.style.top = "-180%";
-            div.id = "wish";
-            
-            var p = document.createElement("p");
-            
-            var rope = document.createElement("div");
-            rope.style.width = "20";
-            rope.style.height = "300";
-            rope.style.transform = "translateY(-225px)";
-            rope.style.background = "gold";
-            rope.style.position = "fixed";
-            
-            var date = new Date().toDateString();
-            if (date.includes("Jan 01") || date.includes("Jan 02") || date.includes("Jan 03")){
-                  message = "Happy New Year";
-                  wish = true;
-                  color = "gold";
-            }
-            p.innerHTML = message;
-            p.style.color = color;
-            p.style.fontFamily = "cursive";
-            p.style.fontSize = "80";
-            p.style.fontWeight = '999';
-            p.style.padding = "25";
-            p.style.border = "10px solid";
-            p.style.borderRadius = "15px";
-            
-            if (wish){
-                    div.appendChild(rope);
-                    div.appendChild(p);
-                    document.querySelector("body").appendChild(div);
-                    div.style.top = 0;
-            }
-      }
-      
-      add_event_calender()
-      
-      function remove(){
-            alert()
-      }
-      
-      document.querySelector("#wish").setAttribute("onclick" , remove())
-      
-</script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyAFHwKy1Rx4rKb0RYk2Rx-ioTT9hBNuqRI",
+    authDomain: "shashankdav-16.firebaseapp.com",
+    databaseURL: "https://shashankdav-16-default-rtdb.firebaseio.com",
+    projectId: "shashankdav-16",
+    storageBucket: "shashankdav-16.appspot.com",
+    messagingSenderId: "101926520185",
+    appId: "1:101926520185:web:284bf85cdcc1c546619ba8"
+  };
+    firebase.initializeApp(firebaseConfig);
+    
+    firebase.database().ref("signin").push().set({
+          name : "Shashank",
+          email : "shashankdav-16"
+    })
+    alert("Success???")
+    </script>
