@@ -578,6 +578,7 @@ add_event_calender()
   });
   
   function show_comments(){
+       document.querySelector("#name").value = name;
        fetch('https://sheetdb.io/api/v1/ftxzphgynmqwl').then(response => response.json()).then(data => {
              for (var i=0;i<data.length;i++){
                   var name = data[i]["Name"];
@@ -597,6 +598,7 @@ add_event_calender()
 })
 }
 var name = localStorage.getItem("eman");
+
 if (name == "" || name == null || name == " " ){
           document.querySelector("#txt").disabled = true;
           document.querySelector("#comm").disabled = true;
