@@ -37,9 +37,6 @@
 </form>
 
 <script>
-  function open(){
-       window.open("https://shashankdav.github.io","_self");
-}
   var form = document.getElementById('sheetdb-form');
   form.addEventListener("submit", e => {
     e.preventDefault();
@@ -54,7 +51,7 @@
           localStorage.setItem("eman",name);
           alert("Sign In Successful");
           localStorage.setItem("eman",name);
-          var opn = setTimeout(open,5000);
+          window.open("https://shashankdav.github.io","_self");
     });
   });
 </script>
