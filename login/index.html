@@ -33,10 +33,13 @@
 <form action="https://sheetdb.io/api/v1/ciman6lqr2fhs" method="POST" id="sheetdb-form">
   <input name="data[Name]" id="name" placeholder="Enter your Name here...">
   <input name="data[Email]" id="email" placeholder="Enter your Email here...">
-  <button type="submit">Sign In</button>
+  <button class="but" type="submit">Sign In</button>
 </form>
 
 <script>
+  function open(){
+       window.open("https://shashankdav.github.io","_self");
+}
   var form = document.getElementById('sheetdb-form');
   form.addEventListener("submit", e => {
     e.preventDefault();
@@ -46,11 +49,12 @@
     }).then(
         response => response.json()
     ).then((html) => {
+          document.querySelector(".but").disabled = "true";
           var name = document.querySelector('#name').value;
           localStorage.setItem("eman",name);
           alert("Sign In Successful");
           localStorage.setItem("eman",name);
-          window.open("https://shashankdav.github.io","_self");
+          var opn = setTimeout(open,5000);
     });
   });
 </script>
