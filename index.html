@@ -567,9 +567,6 @@ function pp() {
       }
 }
 
-add_event_calender()
-var namm = localStorage.getItem("eman");
-document.querySelector("#name").value = namm;
 var com = 0;
 var form = document.getElementById('sheetdb-form');
 form.addEventListener("submit", e => {
@@ -580,6 +577,8 @@ form.addEventListener("submit", e => {
     }).then(
         response => response.json()
     ).then((html) => {
+          alert(localStorage.getItem("eman");
+          alert(document.querySelector("#name").value);
           document.querySelector("#txt").innerHTML = "";
           location.reload();
     });
