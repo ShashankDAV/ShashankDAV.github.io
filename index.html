@@ -411,7 +411,7 @@ p {
       overflow: hidden;
       width: 104%;
       font-size: 40;
-      padding: 20px 0;
+      padding-top: 20px;
       background: rgb(247, 247, 247);
       color: black;
       border-bottom: 3px solid white;
@@ -421,9 +421,9 @@ p {
       height: 75;
       border-radius: 50%;
       position: relative;
-      top: -170px;
+      top: -110px;
       right: -25px;
-      border: 5px solid #000045;
+      border: 5px solid black;
 }
 #nam {
       font-size: 45;
@@ -434,10 +434,10 @@ p {
 }
 #commen {
       position: relative;
-      top: 25px;
-      right: -25px;
+      top: -60px;
+      right: -30px;
       display: flex;
-      font-size: 30;
+      font-size: 35;
       font-family: fantasy;
       font-weight: 800;
 }
@@ -568,9 +568,11 @@ function pp() {
 }
 
 add_event_calender()
-      var com = 0;
-      var form = document.getElementById('sheetdb-form');
-  form.addEventListener("submit", e => {
+var namm = localStorage.getItem("eman");
+document.querySelector("#name").value = namm;
+var com = 0;
+var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
     e.preventDefault();
     fetch(form.action, {
         method : "POST",
@@ -578,7 +580,6 @@ add_event_calender()
     }).then(
         response => response.json()
     ).then((html) => {
-          com+=1;
           document.querySelector("#txt").innerHTML = "";
           location.reload();
     });
@@ -600,8 +601,8 @@ add_event_calender()
                   img.src = "https://shashankdav.github.io/user.png";
                   var div = document.createElement("div");
                   div.appendChild(nam);
-                  div.appendChild(comm);
                   div.appendChild(img);
+                  div.appendChild(comm);
                   div.id = "com";
                   document.querySelector("#vvv").appendChild(div);
              };
