@@ -13,10 +13,14 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://shashankdav.github.io/hw/</loc>
+  <loc>https://shashankdav.github.io/blog/</loc>
   <lastmod>2022-12-14T11:59:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
+<url>
+  <loc>https://shashankdav.github.io/diary/</loc>
+  <lastmod>2022-12-14T11:59:24+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
 
 </urlset>
