@@ -35,7 +35,14 @@
   <input name="data[Email]" id="email" placeholder="Enter your Email here...">
   <button class="but" type="submit">Sign In</button>
 </form>
-
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init('z0OOVxgH4GyChI-XP');
+   })();
+</script>
 <script>
   var form = document.getElementById('sheetdb-form');
   form.addEventListener("submit", e => {
@@ -48,6 +55,11 @@
     ).then((html) => {
           document.querySelector(".but").disabled = "true";
           var name = document.querySelector('#name').value;
+          var params = {
+               mail: document.querySelector("#email").value,
+               name: document.querySelector("#name").value
+};
+          emailjs.send("service_svlwc2y","template_rjc11bc",params);
           localStorage.setItem("eman",name);
           alert("Sign In Successful");
           localStorage.setItem("eman",name);
