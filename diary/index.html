@@ -135,7 +135,9 @@
       }
       
 </style>
-
+<head>
+<title>Diary-ShashankDAV</title>
+</head>
 <body>
       <div class="search">
             <input class="question" placeholder="Search..." onkeyup="srch(this.value.toLowerCase())">
@@ -165,8 +167,8 @@
       views = geet("v");
       new_view = "";
       if (views == null){
-         save("v" , "")
-         window.reload()
+         localStorage.setItem("v","");
+         alert("");
 }
       
       function sote(str,index,chr) {
