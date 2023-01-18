@@ -1,0 +1,29 @@
+<style>
+      .pp {
+            border-radius: 50%;
+            width: 60%;
+            margin-left: 20%;
+            border: 5px solid;
+      }
+      .nam {
+            font-size: 100px;
+            margin-left: 44.5%;
+            font-family: fantasy;
+            background: white;
+      }
+</style>
+<head>
+      <title></title>
+</head>
+<body>
+      <div class="profile">
+            <img src="https://shashankdav.github.io/pp.png" class='pp'>
+            <h1 class="nam"></h1>
+      </div>
+</body>
+<script>
+let params = new URLSearchParams(document.location.search);
+let name = params.get("name");
+document.querySelector("title").innerHTML = `${name}'s Website`;
+document.querySelector(".nam").innerHTML = name;
+</script>
