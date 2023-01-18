@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Web IDE</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+Here you can write the CSS Code...
+</style>
+<body>
+<h2>DEMO CODE NOT WORKING</h2>
+<b>File is not connected with server</b>
+<h1>Getting server updates</h1>
+
+ <div id="result"></div> 
+
+<script> 
+if(typeof(EventSource) !== "undefined") { var source = new EventSource("sse.txt");
+ source.onmessage = function(event) {
+ document.getElementById("result").innerHTML += event.data + "<br>"; }; 
+} else { 
+document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events..."; 
+}
+
+ </script> 
+</body>
+</html>
