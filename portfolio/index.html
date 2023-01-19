@@ -1,10 +1,4 @@
 <style>
-      .pp {
-            border-radius: 50%;
-            width: 60%;
-            height: 60%;
-            border: 5px solid;
-      }
       .nam {
             font-size: 100px;
             font-family: fantasy;
@@ -35,7 +29,6 @@
 </head>
 <body>
       <div class="profile">
-            <img src="https://shashankdav.github.io/pp.png" class='pp'>
             <h1 class="nam">Name Loading</h1>
       </div>
       <img src="" class="img">
@@ -54,12 +47,6 @@ fetch('https://sheetdb.io/api/v1/5bihgvfpd8f8v').then(response => response.json(
                   document.querySelector("title").innerHTML = data[x]["name"];
                   document.querySelector(".nam").innerHTML = data[x]["name"];
                   document.querySelector(".mes").innerHTML = data[x]['message'];
-                  if (data[x]["profile_pic"]==""){
-                        console.log("No Profile Picture Uploaded");
-                  }
-                  else{
-                        document.querySelector(".pp").src = data[x]["profile_pic"];
-                  }
                   if (data[x]["image"] == ""){
                         console.log(":)")
                   }
