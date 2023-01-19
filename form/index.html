@@ -1,0 +1,80 @@
+<style>
+      form {
+            width: 80%;
+            margin: 25% 15%;
+            padding: 2%;
+            background: #b19cd9;
+            border-radius: 25px;
+      }
+      #uname,#name,#mes {
+            margin-top: 25;
+            width: 100%;
+            font-size: 50;
+            outline: none;
+            padding: 10;
+            border-radius: 15px;
+            border: none;
+      }
+      #mes{
+            height: 30%;
+      }
+      #pp,#img{
+            font-size: 50;
+            margin-top: 25;
+            outline: none;
+      }
+      #submit {
+            font-size: 50;
+            background: pink;
+            border: none;
+            margin-top: 50;
+            margin-left: 35%;
+            padding: 10;
+            border-radius: 20px;
+            border: 5px solid;
+      }
+      #idk{
+            font-size: 75;
+            font-weight: 1000;
+            background: #b19cd9;
+            width: 100%;
+            padding: 2%;
+            border-radius: 25px;
+            display: flex;
+            text-align: center;
+            overflow: hidden;
+            overflow-x: scroll;
+            display: none;
+      }
+</style>
+<div class="frm">
+<form id="sheetdb-form" action="https://sheetdb.io/api/v1/5bihgvfpd8f8v" method="POST">
+      <input placeholder="Enter username..." id="uname" name="data[user]">
+      <input placeholder="Enter name..." id="name" name="data[name]">
+      <textarea placeholder="Enter message..." id="mes" name="data[message]"></textarea>
+      <input id="pp" name="data[profile_pic]" type="file">
+      <input id="img" name="data[image]" type="file">
+      <input id="submit" type="submit">
+</form>
+</div>
+<p id="idk">Loading...</p>
+<script>
+var com = 0;
+var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+          document.querySelector(".frm").style.display = "none";
+          alert("Site Made Successfully");
+          var sit = "Site is live at:"+"https://shashankdav.github.io/portfolio?user="+document.querySelector("#uname").value;
+          alert(sit);
+          document.querySelector("#idk").style.display = "block";
+          document.querySelector("#idk").innerHTML = sit;
+    });
+  });
+</script>
