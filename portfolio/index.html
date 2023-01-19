@@ -31,7 +31,7 @@
       <div class="profile">
             <h1 class="nam">Name Loading</h1>
       </div>
-      <img src="" class="img">
+      
       <div class="message">
             <h1 class="mes">Message Loading</h1>
       </div>
@@ -53,9 +53,6 @@ fetch('https://sheetdb.io/api/v1/5bihgvfpd8f8v').then(response => response.json(
                   else{
                         document.querySelector(".img").src = data[x]["image"];
             }
-            }
-            else{
-                  alert("There is no such user registered on this site.")
             }
       }
 })
