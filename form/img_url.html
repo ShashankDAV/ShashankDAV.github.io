@@ -1,0 +1,40 @@
+<style>
+      div{
+            background: lightblue;
+            width: 80%;
+            margin: 25% 10%;
+            padding: 25px;
+            border-radius: 15px;
+      }
+      #file {
+            font-size: 30;
+            font-weight: 1000;
+            font-family: fantasy;
+      }
+      .x {
+            font-size: 50;
+            font-family: fantasy;
+            font-weight: 1000;
+            display: none;
+      }
+</style>
+<body>
+      <div class="inp">
+            <input type="file" id="file">
+      </div>
+      <div class="x">
+         
+      </div>
+</body>
+<script>
+var file = document.querySelector("#file");
+
+file.addEventListener("change" , e => {
+      var fi = file.files[0];
+      var reader = new FileReader();
+      var url = reader.readAsDataUrl(fi);
+      document.querySelector(".inp").style.display = "none";
+      document.querySelector(".x").style.display = "block";
+      document.querySelector(".x").innerHTML = "Image URL is: "+`<a href="${url}">${url}</a>`
+})
+</script>
