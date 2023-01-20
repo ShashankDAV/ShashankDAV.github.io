@@ -1,7 +1,7 @@
 <style>
       form {
             width: 80%;
-            margin: 25% 15%;
+            margin: 25% 8%;
             padding: 2%;
             background: #b19cd9;
             border-radius: 25px;
@@ -46,12 +46,24 @@
             overflow-x: scroll;
             display: none;
       }
+      p{
+            font-size: 30px;
+            font-family: fantasy;
+            font-weight: 1000;
+            background: white;
+            width: 95%;
+            text-align: center;
+            border-radius: 15px;
+            padding: 15px;
+      }
 </style>
 <div class="frm">
 <form id="sheetdb-form" action="https://sheetdb.io/api/v1/5bihgvfpd8f8v" method="POST">
       <input placeholder="Enter username..." id="uname" name="data[user]">
       <input placeholder="Enter name..." id="name" name="data[name]">
       <textarea placeholder="Enter message..." id="mes" name="data[message]"></textarea>
+      <input placeholder="Enter image url...." id="name" name="data[image]" type="url">
+      <p>Don't have image url make one right <a href="https://shashankdav.github.io">here</a></p>
       <input id="submit" type="submit">
 </form>
 </div>
