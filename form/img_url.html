@@ -45,6 +45,9 @@ function func(){
       var file = document.querySelector("#file");
       var fi = file.files[0];
       var reader = new FileReader();
+      reader.addEventListener("load" , () => {
+            alert(reader.result);
+      });
       var url = reader.readAsDataURL(fi);
       document.querySelector(".inp").style.display = "none";
       document.querySelector(".x").style.display = "block";
