@@ -1,26 +1,173 @@
-<!doctype html>
-<html>
-  <head>
-    <script
+<style>
+      #close {
+            height: 80;
+            width: 80;
+            margin-left: 90%;
+      }
+      
+      .search {
+            display: flex;
+            width: 100%;
+            border: 5px solid orange;
+            border-radius: 75px;
+            overflow: hidden;
+            height: 100px;
+            margin: 0;
+      }
+      
+      .search_img {
+            height: 75;
+            margin: 13 -80;
+            margin-left: 5;
+      }
+      
+      .question {
+            margin-left: 30;
+            border: none;
+            outline: none;
+            font-size: 60;
+            height: 100px;
+            background: transparent;
+            color: black;
+            width: 77%;
+      }
+      
+      #calen-1 {
+            background: url("https://shashankdav.github.io/calender/5.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+      }
+      #calen-2 {
+            background: url("https://shashankdav.github.io/calender/4.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+      }
+      #calen-3 {
+            background: url("https://shashankdav.github.io/calender/6.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+      }
+      #calen-4 {
+            background: url("https://shashankdav.github.io/calender/1.jpg");
+            border: 6px solid;
+            padding: 10;
+            border-radius: 15px;
+            height: 250;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+      }
+      #date {
+            font-size: 100;
+      }
+      
+      .save {
+            margin: 20;
+            padding: 20;
+            background: rgb(1,200,250);
+            border-radius: 5px;
+            position: fixed;
+            top: -101%;
+            transition: all 1s;
+      }
+      
+      #txt {
+            margin-top: 10;
+            padding: 10px;
+            width: 100%;
+            height: 350;
+            font-size: 60;
+            font-family: Monospace;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            background: white;
+      }
+      
+      #bu {
+            margin-top: 10;
+            background: green;
+            border-radius: 15px;
+            font-size: 65;
+            margin-left: 83%;
+            outline: none;
+            border: none;
+      }
+      
+      #da {
+            width: 53%;
+            font-size: 60;
+            border-radius: 15px;
+            border: 5px solid;
+            background: white;
+            outline: none;
+            margin-top: 10;
+      }
+      
+      label {
+            font-size: 60;
+      }
+      
+      #plus {
+            font-size: 140;
+            position: relative;
+            top: -35;
+            right: -90;
+      }
+      
+</style>
+<head>
+<title>Diary-ShashankDAV</title>
+</head>
+<script
       src="https://raw.githack.com/brython-dev/brython/master/www/src/brython.js">
-    </script>
-  </head>
-  <h1 id="hi">
-        hi
-  </h1>
-  <body onload="brython()">
-    <script type="text/python">
-    
-    from browser import alert , console , document
-    
-    x=open("site.txt","w")
-    ax=x.write("Jai Shree Ram")
+</script>
+<body onload="brython()">
 
-    alert("Done")
-    
-    </script>
-    <script>
-          
-    </script>
-  </body>
-</html>
+      <div class="search">
+            <input class="question" placeholder="Search..." onkeyup="srch(this.value.toLowerCase())">
+            <img class="search_img" src="https://shashankdav.github.io/search.png" alt="O">
+            <div id="plus">+</div>
+      </div>
+      <div id="save" class="save">
+      <div onclick="clse()"><img id="close" src="https://shashankdav.github.io/x.png" alt="oo"></div>
+      <div>
+      <label for="da">Select Date:</label>
+      <input id="da" type="date" placeholder="Select Date">
+      </div>
+      <textarea id="txt" placeholder="Write Diary..."></textarea>
+      <button id="bu" onclick="add(document.querySelector('#txt').value)">Save</button> 
+      </div>
+      
+<script type="text/python">
+
+from browser import document , alert , html
+
+def save():
+      save = document["save"]
+      save.style.top = "200px"
+
+button = document["plus"]
+button.bind("press",save())
+
+</script>
+</body>
