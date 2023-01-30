@@ -56,7 +56,12 @@ function show(){
    for (let i=1 ; i<id+1;i++){
             console.log(i)
             firebase.database().ref().child("/message").child(i).get().then((snapshot) => {
-
+                  let e = document.querySelector(".main");
+                  var child = e.lastElementChild;  
+                  while (child) { 
+                        e.removeChild(child); 
+                        child = e.lastElementChild; 
+        }
                   var el = document.createElement("div");
                   el.id = "mess";
                   el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
