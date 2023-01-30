@@ -606,14 +606,11 @@ var nam = localStorage.getItem("eman");
 
 if (nam){
    console.log("Logged In")
-   alert(nam)
 }
 else{
-          alert("1")
           document.querySelector("#txt").disabled = true;
           document.querySelector("#comm").disabled = true;
           document.querySelector("#txt").placeholder = "Sign In first..";
-          alert("2")
 }
 document.querySelector("#name").value = name;
 
