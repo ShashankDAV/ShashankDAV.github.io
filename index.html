@@ -604,7 +604,10 @@ form.addEventListener("submit", e => {
 }
 var name = localStorage.getItem("eman");
 
-if (name == null){
+if (name){
+   console.log("Logged In")
+}
+else{
           document.querySelector("#txt").disabled = true;
           document.querySelector("#comm").disabled = true;
           document.querySelector("#txt").placeholder = "Sign In first..";
