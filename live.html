@@ -1,3 +1,4 @@
+
 <style>
       #mess {
             width: 100%;
@@ -66,7 +67,15 @@
 })
 
 function ask(){
-      name = prompt("Enter your name to continue:")
+      var login = localStorage.getItem("eman");
+      if (login== null || login == ""){
+            alert("Login First");
+            window.open("https://shashankdav.github.io/login","_self");
+            document.querySelector("#but").disabled = true;
+      }
+      else{
+            name = login;
+      }
 }
 
 document.addEventListener("load",ask())
@@ -85,11 +94,6 @@ function send(){
                   console.log({error});
                 } else {
                     pa = pa +1;
-                    let e = document.querySelector(".main")
-                    var child = e.lastElementChild;  
-                    while(child) { 
-                        document.querySelector(".main").removeChild(child); 
-                        child = e.lastElementChild;}
                     console.log("Sent")
       }
 })
