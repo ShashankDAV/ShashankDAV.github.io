@@ -62,8 +62,10 @@ function show(){
                   el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
                   document.querySelector(".main").appendChild(el);
                   console.log("Fetched Successfully");
-                  window.location.reload();
-})}
+                  
+})
+   window.location.reload();
+}
 })}
 
 show()
