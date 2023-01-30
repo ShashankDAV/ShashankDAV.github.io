@@ -52,16 +52,16 @@ function show(){
   firebase.database().ref('/message/').on('value',(snap)=>{
     var totalRecord =  snap.numChildren();
     id = totalRecord;
-
-   for (let i=1 ; i<id+1;i++){
-            console.log(i)
-            firebase.database().ref().child("/message").child(i).get().then((snapshot) => {
-                  let e = document.querySelector(".main");
+    let e = document.querySelector(".main");
                   var child = e.lastElementChild;  
                   while (child) { 
                         e.removeChild(child); 
                         child = e.lastElementChild; 
         }
+
+   for (let i=1 ; i<id+1;i++){
+            console.log(i)
+            firebase.database().ref().child("/message").child(i).get().then((snapshot) => {
                   var el = document.createElement("div");
                   el.id = "mess";
                   el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
