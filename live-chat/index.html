@@ -32,8 +32,13 @@
 </style>
 <body>
       <h1>Live-Chat</h1>
-      <form id="form" action="https://shashankdav.github.io/live-chat/chat.html" method="POST">
       <input required type="name" placeholder="Room Name" id="room" name="room">
-      <button id="submit">Submit</button>
-      </form>
+      <button onclick="opn()" id="submit">Submit</button>
 </body>
+<script>
+       function opn(){
+               var roomName = document.querySelector("#name").value;
+               var link = "https://ShashankDAV.github.io/live-chat/chat.html?room="+roomName;
+               window.open(link,"_self");
+}
+</script>
