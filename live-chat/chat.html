@@ -65,7 +65,7 @@ function show(){
 
    for (let i=1 ; i<id+1;i++){
             console.log(i)
-            firebase.database().ref().child("/"+name).child(i).get().then((snapshot) => {
+            firebase.database().ref().child("/"+room).child(i).get().then((snapshot) => {
                   var el = document.createElement("div");
                   el.id = "mess";
                   el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
