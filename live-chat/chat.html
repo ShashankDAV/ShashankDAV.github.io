@@ -8,7 +8,7 @@
             margin-top: 15px;
       }
       #but {
-            font-size: 60;
+            font-size: 100;
             position: fixed;
             background: white;
             font-weight: 1000;
@@ -18,6 +18,7 @@
             outline: none;
             bottom: 25;
             left: 20;
+            width: 120;
       }
 </style>
 <body>
@@ -31,6 +32,9 @@
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
 <script type="module">
 
+  let params = new URLSearchParams(document.location.search);
+  let room = params.get("room");
+  
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 
   const firebaseConfig = {
@@ -49,7 +53,7 @@
   let name = "";
 
 function show(){
-  firebase.database().ref('/message/').on('value',(snap)=>{
+  firebase.database().ref("/"+room+"/").on('value',(snap)=>{
     var totalRecord =  snap.numChildren();
     id = totalRecord;
     let e = document.querySelector(".main");
@@ -61,7 +65,7 @@ function show(){
 
    for (let i=1 ; i<id+1;i++){
             console.log(i)
-            firebase.database().ref().child("/message").child(i).get().then((snapshot) => {
+            firebase.database().ref().child("/"+name).child(i).get().then((snapshot) => {
                   var el = document.createElement("div");
                   el.id = "mess";
                   el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
@@ -74,13 +78,13 @@ show()
 
 function ask(){
       var login = localStorage.getItem("eman");
-      if (login== null || login == ""){
-            alert("Login First");
-            window.open("https://shashankdav.github.io/login","_self");
-            document.querySelector("#but").disabled = true;
+
+      if (login==null){
+            name = login;
       }
       else{
-            name = login;
+           alert("Sign in First");
+           window.open("https://shashankdav.github.io/login","_self")
       }
 }
 
@@ -95,7 +99,7 @@ function send(){
   let messNo = id +1;
   console.log(messNo)
   
-  firebase.database().ref('/message/'+messNo).set(data,function(error) {
+  firebase.database().ref(`/${room}/`+messNo).set(data,function(error) {
                 if (error) {
                   console.log({error});
                 } else {
@@ -105,5 +109,3 @@ function send(){
 })
 }
 </script>
-
-
