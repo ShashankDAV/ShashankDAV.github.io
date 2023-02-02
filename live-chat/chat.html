@@ -80,11 +80,11 @@ function ask(){
       var login = localStorage.getItem("eman");
 
       if (login==null){
-            name = login;
+            alert("Sign in First");
+           window.open("https://shashankdav.github.io/login","_self")
       }
       else{
-           alert("Sign in First");
-           window.open("https://shashankdav.github.io/login","_self")
+           name = login;
       }
 }
 
