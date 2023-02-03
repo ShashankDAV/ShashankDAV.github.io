@@ -21,6 +21,9 @@
             width: 120;
       }
 </style>
+<head>
+<title></title>
+</head>
 <body>
       
 <div class="main">
@@ -34,6 +37,7 @@
 
   let params = new URLSearchParams(document.location.search);
   let room = params.get("room");
+  document.querySelector("title").value = room;
   
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 
