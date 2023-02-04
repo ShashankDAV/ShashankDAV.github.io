@@ -171,6 +171,8 @@ function show(){
                   }
                   el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
                   document.querySelector(".chat").appendChild(el);
+                  let hit = document.querySelector(".chat").scrollHeight;
+                  document.querySelector(".chat").scrollTop = hit;
 })}
 })}
 
