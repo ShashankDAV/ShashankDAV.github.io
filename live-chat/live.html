@@ -91,10 +91,30 @@
             border-radius: 10px;
             padding: 5 0;
       }
+      .alrt{
+            width: 100%;
+            background: white;
+            color: #000045;
+            position: fixed;
+            font-size: 60;
+            z-index: 2;
+            padding: 15 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 1000;
+            height: 150;
+            left: -2;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            top: -300px;
+            transition-duration: 3s;
+      }
 </style>
 <head><title>Live-Chat</title></head>
 <body>
       <div class="body">
+      <div class="alrt">a</div>
       <div class="chat">
             <div id="txt">Messages are loading.....</div>
       </div>
@@ -156,12 +176,20 @@ function show(){
 
 show()
 
+function alrt(txt){
+      document.querySelector(".alrt").style.top = "-5px";
+      document.querySelector(".alrt").innerHTML = txt;
+      setInterval(() => {
+            document.querySelector(".alrt").style.top = "-300px";
+      } , 5000)
+}
+
 function ask(){
       var login = localStorage.getItem("eman");
 
       if (login==null){
-            alert("Sign in First");
-           window.open("https://shashankdav.github.io/login","_self")
+           alert("Sign in First");
+           window.open("https://shashankdav.github.io/login","_self");
       }
       else{
            name = login;
@@ -171,20 +199,24 @@ function ask(){
 document.addEventListener("load",ask())
 
 function send(){
-  let data = {};
-  data["message"] = document.querySelector(".message").value;
-  document.querySelector(".message").value = "";
-  data["name"] = name;
-  let messNo = id +1;
-  console.log(messNo)
+      let data = {};
+      let msg = document.querySelector(".message").value;
+      if (msg == ""){
+            alrt("Enter Message.")
+      }
+      else{
+            document.querySelector(".message").value = "";
+            data["name"] = name;
+            let messNo = id +1;
   
-  firebase.database().ref(`/${room}/`+messNo).set(data,function(error) {
+            firebase.database().ref(`/${room}/`+messNo).set(data,function(error) {
                 if (error) {
                   console.log({error});
                 } else {
                     pa = pa +1;
       }
 })
+}
 }
 
 document.querySelector(".send").addEventListener("click" , send)
