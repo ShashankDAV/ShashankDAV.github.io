@@ -176,9 +176,10 @@ function show(){
 
 show()
 
-function alrt(txt){
+function alrt(txt,col){
       document.querySelector(".alrt").style.top = "-5px";
       document.querySelector(".alrt").innerHTML = txt;
+      document.querySelector(".alert").style.background = col;
       setInterval(() => {
             document.querySelector(".alrt").style.top = "-300px";
       } , 5000)
@@ -202,7 +203,7 @@ function send(){
       let data = {};
       let msg = document.querySelector(".message").value;
       if (msg == ""){
-            alrt("Enter Message.")
+            alrt("Enter Message.","lightred")
       }
       else{
             document.querySelector(".message").value = "";
