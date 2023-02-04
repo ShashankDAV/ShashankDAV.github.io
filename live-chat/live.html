@@ -206,7 +206,7 @@ function send(){
             alrt("Enter Message.","lightred")
       }
       else{
-            document.querySelector(".message").value = "";
+            data["message"] = msg;
             data["name"] = name;
             let messNo = id +1;
   
@@ -215,6 +215,7 @@ function send(){
                   console.log({error});
                 } else {
                     pa = pa +1;
+                    document.querySelector(".message").value = "";
       }
 })
 }
