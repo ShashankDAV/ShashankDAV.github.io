@@ -108,13 +108,14 @@
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
             top: -300px;
-            transition-duration: 3s;
+            transition-duration: 1s;
       }
 </style>
 <head><title>Live-Chat</title></head>
 <body>
       <div class="body">
       <div class="alrt">a</div>
+      <div class="type">Link</div>
       <div class="chat">
             <div id="txt">Messages are loading.....</div>
       </div>
@@ -181,10 +182,10 @@ show()
 function alrt(txt,col){
       document.querySelector(".alrt").style.top = "-5px";
       document.querySelector(".alrt").innerHTML = txt;
-      document.querySelector(".alert").style.background = col;
+      document.querySelector(".alrt").style.background = col;
       setInterval(() => {
             document.querySelector(".alrt").style.top = "-300px";
-      } , 5000)
+      } , 4000)
 }
 
 function ask(){
@@ -205,7 +206,7 @@ function send(){
       let data = {};
       let msg = document.querySelector(".message").value;
       if (msg == ""){
-            alrt("Enter Message.","lightred")
+            alrt("Enter Message.","rgb(255,70,0)")
       }
       else{
             data["message"] = msg;
