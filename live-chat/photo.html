@@ -1,9 +1,10 @@
 <body>
       <input type="file" id="fl">
       <button onclick="lol()">Hi</button>
+      <img class="i" src="">
 </body>
 <script>
       function lol(){
-            alert(document.querySelector("#fl").value)
+            document.querySelector(".i").src =  document.querySelector("#fl").value;
       }
 </script>
