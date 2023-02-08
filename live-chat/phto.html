@@ -233,12 +233,14 @@ function phot(event){
 function send(){
       let data = {};
       let msg = document.querySelector(".message").value;
-      if (msg == ""){
+      if (msg == "" || imgUrl == ""){
             alrt("Enter Message.","rgb(255,70,0)")
       }
       else{
             if (img){
                   data["message"] = msg + `<img src="` + imgUrl + `">`;
+                  img = false;
+                  imgUrl = "";
             }
             else{
                   data["message"] = msg;
