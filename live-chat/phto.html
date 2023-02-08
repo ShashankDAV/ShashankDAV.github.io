@@ -241,11 +241,14 @@ function send(){
 }
 function photo(){
       document.querySelector("#file").click();
-      
-      var loadFile = function(event) {
-	      window.open(URL.createObjectURL(event.target.files[0]) , "_self")
-}}
+}
+
+function phot(event){
+	alrt(URL.createObjectURL(event.target.files[0]));
+}
+
 
 document.querySelector(".send").addEventListener("click" , send);
-document.querySelector(".cam").addEventListener("click" , photo)
+document.querySelector(".cam").addEventListener("click" , photo);
+document.querySelector("#file").addEventListener("change" , phot)
 </script>
