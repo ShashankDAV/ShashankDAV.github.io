@@ -227,6 +227,8 @@ let img = false;
 
 function phot(event){
       imgUrl = URL.createObjectURL(event.target.files[0]);
+      var imgFullURL = document.querySelector('#file').src;
+      alert(imgFullURL);
       img = true;
 }
 
