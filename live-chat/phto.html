@@ -240,9 +240,15 @@ function send(){
 }
 }
 function photo(){
-      
+      let fake = document.querySelector('.cam');
+      fake.addEventListener('click', function(e) {
+            e.preventDefault();
+            let clickEvent = new Event('click');
+            document.querySelector("#file").dispatchEvent(clickEvent);
+})
 }
 
 document.querySelector(".send").addEventListener("click" , send);
 document.querySelector(".cam").addEventListener("click" , photo)
 </script>
+    
