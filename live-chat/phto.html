@@ -218,6 +218,18 @@ function ask(){
 
 document.addEventListener("load",ask())
 
+function photo(){
+      document.querySelector("#file").click();
+}
+
+let imgUrl = "";
+let img = false;
+
+function phot(event){
+      imgUrl = URL.createObjectURL(event.target.files[0]));
+      img = true;
+}
+
 function send(){
       let data = {};
       let msg = document.querySelector(".message").value;
@@ -225,7 +237,12 @@ function send(){
             alrt("Enter Message.","rgb(255,70,0)")
       }
       else{
-            data["message"] = msg;
+            if (img){
+                  data["message"] = msg + `<img src="` + imgUrl + `">`;
+            }
+            else{
+                  data["message"] = msg;
+            }
             data["name"] = name;
             let messNo = id +1;
   
@@ -239,14 +256,6 @@ function send(){
 })
 }
 }
-function photo(){
-      document.querySelector("#file").click();
-}
-
-function phot(event){
-	alrt(URL.createObjectURL(event.target.files[0]));
-}
-
 
 document.querySelector(".send").addEventListener("click" , send);
 document.querySelector(".cam").addEventListener("click" , photo);
