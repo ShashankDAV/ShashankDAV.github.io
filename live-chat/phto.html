@@ -27,19 +27,19 @@
             border-bottom-right-radius: 5px;
             position: relative;
       }
-      .cam {
+      .font {
             width: 15%;
             background: rgb(0,143,250);
             border: none;
             outline: none;
             position: relative;
-      }
-      .cam img{
-            height: 100px;
-            width: 100%;
+            font-weight: 1000;
+            color: white;
+            font-size: 90;
       }
       .message {
-            height: 105px;
+            height: 110px;
+            outline: none;
             width: 85%;
             font-size: 50;
             border: 5px solid rgb(0,143,250);
@@ -125,6 +125,33 @@
            width: 550;
            border-radius: 25px;
 }
+      .fonts{
+            width: 95%;
+            background: #F595E8;
+            border-radius: 25px;
+            padding: 30 0;
+            position: fixed;
+            margin: 0 2.5%;
+            bottom: -200px;
+            transition-duration: 0.75s;
+      }
+      .fonts button{
+            width: 150px;
+            height: 150px;
+            background: #000045;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            margin: 50px;
+            font-size: 30px;
+            font-weight: 1000;
+            border: 5px solid #000045;
+      }
+      .fonts button:hover{
+            background: #000090;
+            border: 5px solid cyan;
+      }
 </style>
 <head><title>Live-Chat</title></head>
 <body>
@@ -134,10 +161,14 @@
       <div class="chat">
             <div id="txt">Messages are loading.....</div>
       </div>
+      <div class="fonts" onclick="document.querySelector('.fonts').style.bottom = '-200px'">
+            <button id="<marquee style='color:red; font-size:100;font-weight: 1000;font-family: cursive;'>" onclick='cf()'>Moving</button>
+            <button onclick="setColor()">Colors</button>
+      </div>
       <div class="mes">
             <textarea class="message" placeholder="Enter your message..."></textarea>
-            <button class="cam"><img src="https://shashankdav.github.io/images/camera.jpg"></button>
-            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"><button for="image" class="send"><img src="https://shashankdav.github.io/send.png"></button>
+            <button class="font">F</button>
+            <button class="send"><img src="https://shashankdav.github.io/send.png"></button>
       </div>
       </div>
 </body>
@@ -222,25 +253,28 @@ function photo(){
       document.querySelector("#file").click();
 }
 
-let imgUrl = "";
-let img = false;
+let fonty = "";
+let font = false;
 
-function phot(event){
-      imgUrl = URL.createObjectURL(event.target.files[0]);
-      img = true;
+function cf() {
+      alert("Hi")
+}
+
+function fonts(){
+      document.querySelector(".fonts").style.bottom = "130px";
 }
 
 function send(){
       let data = {};
       let msg = document.querySelector(".message").value;
-      if (msg == "" || imgUrl == ""){
+      if (msg == ""){
             alrt("Enter Message.","rgb(255,70,0)")
       }
       else{
-            if (img){
-                  data["message"] = msg + `<img src="` + imgUrl + `">`;
-                  img = false;
-                  imgUrl = "";
+            if (font){
+                  data["message"] = fonty + msg;
+                  font = false;
+                  fonty = "";
             }
             else{
                   data["message"] = msg;
@@ -260,6 +294,5 @@ function send(){
 }
 
 document.querySelector(".send").addEventListener("click" , send);
-document.querySelector(".cam").addEventListener("click" , photo);
-document.querySelector("#file").addEventListener("change" , phot)
+document.querySelector(".font").addEventListener("click" , fonts);
 </script>
