@@ -165,9 +165,9 @@
       <div class="chat">
             <div id="txt">Messages are loading.....</div>
       </div>
-      <div class="fonts" onclick="document.querySelector('.fonts').style.bottom = '-300px'">
+      <div class="fonts" onclick="document.querySelector('.fonts').style.bottom = '-300px' ; document.querySelector('.fonts').style.background = 'transparent'">
             <button class="marq">Moving</button>
-            <button class="col">Colors</button>
+            <button class="col">Color</button>
       </div>
       <div class="mes">
             <textarea class="message" placeholder="Enter your message..."></textarea>
@@ -261,6 +261,8 @@ let font = false;
 
 function fonts(){
       document.querySelector(".fonts").style.bottom = "130px";
+      document.querySelector(".fonts").style.background = "#F595E8";
+      
 }
 
 function send(){
