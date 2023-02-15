@@ -1,5 +1,9 @@
 <style>
 
+*{
+      font-family: fantasy;
+}
+
 body {
      background: linear-gradient(135deg , #ADEFD1FF, #00203FFF);
 }
@@ -226,33 +230,22 @@ body {
 
 .notice {
       width: 99%;
-      height: 770;
+      margin: 0 0.5%;
       background: #ffffff;
-      position: relative;
-      border-radius: 15px;
-      justify-content: center;
-      margin: 0 5;
-      overflow: hidden;
+      border-radius: 5px;
 }
 
 .h {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      width: 100%;
-      margin-top: 0;
-      height: 250;
-      font-size: 100;
-      background: white;
-      margin: 0;
-      border-radius: 5px;
-      z-index: 1;
+      font-size: 130px;
+      text-align: center;
+      font-family: fantasy;
+      position: relative;
+      bottom: -50px;
 }
 
 .n1 {
       position: relative;
-      bottom: -230;
+      top: -10px;
       border-bottom: 5px solid;
       padding: 10px;
       height: auto;
@@ -267,7 +260,7 @@ h2 {
 }
 
 p {
-      font-size: 25;
+      font-size: 30;
 }
 
 #co {
@@ -400,11 +393,11 @@ p {
 }
 
 #vvv {
-      margin-top: 250;
       border-left: 5px solid;
       border-right: 5px solid;
       border-top: 5px solid;
-      //border-radius: 15px;
+      margin: 0 1%;
+      margin-top: 250;
       overflow: hidden;
 }
 #com {
@@ -482,12 +475,20 @@ p {
 
 <h1 class="h">Notice</h1>
 <div class="n1">
-      <h2>Date: 6/11/22</h2>
+      <h2>Date: 06/11/22</h2>
       <p>Homework site is under maintenance so homework will not be uploaded. I am extremely sorry for this inconvenience.</p>
 </div>
 <div class="n1">
       <h2>Date : 30/12/22</h2>
       <p>Login site is now fixed which was not working as supposed to work earlier.</p>
+</div>
+<div class="n1">
+      <h2>Date : 15/02/22</h2>
+      <p>No updates will be made on this site as my exams are going on. :)</p>
+</div>
+<div class="n1">
+      <h2>Date : 15/02/22</h2>
+      <p>If you have any doubt in study , click <a href="https://shashankdav.github.io/live-chat/live.html?room=doubt">here</a> and enter your doubt. Your doubt will be solved in short period of time.</p>
 </div>
 </div>
 <div class="comment-section">
@@ -498,7 +499,7 @@ p {
       </form>
 </div>
 <div id="vvv">
-
+      
 </div>
 <div class="copyright">
       <p>© Copyright ShashankDAV.github.io</p><img src='https://shashankdav.github.io/logo.png'><br>
@@ -605,7 +606,7 @@ form.addEventListener("submit", e => {
 var nam = localStorage.getItem("eman");
 
 if (nam){
-   console.log("Logged In")
+    let iddddddd = 0;
 }
 else{
           document.querySelector("#txt").disabled = true;
