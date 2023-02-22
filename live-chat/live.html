@@ -10,7 +10,7 @@
             background: #000045;
       }
       .chat {
-            height: 93%;
+            height: 93.5%;
             overflow: hidden;
             overflow-y: scroll;
       }
@@ -27,19 +27,8 @@
             border-bottom-right-radius: 5px;
             position: relative;
       }
-      .font {
-            width: 15%;
-            background: rgb(0,143,250);
-            border: none;
-            outline: none;
-            position: relative;
-            font-weight: 1000;
-            color: white;
-            font-size: 90;
-      }
       .message {
-            height: 110px;
-            outline: none;
+            height: 105px;
             width: 85%;
             font-size: 50;
             border: 5px solid rgb(0,143,250);
@@ -78,9 +67,6 @@
             border-radius: 25px;
             font-weight: 1000;
             position: relative;
-      }
-      h1{
-            font-size: 35px;
       }
       #pxt:after {
             content: '';
@@ -128,50 +114,52 @@
            width: 550;
            border-radius: 25px;
 }
-      .fonts{
-            width: 95%;
-            background: #F595E8;
-            border-radius: 25px;
-            padding: 30 0;
-            position: fixed;
-            margin: 0 2.5%;
-            bottom: -300px;
-            transition-duration: 0.75s;
-      }
-      .fonts button{
-            width: 150px;
-            height: 150px;
-            background: #000045;
+      .top{
             color: white;
-            border: none;
-            outline: none;
-            border-radius: 50%;
-            margin: 50px;
-            font-size: 30px;
-            font-weight: 1000;
-            border: 5px solid #000045;
+            position: fixed;
+            background: lightgrey;
+            z-index: 4;
+            padding: 0px 30px ;
+            border-radius: 15px;
+            width: 50;
+            height: 100;
+            margin-left: 15px;
+            overflow: hidden;
+            align-items: center;
+            display: flex;
+            margin-top: 15px;
+            transition: width 0.5s;
       }
-      .fonts button:hover{
-            background: #000090;
-            border: 5px solid cyan;
+      .online{
+            background: #3dcd00;
+            margin-left: 30;
+            padding-left: 100;
+            padding-right: 100;
+            font-size: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-weight: 1000;
+            font-family: fantasy;
+      }
+      .op{
+            font-size: 100;
       }
 </style>
 <head><title>Live-Chat</title></head>
 <body>
-      <input type="color" class="cc" style="width: 0px ; height: 0px ; position : fixed ; top : -1000px">
       <div class="body">
       <div class="alrt">a</div>
-      <div class="type">Link</div>
+      <div class="top">
+            <h1 class="op">></h1>
+            <div class="online">Online : 0</div>
+      </div>
       <div class="chat">
             <div id="txt">Messages are loading.....</div>
       </div>
-      <div class="fonts" onclick="document.querySelector('.fonts').style.bottom = '-300px' ; document.querySelector('.fonts').style.background = 'transparent'">
-            <button class="marq">Moving</button>
-            <button class="col">Color</button>
-      </div>
       <div class="mes">
-            <textarea class="message" placeholder="Enter your message..."></textarea>
-            <button class="font">F</button>
+            <textarea class="message" placeholder="Enter your message.."></textarea>
             <button class="send"><img src="https://shashankdav.github.io/send.png"></button>
       </div>
       </div>
@@ -179,6 +167,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
 <script type="module">
+
   let params = new URLSearchParams(document.location.search);
   let room = params.get("room");
   
@@ -194,7 +183,7 @@
   };
 
   firebase.initializeApp(firebaseConfig);
-
+  
   var pa = 0;
   let id = 1;
   let name = "";
@@ -252,19 +241,6 @@ function ask(){
 
 document.addEventListener("load",ask())
 
-function photo(){
-      document.querySelector("#file").click();
-}
-
-let fonty = "";
-let font = false;
-
-function fonts(){
-      document.querySelector(".fonts").style.bottom = "130px";
-      document.querySelector(".fonts").style.background = "#F595E8";
-      
-}
-
 function send(){
       let data = {};
       let msg = document.querySelector(".message").value;
@@ -272,14 +248,7 @@ function send(){
             alrt("Enter Message.","rgb(255,70,0)")
       }
       else{
-            if (font){
-                  data["message"] = fonty + msg;
-                  font = false;
-                  fonty = "";
-            }
-            else{
-                  data["message"] = msg;
-            }
+            data["message"] = msg;
             data["name"] = name;
             let messNo = id +1;
   
@@ -294,16 +263,36 @@ function send(){
 }
 }
 
+var lft = true;
 
-
-document.querySelector(".marq").addEventListener("click" , () => {
-      font = true;
-      fonty = `<marquee style='color:${document.querySelector(".cc").value}; font-size:100;font-weight: 1000;font-family: cursive;'>`;
+document.querySelector(".top").addEventListener("click" , () => {
+      if (lft){
+            document.querySelector(".top").style.width = "525px";
+            document.querySelector(".op").innerHTML = "<";
+            lft = false
+      }
+      else{
+            document.querySelector(".op").innerHTML = ">";
+            document.querySelector(".top").style.width = "50px";
+            lft = true
+      }
 })
-document.querySelector(".col").addEventListener("click" , () =>{
-      document.querySelector(".cc").click();
-})
 
-document.querySelector(".send").addEventListener("click" , send);
-document.querySelector(".font").addEventListener("click" , fonts);
+function add(){
+      firebase.database().ref().child("/"+room).child("online").get().then((snapshot) => {
+            let online = snapshot.val()['online'] + 1 
+            document.querySelector(".online").innerHTML = "Online : " + online;
+            firebase.database().ref(`/${room}/`+"online").set({"online":online})
+      })
+}
+
+document.querySelector(".send").addEventListener("click" , send)
+window.addEventListener("load" , add)
+window.addEventListener('unload', function (e) {
+            firebase.database().ref().child("/"+room).child("online").get().then((snapshot) => {
+            let online = snapshot.val()['online'] - 1
+            document.querySelector(".online").innerHTML = "Online : " + online;
+            firebase.database().ref(`/${room}/`+"online").set({"online":online})
+      })
+});
 </script>
