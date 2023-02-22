@@ -38,7 +38,7 @@
       }
       #txt {
             background: white;
-            padding: 20 50;
+            padding: 0 50;
             width: 550;
             font-size: 35;
             margin: 15;
@@ -59,7 +59,7 @@
       }
       #pxt {
             background: white;
-            padding: 20 50;
+            padding: 0 50;
             width: 550;
             font-size: 35;
             margin: 15;
@@ -146,13 +146,76 @@
       .op{
             font-size: 100;
       }
+      #name-c {
+            color: crimson;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      #name-m {
+            color: magenta;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      #name {
+            color: magenta;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+            animation: color 5s linear infinite;
+      }
+      @keyframes color {
+            0% {
+                  color: cyan;
+            }
+            10%{
+                  color: green;
+            }
+            20%{
+                  color: blue;
+            }
+            30%{
+                  color: red;
+            }
+            40%{
+                  color : yellow
+            }
+            50%{
+                  color : purple;
+            }
+            60% {
+                  color : pink;
+            }
+            70% {
+                  color : blue;
+            }
+            80% {
+                  color: crimson;
+            }
+            90% {
+                  color: orange;
+            }
+            100%{
+                  color: magenta;
+            }
+      }
+      #mess {
+            position: relative;
+            top: -15px;
+            left: -15px;
+            font-weight: 450;
+      }
 </style>
 <head><title>Live-Chat</title></head>
 <body>
       <div class="body">
-      <div class="alrt">a</div>
+      <div class="alrt"></div>
       <div class="chat">
-            <div id="txt">Messages are loading.....</div>
+            <div id="txt"><h2 id="name">Op</h2><h3 id="mess">Messages are loading.....</h3></div>
       </div>
       <div class="mes">
             <textarea class="message" placeholder="Enter your message.."></textarea>
@@ -190,27 +253,33 @@ function show(){
     var totalRecord =  snap.numChildren();
     id = totalRecord;
     let e = document.querySelector(".chat");
-                  var child = e.lastElementChild;  
-                  while (child) { 
-                        e.removeChild(child); 
-                        child = e.lastElementChild; 
-        }
+    e.innerHTML = "";
 
-   for (let i=1 ; i<id+1;i++){
+    for (let i=1 ; i<id+1;i++){
             firebase.database().ref().child("/"+room).child(i).get().then((snapshot) => {
                   var el = document.createElement("div");
+                  var he = document.createElement("h2");
+                  var mes = document.createElement("h3");
+                  mes.id = "mess"
                   if (snapshot.val()['name'] == localName){
                         el.id = "pxt";
+                        he.id = "name-c";
+                  }
+                  else if (snapshot.val()['name'] == "ShashankDAV[Owner]"){
+                        he.id = "name";
                   }
                   else{
                        el.id = "txt";
+                       he.id = "name-m"
                   }
-                  el.innerHTML = snapshot.val()['name'] + " : " + snapshot.val()['message'];
+                  he.innerHTML = snapshot.val()['name'];
+                  mes.innerHTML = snapshot.val()['message']
+                  el.appendChild(he)
+                  el.appendChild(mes)
                   document.querySelector(".chat").appendChild(el);
                   let hit = document.querySelector(".chat").scrollHeight;
                   document.querySelector(".chat").scrollTop = hit;
-})}
-})}
+})}})}
 
 show()
 
@@ -246,7 +315,7 @@ function send(){
       else{
             data["message"] = msg;
             data["name"] = name;
-            let messNo = id +1;
+            let messNo = id + 1;
   
             firebase.database().ref(`/${room}/`+messNo).set(data,function(error) {
                 if (error) {
@@ -275,23 +344,5 @@ document.querySelector(".top").addEventListener("click" , () => {
 })
 
 document.querySelector(".send").addEventListener("click" , send)
-
-let online = 0;
-firebase.database().ref().child("/"+room).child("online").get().then((s) => {
-      online = online + s.val()['online']
-      console.log(online)
-})
-
-window.addEventListener("load" , () => {
-      online += 1
-})
-window.addEventListener('unload', () => {
-      online -= 1
-});
-
-setInterval(() => {
-      firebase.database().ref(`/${room}/`+"online").set({"online":online});
-      document.querySelector(".online").innerHTML = "Online : " + online;
-} , 25)
 
 </script>
