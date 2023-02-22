@@ -215,7 +215,7 @@
       <div class="body">
       <div class="alrt"></div>
       <div class="chat">
-            <div id="txt"><h2 id="name">Op</h2><h3 id="mess">Messages are loading.....</h3></div>
+            <div id="txt"><h3 id="name">Op</h3><h3 id="mess">Messages are loading.....</h3></div>
       </div>
       <div class="mes">
             <textarea class="message" placeholder="Enter your message.."></textarea>
@@ -258,7 +258,7 @@ function show(){
     for (let i=1 ; i<id+1;i++){
             firebase.database().ref().child("/"+room).child(i).get().then((snapshot) => {
                   var el = document.createElement("div");
-                  var he = document.createElement("h2");
+                  var he = document.createElement("h3");
                   var mes = document.createElement("h3");
                   mes.id = "mess"
                   if (snapshot.val()['name'] == localName){
