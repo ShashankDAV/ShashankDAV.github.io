@@ -10,7 +10,7 @@
             background: #000045;
       }
       .chat {
-            height: 95%;
+            height: 94%;
             overflow: hidden;
             overflow-y: scroll;
       }
@@ -267,7 +267,7 @@ var lft = true;
 
 document.querySelector(".top").addEventListener("click" , () => {
       if (lft){
-            document.querySelector(".top").style.width = "525px";
+            document.querySelector(".top").style.width = "550px";
             document.querySelector(".op").innerHTML = "<";
             lft = false
       }
@@ -278,29 +278,24 @@ document.querySelector(".top").addEventListener("click" , () => {
       }
 })
 
-function add(){
-      firebase.database().ref().child("/"+room).child("online").get().then((snapshot) => {
-            let online = 0
-            if (snapshot.val() == null){
-                 firebase.database().ref(`/${room}/`+"online").set({"online": 0})
-                 online = snapshot.val()['online'] + 1
-            }
-            else{
-                  online = snapshot.val()['online'] + 1
-            }
-            document.querySelector(".online").innerHTML = "Online : " + online;
-            firebase.database().ref(`/${room}/`+"online").set({"online": online})
-            console.log(online)
-      })
-}
-
 document.querySelector(".send").addEventListener("click" , send)
-window.addEventListener("load" , add)
-window.addEventListener('unload', function (e) {
-            firebase.database().ref().child("/"+room).child("online").get().then((snapshot) => {
-            let online = snapshot.val()['online'] - 1
-            document.querySelector(".online").innerHTML = "Online : " + online;
-            firebase.database().ref(`/${room}/`+"online").set({"online":online})
-      })
+
+let online = 0;
+firebase.database().ref().child("/"+room).child("online").get().then((s) => {
+      online = online + s.val()['online']
+      console.log(online)
+})
+
+window.addEventListener("load" , () => {
+      online += 1
+})
+window.addEventListener('unload', () => {
+      online -= 1
 });
+
+setInterval(() => {
+      firebase.database().ref(`/${room}/`+"online").set({"online":online});
+      document.querySelector(".online").innerHTML = "Online : " + online;
+} , 25)
+
 </script>
