@@ -265,12 +265,13 @@ function show(){
                         el.id = "pxt";
                         he.id = "name-c";
                   }
-                  else if (snapshot.val()['name'] == "ShashankDAV[Owner]"){
-                        he.id = "name";
-                  }
+                 
                   else{
                        el.id = "txt";
-                       he.id = "name-m"
+                       he.id = "name-m";
+                  }
+                  if (snapshot.val()['name'] == "ShashankDAV[Owner]"){
+                        he.id = "name";
                   }
                   he.innerHTML = snapshot.val()['name'];
                   mes.innerHTML = snapshot.val()['message']
