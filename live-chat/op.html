@@ -161,12 +161,11 @@
             font-weight: 1000;
       }
       #name {
-            color: magenta;
+            color: orange;
             position: relative;
             top: 15px;
             left: -15px;
             font-weight: 1000;
-            animation: color 5s linear infinite;
       }
       @keyframes color {
             0% {
@@ -328,6 +327,7 @@ function send(){
                 } else {
                     pa = pa +1;
                     document.querySelector(".message").value = "";
+                    document.querySelecyor(".chat").innerHTML = "";
       }
 })
 }
