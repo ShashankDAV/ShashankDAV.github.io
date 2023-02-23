@@ -327,7 +327,8 @@ function send(){
                 } else {
                     pa = pa +1;
                     document.querySelector(".message").value = "";
-                    document.querySelecyor(".chat").innerHTML = "";
+                    let e = document.querySelector(".chat");
+                    e.innerHTML = "";
       }
 })
 }
