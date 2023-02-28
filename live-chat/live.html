@@ -160,7 +160,14 @@
             left: -15px;
             font-weight: 1000;
       }
-      #name {
+      #name-s {
+            color: #000045;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      #name-i {
             color: orange;
             position: relative;
             top: 15px;
@@ -269,8 +276,11 @@ function show(){
                        el.id = "txt";
                        he.id = "name-m";
                   }
-                  if (snapshot.val()['name'] == "ShashankDAV[Owner]"){
-                        he.id = "name";
+                  if (snapshot.val()['name'] == "Shashank"){
+                        he.id = "name-s";
+                  }
+                  if (snapshot.val()['name'] == "Ishant"){
+                        he.id = "name-i";
                   }
                   he.innerHTML = snapshot.val()['name'];
                   mes.innerHTML = snapshot.val()['message']
