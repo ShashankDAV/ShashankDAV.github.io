@@ -282,6 +282,7 @@ function show(){
                   var mes = document.createElement("h3");
                   mes.id = "mess"
                   var message = snapshot.val()['message'];
+                  for (let i=0 ; i<3 ; i++){
                   if (message.startsWith("*")){
                         mes.style.fontWeight = "1000";
                         message = message.substring(1);
@@ -293,6 +294,7 @@ function show(){
                   if (message.startsWith("|")){
                         mes.style.fontFamily = "fantasy";
                         message = message.substring(1);
+                  }
                   }
                   if (snapshot.val()['name'] == localName){
                         el.id = "pxt";
