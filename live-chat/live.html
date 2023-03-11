@@ -1,0 +1,385 @@
+<style>
+      .mes {
+            width: 100%;
+            display: flex;
+            position: relative;
+            margin-top: 5px;
+      }
+
+      body {
+            background: #000045;
+      }
+      .chat {
+            height: 94.4%;
+            overflow: hidden;
+            overflow-y: scroll;
+      }
+      .chat::-webkit-scrollbar {
+            width: 18px;
+            border-radius: 20px;
+      }
+
+      .chat::-webkit-scrollbar-track {
+            border-radius: 20px;
+            background: #000045;
+      }
+
+      .chat::-webkit-scrollbar-thumb {
+            width: 24px;
+            background: linear-gradient(45deg, cyan , blue , cyan);
+            border-radius: 15px;
+      }
+      .send img{
+            height: 100px;
+            width: 100%;
+      }
+      .send {
+            width: 15%;
+            background: rgb(0,143,250);
+            border: none;
+            outline: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            position: relative;
+      }
+      .message {
+            height: 105px;
+            width: 85%;
+            font-size: 50;
+            border: 5px solid rgb(0,143,250);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            position: relative;
+      }
+      #txt {
+            background: white;
+            padding: 0 50;
+            width: 550;
+            font-size: 35;
+            margin: 15;
+            border-radius: 25px;
+            font-weight: 1000;
+            position: relative;
+      }
+      #txt:after {
+            content: '';
+            position: absolute;
+            left: -10;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-bottom: 50px solid #fff;
+            border-right: 25px solid transparent;
+      }
+      #pxt {
+            background: white;
+            padding: 0 50;
+            width: 550;
+            font-size: 35;
+            margin: 15;
+            margin-left: 28%;
+            border-radius: 25px;
+            font-weight: 1000;
+            position: relative;
+      }
+      #pxt:after {
+            content: '';
+            position: absolute;
+            right: -10;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-bottom: 50px solid #fff;
+            border-right: 25px solid transparent;
+      }
+      #link {
+            font-size: 35;
+            font-weight: 1000;
+            color: #000045;
+            outline: none;
+            border: 5px solid #000045;
+            background: white;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+            padding: 5 0;
+      }
+      .alrt{
+            width: 100%;
+            background: white;
+            color: #000045;
+            position: fixed;
+            font-size: 60;
+            z-index: 2;
+            padding: 15 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 1000;
+            height: 150;
+            left: -2;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            top: -300px;
+            transition-duration: 1s;
+      }
+      img {
+           width: 550;
+           border-radius: 25px;
+}
+      .top{
+            color: white;
+            position: fixed;
+            background: lightgrey;
+            z-index: 4;
+            padding: 0px 30px ;
+            border-radius: 15px;
+            width: 50;
+            height: 100;
+            margin-left: 15px;
+            overflow: hidden;
+            align-items: center;
+            display: flex;
+            margin-top: 15px;
+            transition: width 0.5s;
+      }
+      .online{
+            background: #3dcd00;
+            margin-left: 30;
+            padding-left: 100;
+            padding-right: 100;
+            font-size: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-weight: 1000;
+            font-family: fantasy;
+      }
+      .op{
+            font-size: 100;
+      }
+      #name-c {
+            color: crimson;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      #name-m {
+            color: purple;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      #name-s {
+            color: #000060;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      #name-i {
+            color: #61ed6f;
+            position: relative;
+            top: 15px;
+            left: -15px;
+            font-weight: 1000;
+      }
+      @keyframes color {
+            0% {
+                  color: cyan;
+            }
+            10%{
+                  color: green;
+            }
+            20%{
+                  color: blue;
+            }
+            30%{
+                  color: red;
+            }
+            40%{
+                  color : yellow
+            }
+            50%{
+                  color : purple;
+            }
+            60% {
+                  color : pink;
+            }
+            70% {
+                  color : blue;
+            }
+            80% {
+                  color: crimson;
+            }
+            90% {
+                  color: orange;
+            }
+            100%{
+                  color: magenta;
+            }
+      }
+      #mess {
+            position: relative;
+            top: -15px;
+            left: -15px;
+            font-weight: 450;
+      }
+</style>
+<head><title>Live-Chat</title></head>
+<body>
+<div class="body">
+<div class="alrt"></div>
+<div class="chat">
+<div id="txt"><h3 id="name">Op</h3><h3 id="mess">Messages are loading.....</h3></div>
+</div>
+<div class="mes">
+<textarea class="message" placeholder="Enter your message.."></textarea>
+<button class="send"><img src="https://shashankdav.github.io/send.png"/></button>
+</div>
+</div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<script type="module">
+
+  let params = new URLSearchParams(document.location.search);
+  let room = params.get("room");
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCV24K_7FARbMsRGwtw8lWSdCe8x9v4MzE",
+    authDomain: "live-shashankdav.firebaseapp.com",    projectId: "live-shashankdav",
+    storageBucket: "live-shashankdav.appspot.com",
+    messagingSenderId: "868265309052",
+    appId: "1:868265309052:web:12860b9948bbee6bb5aaf9"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  var pa = 0;
+  let id = 1;
+  let name = "";
+  let localName = localStorage.getItem("eman");
+
+function show(){
+  firebase.database().ref("/"+room+"/").on('value',(snap)=>{
+    var totalRecord =  snap.numChildren();
+    id = totalRecord;
+    let e = document.querySelector(".chat");
+    e.innerHTML = "";
+
+    for (let i=1 ; i<id+1;i++){
+            firebase.database().ref().child("/"+room).child(i).get().then((snapshot) => {
+                  var el = document.createElement("div");
+                  var he = document.createElement("h3");
+                  var mes = document.createElement("h3");
+                  mes.id = "mess"
+                  var message = snapshot.val()['message'];
+                  if (message.startsWith("*")){
+                        mes.style.fontWeight = "1000";
+                        message = message.substring(1);
+                  }
+                  if (message.startsWith("_")){
+                        mes.style.fontStyle = "italic";
+                        message = message.substring(1);
+                  }
+                  if (message.startsWith("|")){
+                        mes.style.fontFamily = "fantasy";
+                        message = message.substring(1);
+                  }
+                  if (snapshot.val()['name'] == localName){
+                        el.id = "pxt";
+                        he.id = "name-c";
+                  }
+
+                  else{
+                       el.id = "txt";
+                       he.id = "name-m";
+                  }
+                  if (snapshot.val()['name'] == "Shashank"){
+                        he.id = "name-s";
+                  }
+                  if (snapshot.val()['name'] == "Ishant"){
+                        he.id = "name-i";
+                  }
+                  he.innerHTML = snapshot.val()['name'];
+                  mes.innerHTML = message;
+                  el.appendChild(he);
+                  el.appendChild(mes);
+                  document.querySelector(".chat").appendChild(el);
+                  let hit = document.querySelector(".chat").scrollHeight;
+                  document.querySelector(".chat").scrollTop = hit;
+})}})}
+
+show()
+
+function alrt(txt,col){
+      document.querySelector(".alrt").style.top = "-5px";
+      document.querySelector(".alrt").innerHTML = txt;
+      document.querySelector(".alrt").style.background = col;
+      setInterval(() => {
+            document.querySelector(".alrt").style.top = "-300px";
+      } , 4000)
+}
+
+function ask(){
+      var login = localStorage.getItem("eman");
+
+      if (login==null){
+           alert("Sign in First");
+           window.open("https://shashankdav.github.io/login","_self");
+      }
+      else{
+           name = login;
+      }
+}
+
+document.addEventListener("load",ask())
+
+function send(){
+      let data = {};
+      let msg = document.querySelector(".message").value;
+      if (msg == ""){
+            alrt("Enter Message.","rgb(255,70,0)")
+      }
+      else{
+            data["message"] = msg;
+            data["name"] = name;
+            let messNo = id + 1;
+
+            firebase.database().ref(`/${room}/`+messNo).set(data,function(error) {
+                if (error) {
+                  console.log({error});
+                } else {
+                    pa = pa +1;
+                    document.querySelector(".message").value = "";
+      }
+})
+}
+}
+
+var lft = true;
+
+/*document.querySelector(".top").addEventListener("click" , () => {
+      if (lft){
+            document.querySelector(".top").style.width = "550px";
+            document.querySelector(".op").innerHTML = "<";
+            lft = false
+      }
+      else{
+            document.querySelector(".op").innerHTML = ">";
+            document.querySelector(".top").style.width = "50px";
+            lft = true
+      }
+})*/
+
+document.querySelector(".send").addEventListener("click" , send)
+
+</script>
