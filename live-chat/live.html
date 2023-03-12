@@ -330,6 +330,10 @@ function show(){
                         mes.style.color = "#6709ab";
                         message = message.substring(1);
                   }
+                  if (message.startsWith("https://")){
+                        mes.style.color = "blue";
+                        message = `<a href={message}>{message}</a>`;
+                  }
                   }
                   if (snapshot.val()['name'] == localName){
                         el.id = "pxt";
