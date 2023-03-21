@@ -1,0 +1,177 @@
+<style>
+body{
+      background: black;
+      color: white;
+}
+#inp {
+      width: 100%;
+      font-size: 25px;
+      padding: 10px;
+      border-radius: 15px;
+      border: 3px solid #004999;
+      outline: none;
+      background: black;
+      color: white;
+}
+#hint {
+      padding-left: 5px;
+      font-size: 20px;
+      border-left: 3px solid #004999;
+}
+#word{
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 10px;
+      border: 3px solid #004999;
+      //margin: 2px;
+      margin: 1px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+#words{
+      display:  flex;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 5px;
+}
+</style>
+<body>
+<h1 id="hint">Hint: </h1>
+<form id="form" onsubmit="srch() ; event.preventDefault()"><input placeholder="Guess the word..." id="inp"></form>
+<div id="words" style="margin-top: 7px" class="a"></div>
+<div id="words" class="b"></div>
+<div id="words" class="c"></div>
+<div id="words" class="d"></div>
+<div id="words" class="e"></div>
+</body>
+<script>
+
+alert("Upvote the code if you like it , suggest some features that can be added in this game.")
+var hints = {
+      'diffusion' : 'The process through which unicellular organisms respire',
+      'bulb' : 'A symbol of great idea',
+      'python' : 'A programming language for data science',
+      'javascript' : 'A programming language for web development',
+      'chrome' : 'The app in which you are seeing this game',
+      'clean' : 'Oppostie of dirty',
+      'worst' : 'Superlative form of bad',
+      'india' : 'Largest democracy',
+      'russia' : 'Largest country according to area',
+      'accept' : 'To agree to do any work',
+      'clear' : 'Oppostie of indistinct',
+      'twitter' : 'The company which was bought by Elon Musk',
+      'alien' : '👽',
+      'cricket' : 'Game consisting of two teams that play using ball and bat',
+      'soccer' : 'American call football as ____',
+      'array' : 'A collection of data in programming language',
+      'oop' : 'It is based on the concept of "objects", which can contain data and code',
+      'java' : 'Programming language for develeoping android and ios applications',
+      'byte' : 'It is equal to 8 bits (No need to write 1)',
+      'megabyte' : '1024 kilobytes = ____ (No need to write 1)',
+      'string' : 'Text in programming languages is known as ___',
+      '1451' : '11**2 + 11**3 - 11**0',
+      'gigabyte' : '1024 megabytes = ____(No need to write 1)',
+      'friction' : 'the rubbing of one surface or thing against another',
+      'gravity' : 'the natural force that makes things fall to the ground when you drop them',
+      'spain' : 'Bull fight is the national game of this country',
+      'japan' : 'The country where most animes are made',
+      'nippon' : 'Another name for Japan'
+}
+
+var len = Object.keys(hints).length;
+var hintKey = "";
+var hintValue = "";
+var nth = 0;
+var abc = "abcde";
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function srch(e){
+      if (nth == 5){
+            var a = new Audio("https://shashankdav.github.io/images/wrong.mp3");
+            a.play();
+            alert(message)
+            setTimeout(() => {
+                 var message = "You lost ☹️ , the word was " + hintKey + ".\n Next word is loading....";
+                 randomWord();
+            } , 1000)
+      }
+      else{
+            var inp = document.querySelector("#inp").value.toLowerCase();
+            var clse = "." + abc[nth] + " #word";
+            var word = document.querySelectorAll(clse);
+            var s = 0;
+            for (let x=0;x<word.length;x++){
+                  if (word[x].innerHTML == inp[x]){
+                        word[x].style.color = "white";
+                        word[x].style.background = "#18de4d";
+                        s += 1
+                        var au = new Audio("https://shashankdav.github.io/images/top.wav");
+                        au.play();
+                  }
+                  else {
+                        word[x].style.color = "black";
+                        if (inp[x]==undefined){
+                            word[x].innerHTML = "";
+                        }
+                        else{
+                            word[x].innerHTML = inp[x];
+                        }
+                        word[x].style.background = "red";
+                        var au = new Audio("https://shashankdav.github.io/images/top.wav");
+                        au.play();
+                  }
+                  await sleep(300);
+            }
+           
+            if (s == word.length){
+                        var a = new Audio("https://shashankdav.github.io/images/correct.mp3");
+                        a.play();
+                        setTimeout(() => {
+                              alert("You guessed it 👏 , Next word is loading....")
+                              randomWord();
+                        } , 1000)
+                  }
+            else{
+                  var a = new Audio("https://shashankdav.github.io/images/wrong.mp3");
+                  a.play();
+            }
+            nth += 1
+            document.querySelector("#inp").value = "";
+      }
+}
+function randomWord(){
+      var ran = Math.floor(Math.random() * len);
+      var hint = document.querySelector("#hint");
+      hint.innerHTML = "Hint : " + hints[Object.keys(hints)[ran]];
+      hintValue = hints[Object.keys(hints)[ran]];
+      hintKey = Object.keys(hints)[ran];
+      nth = 0
+      document.querySelector("#inp").value = "";
+      var divs = document.querySelectorAll("#words");
+      for (let g=0;g<divs.length;g++){
+            divs[g].innerHTML = "";
+      }
+      for (let j = 0 ; j<divs.length ; j++){
+            div = divs[j]
+            for (let i = 0 ; i < hintKey.length ; i++){
+                  var word = document.createElement("div");
+                  word.id = 'word';
+                  word.style.height = Math.floor(1000/hintKey.length);
+                  word.style.width = Math.floor(1000/hintKey.length);
+                  word.style.color = "black";
+                  word.innerHTML = hintKey[i];
+                  div.appendChild(word);
+            }
+            div.innerHTML = div.innerHTML + "<br>";
+      }
+}
+
+randomWord()
+
+</script>
