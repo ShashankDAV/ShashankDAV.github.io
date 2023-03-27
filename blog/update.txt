@@ -1,0 +1,6 @@
+MDLabel:
+   pos_hint : {"center_x":0.5,"center_y":0.5}
+   text : "This is updates page"
+   bold : True
+   italic : True
+   
