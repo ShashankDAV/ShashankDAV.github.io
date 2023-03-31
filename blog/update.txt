@@ -1,6 +1,7 @@
 MDLabel:
 
-	text : "This is Shashank's app"	italic : True
+	text : "This is Shashank's app"
+	
 
 	pos_hint : {'y': 0.34 , 'x' : 0.03}
 
