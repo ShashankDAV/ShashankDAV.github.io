@@ -1,8 +1,0 @@
-MDLabel:
-
-	text : "This is Shashank's app"
-	
-
-	pos_hint : {'y': 0.34 , 'x' : 0.03}
-
-	font_size : '30dp'
