@@ -8,8 +8,8 @@ MDTopAppBar:
                     type : 'bottom'
                     icon : 'home'
                     elevation : 0
-                   on_action_button : app.root.ids.manager.current = 'home'
-                   pos_hint : {'top':1}
+                    on_action_button : app.root.ids.manager.current = 'home'
+                    pos_hint : {'top':1}
             MDLabel:
                 text : 'Hello , This is updates page'
                 pos_hint : {'center_x':0.5 , 'center_y':0.5}
