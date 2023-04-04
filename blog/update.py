@@ -11,9 +11,10 @@ MDTopAppBar:
                     on_action_button : app.root.ids.manager.current = 'home'
                     pos_hint : {'top':1}
             MDLabel:
-                text : 'Hello , This is updates page'
-                pos_hint : {'center_x':0.5 , 'center_y':0.5}
+                text : 'No updates now ▶️'
+                pos_hint : {'center_x':0.75 , 'center_y':0.35}
                 bold : True
             MDRectangleFlatButton:
-                text : 'Button'
+                text : 'Go to homepage'
+                on_press : app.root.ids.manager.current = "home"
                 pos_hint : {'center_x':0.75 , 'center_y':0.5}
