@@ -12,9 +12,9 @@ MDTopAppBar:
                     pos_hint : {'top':1}
             MDLabel:
                 text : 'No updates now'
-                pos_hint : {'center_x':0.8 , 'center_y':0.75}
+                pos_hint : {'center_x':0.9 , 'center_y':0.75}
                 bold : True
             MDRectangleFlatButton:
                 text : 'Go to homepage'
                 on_press : app.root.ids.manager.current = "home"
-                pos_hint : {'center_x':0.6 , 'center_y':0.5}
+                pos_hint : {'center_x':0.3 , 'center_y':0.5}
