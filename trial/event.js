@@ -32,6 +32,15 @@
                   wish = true;
                   color = "gold";
             }
+            if (date.includes("Apr 23")){
+
+                  message = "Happy Marriage Anniversary Mummy And Papa";
+
+                  wish = true;
+
+                  color = "gold";
+
+            }
             p.innerHTML = message;
             p.style.color = color;
             p.style.fontFamily = "cursive";
