@@ -1,0 +1,117 @@
+<style>
+.get-started-btn{
+      width: 400px;
+      font-size: 50px;
+      height: 175px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000045;
+      background: #00c3d0;
+      font-weight: 750;
+      border: 10px solid white;
+      border-radius: 25px;
+      margin-top: 90%;
+      margin-left: 30%;
+      outline: none;
+      user-select: none;
+}
+.get-started-btn:before{
+      content: '';
+      width: 420px;
+      height: 195px;
+      background: #00c3d9;
+      position: absolute;
+      z-index: -1;
+      border-radius: 25px;
+}
+.get-started-btn:hover{
+      background: #000045;
+      color: #00c3d0;
+}
+.get-started-btn:hover::before{
+      background: #000045;
+}
+.wish {
+      font-size : 60;
+      color : white;
+      font-family: fantasy;
+}
+.board {
+      margin-top : 100%;
+      height: 200;
+      display: flex;
+      justify-content: center;
+      border-radius : 25px;
+      display: none;
+}
+.galaxy {
+      z-index: -2;
+      position: fixed;
+      top: 0;
+      width : 101%;
+      height : 101%;
+      left : -5;
+}
+.pic {
+      position : fixed;
+      margin-left : 2%;
+      width : 96%;
+      height : 80%;
+      border-radius : 50px;
+      bottom : 100;
+      z-index: -2;
+      opacity : 0;
+      transition: opacity 1s linear, transform 0.5s linear;
+}
+</style>
+<body>
+<img class="galaxy" src="https://shashankdav.github.io/images/galaxy.jpg">
+<button onclick="textPopup()" class="get-started-btn">Click Here</button>
+<div class='board'></div>
+<div class="div-pic">
+<img id="pic" class="pic" src="https://shashankdav.github.io/images/pic1.png" onmouseover="flipPic()">
+</div>
+</body>
+<script>
+let text = "Happy Marriage Anniversary<br>ㅤㅤㅤMummy And Papa"
+function textPopup(){
+      let el = document.createElement("h1");
+      el.innerHTML = text;
+      el.className = "wish";
+      document.querySelector(".board").appendChild(el);
+      document.querySelector(".get-started-btn").style.display = "none";
+      document.querySelector(".board").style.display = "flex";
+      animation(document.querySelector(".board"))
+}
+function animation(x){
+      let i = 100;
+      let int = setInterval(() => {
+            x.style.marginTop = `${i}%`;
+            if (i<0){
+                  clearInterval(int);
+                  document.querySelector(".pic").style.opacity = "1";
+                  document.querySelector(".pic").style.zIndex = "1";
+            }
+            else{
+                  i -= 1;
+            }
+      } , 50)
+}
+let flip = true;
+function flipPic(){
+      var pict = document.querySelector("#pic")
+      if (flip){
+            pict.style.transform = "rotateY(180deg)";
+            pict.src = "https://shashankdav.github.io/images/pic2.jpg";
+            flip = false
+      }
+      else{
+            pict.style.transform = "rotateY(360deg)";
+            pict.src = "https://shashankdav.github.io/images/pic1.png";
+            flip = true
+      }
+}
+var picture = document.querySelector("#pic")
+picture.addEventListener("click" , flipPic)
+</script>
