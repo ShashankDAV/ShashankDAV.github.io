@@ -1,0 +1,620 @@
+<style>
+
+*{
+      font-family: fantasy;
+}
+
+body {
+     background: linear-gradient(135deg , #ADEFD1FF, #00203FFF);
+}
+
+.menu {
+      width: 98.5%;
+      height: 130;
+      background: #000;
+      border-radius: 15px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+}
+
+.menu-logo {
+      color: white;
+      font-size: 75;
+      margin-right: 170;
+      font-weight: 500;
+      user-select: none;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+}
+
+.menu-logo span {
+      color: crimson;
+      font-weight: 1000;
+}
+
+.menu-btn {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 80;
+      color: white;
+      font-weight: 800;
+}
+
+.menu-bar {
+      width: 100%;
+      height: auto;
+      background: #000045;
+      position: fixed;
+      left: -101%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      z-index: 4;
+      transition: all 1s;
+}
+
+.menu-bar ul li {
+      list-style: none;
+      margin-top: 100;
+      padding: 5;
+}
+
+.a {
+      color: white;
+      font-size: 70;
+      font-weight: 1000;
+      user-select: none;
+      transition: 0.5s all;
+}
+
+.f {
+      width: 100%;
+      height: 6000;
+      background: yellow;
+}
+
+.i {
+      width: 100;
+      height: 100;
+}
+
+#i2 {
+      height: 120;
+}
+
+#a1 {
+      margin-top: 200;
+}
+
+#a1:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: orange;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a1:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a2:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: pink;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a2:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a3:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: cyan;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a3:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a4:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: lightgreen;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a4:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a5:before {
+      content: "";
+      position: absolute;
+      transform: translate3d(-20px , -10px , 0px);
+      width: 10px;
+      height: 100px;
+      background: magenta;
+      transition: 0.5s all;
+      z-index: -1;
+}
+
+#a5:hover::before {
+      width: 450;
+      border-radius: 0px 5px 5px 0px;
+      color: black;
+}
+
+#a4 {
+      padding-bottom: 50px;
+}
+
+.sec h1 {
+      padding-top: 180;
+      font-size: 80;
+}
+
+.sec h2 {
+      font-size: 50;
+      margin: -50 0;
+}
+
+.about {
+      margin: 25 0;
+      margin-top: 90;
+      background: cyan;
+      padding: 20px;
+      border-radius: 15px;
+}
+
+.about h1 {
+      font-size: 80;
+      margin: 10;
+}
+
+.about p {
+      font-size: 35;
+      margin: 10;
+}
+
+.lab {
+     font-size: 40;
+     margin: 10;
+}
+
+.over {
+      overflow: hidden;
+      height: 50;
+}
+
+.about label ul {
+      color: crimson;
+      font-weight: 800;
+      position: relative;
+      top: -85;
+      right: -220;
+      list-style: none;
+      animation: scroll 20s linear infinite;
+}
+
+.notice {
+      width: 99%;
+      margin: 0 0.5%;
+      background: #ffffff;
+      border-radius: 5px;
+}
+
+.h {
+      font-size: 130px;
+      text-align: center;
+      font-family: fantasy;
+      position: relative;
+      bottom: -50px;
+}
+
+.n1 {
+      position: relative;
+      top: -10px;
+      border-bottom: 5px solid;
+      padding: 10px;
+      height: auto;
+      width: 94%;
+      height: auto;
+      margin-left: 13;
+      margin-top: 5;
+}
+
+h2 {
+      font-size: 50;
+}
+
+p {
+      font-size: 10;
+}
+
+#co {
+      margin: 1%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      z-index: -1;
+}
+
+.cs {
+      margin-left: 150;
+      font-size: 75;
+      color: cyan;
+}
+
+.pp {
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      left: 749;
+      bottom: 100;
+      z-index: 2;
+      display: none;
+}
+
+.pp button img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      z-index: 2;
+}
+
+.pp button {
+      border-radius: 50%;
+      height: 150;
+      width: 150;
+      outline: none;
+      border: none;
+      background: white;
+      box-shadow: 0px 0px 30px 10px rgb(1,200,200);
+}
+
+.pp:before {
+      content: "Chatbot";
+      color: black;
+      position: absolute;
+      transform: translate3d(-4px ,130px ,0px);
+      background: white;
+      font-size: 30;
+      border-radius: 90px;
+      padding: 5 20;
+      border: 5px solid rgb(1,200,200);
+      border-top: 0px white;
+      display: none;
+      font-weight: 1000;
+}
+
+.pp:hover::before{
+      display: block;
+}
+
+.copyright {
+      margin-top: 0;
+      background: rgb(40,40,40);
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200;
+      width: 101.9%;
+      transform: translate3d(-10px,10px,0px);
+}
+.copyright p{
+      color: white;
+      padding: 50;
+      font-size: 30;
+}
+.copyright img{
+      border-radius: 50%;
+      height: 100;
+      width: 100;
+}
+
+.menu-txt{
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 45;
+      font-weight: 1000;
+      color: white;
+      transform: translateX(-20px);
+}
+
+.comment-section {
+      width: 100%;
+      height: 250;
+}
+
+.comment-section textarea {
+      font-size: 40;
+      font-family: fantasy;
+      width: 98%;
+      height: 350;
+      border-radius: 10px;
+      margin: 1%;
+      outline: none;
+}
+
+.comment-section button {
+      background: rgb(1,150,1);
+      height: 80;
+      width: 30%;
+      margin: 1%;
+      border: none;
+      margin-left: 69%;
+      font-size: 60;
+      font-family: fantasy;
+      border-radius: 25px;
+      outline: none;
+      font-weight: 800;
+}
+
+#co {
+      margin: 1%;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      z-index: -1;
+}
+
+#vvv {
+      border-left: 5px solid;
+      border-right: 5px solid;
+      border-top: 5px solid;
+      margin: 0 1%;
+      margin-top: 250;
+      overflow: hidden;
+}
+#com {
+      overflow: hidden;
+      width: 104%;
+      font-size: 40;
+      padding-top: 20px;
+      background: rgb(247, 247, 247);
+      color: black;
+      border-bottom: 3px solid white;
+      margin-left: -2;
+}
+.imgg {
+      height: 75;
+      border-radius: 50%;
+      position: relative;
+      top: -110px;
+      right: -25px;
+      border: 5px solid black;
+}
+#nam {
+      font-size: 45;
+      font-family: fantasy;
+      position: relative;
+      top: -10px;
+      right: -125px;
+}
+#commen {
+      position: relative;
+      top: -60px;
+      right: -30px;
+      display: flex;
+      font-size: 35;
+      font-family: fantasy;
+      font-weight: 800;
+}
+</style>
+
+<head>
+      <title>ShashankDAV</title>
+      <link rel="icon" href="https://shashankdav.github.io/logo.png" type="image/x-icon">
+</head>
+
+<body>
+<div class="menu">
+      <h1 class="menu-logo">Shashank<span>DAV</span></h1>
+      <button class="menu-txt" onclick="log()">Sign In</button>
+      <button class="menu-btn" onclick="opn()" id="btn"><img class="i" id="i" src="https://shashankdav.github.io/-.png"></button>
+</div>
+
+<div class="menu-bar" id="bar">
+
+<ul>
+<li id="a1"><a onclick="notes()" class="a">Notes</a></li>
+<li id="a2"><a onclick="alert('Under Development')" class="a">HomeWork</a></li>
+<li id="a3"><a onclick="lc()" class="a">Live-Chat</a></li>
+<li id="a4"><a onclick="blogs()" class="a">Blog</a></li>
+</ul>
+</div>
+
+<section class="sec">
+      <h1>Hi, There</h1>
+      <h2>Welcome to my website</h2>
+</section>
+
+<div class="pp"><button onclick="chat()"><img src="https://shashankdav.github.io/chatbot_img.gif"></button></div>
+
+<div class="about">
+      <h1>ShashankDAV</h1>
+      <p>I am Shashank Pathak and I am a student.</p>
+      <p>My hobbies are Reading and Programming.</p>
+</div>
+
+<div class="notice">
+
+<h1 class="h">Notice</h1>
+<div class="n1">
+      <h2>Date: 06/11/22</h2>
+      <p>Homework site is under maintenance so homework will not be uploaded. I am extremely sorry for this inconvenience.</p>
+</div>
+<div class="n1">
+      <h2>Date : 30/12/22</h2>
+      <p>Login site is now fixed which was not working as supposed to work earlier.</p>
+</div>
+<div class="n1">
+      <h2>Date : 15/02/22</h2>
+      <p>No updates will be made on this site as my exams are going on. :)</p>
+</div>
+<div class="n1">
+      <h2>Date : 15/02/22</h2>
+      <p>If you have any doubt in study , click <a href="https://shashankdav.github.io/live-chat/live.html?room=doubt">here</a> and enter your doubt. Your doubt will be solved in short period of time.</p>
+</div>
+</div>
+<div class="comment-section">
+      <form id="sheetdb-form" action='https://sheetdb.io/api/v1/ftxzphgynmqwl' method="POST">
+      <input id="name" name="data[Name]" type="hidden">
+      <textarea name="data[Comment]" placeholder="Enter your comment here" id="txt" required></textarea>
+      <button class="comment" id="comm">Post</button>
+      </form>
+</div>
+<div id="vvv">
+      
+</div>
+<div class="copyright">
+      <p>© Copyright ShashankDAV.github.io</p><img src='https://shashankdav.github.io/logo.png'><br>
+      <p>Notes website team: Shashank and <a style="color: cyan;" href="https://yugraj.design.blog">Yugraj</a></p>
+</div>
+</body>
+
+<script src="https://shashankdav.github.io/trial/event.js"></script>
+
+<script>
+
+var x = true;
+
+function notes() {
+        window.open("https://davnotes.art.blog","_self");
+}
+
+function blogs() {
+        window.open("https://shashankdav.github.io/blog","_self");
+}
+
+function chat() {
+        window.open("https://shashankdav.github.io/chat","_self");
+}
+
+function lc() {
+        window.open("https://shashankdav.github.io/live-chat","_self");
+}
+
+function log() {
+      var c = localStorage.getItem("eman");
+      if (c == null || c == "" || c == " "){
+            window.open("https://shashankdav.github.io/login","_self");
+      }
+      else {
+            alert("You have already signed in.");
+}
+}
+
+function opn() {
+      if (x) {
+            document.getElementById("bar").style.left = "0";
+            document.getElementById("i").src = "https://shashankdav.github.io/x.png";
+            x = false;
+      }
+      else {
+            document.getElementById("bar").style.left = "-101%";
+            document.getElementById("i").src = "https://shashankdav.github.io/-.png"
+            x = true;
+      }
+}
+
+function save(key,value){
+      localStorage.setItem(key,value);
+}
+
+setInterval(pp, 1000)
+
+function pp() {
+      let x = Math.floor((Math.random() * 100) + 1);
+      if (x%5 == 0) {
+            document.querySelector(".pp").style.display = "block";
+      }
+}
+
+var com = 0;
+var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+          document.querySelector("#txt").innerHTML = "";
+          location.reload();
+    });
+  });
+
+  function show_comments(){
+       fetch('https://sheetdb.io/api/v1/ftxzphgynmqwl').then(response => response.json()).then(data => {
+             for (var i=0;i<data.length;i++){
+                  var name = data[i]["Name"];
+                  var comment = data[i]["Comment"];
+                  var nam = document.createElement("h1");
+                  nam.innerHTML = name;
+                  nam.id = "nam";
+                  var comm = document.createElement("p");
+                  comm.innerHTML = comment;
+                  comm.id="commen";
+                  var img = document.createElement("img");
+                  img.className = "imgg";
+                  img.src = "https://shashankdav.github.io/user.png";
+                  var div = document.createElement("div");
+                  div.appendChild(nam);
+                  div.appendChild(img);
+                  div.appendChild(comm);
+                  div.id = "com";
+                  document.querySelector("#vvv").appendChild(div);
+             };
+})
+}
+var nam = localStorage.getItem("eman");
+
+if (nam){
+    let iddddddd = 0;
+}
+else{
+          document.querySelector("#txt").disabled = true;
+          document.querySelector("#comm").disabled = true;
+          document.querySelector("#txt").placeholder = "Sign In first..";
+}
+document.querySelector("#name").value = name;
+
+show_comments()
+
+</script>
