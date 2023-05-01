@@ -17,7 +17,7 @@ body {
       font-weight: 1000;
       outline: none;
       color : white;
-      text-shadow : 10px 10px 10px #00c3d0;
+      //text-shadow : 10px 10px 10px #00c3d0;
 }
 .input {
 }
@@ -104,6 +104,9 @@ var na = localStorage.getItem("shashank-browser-name");
 if (na != ""){
       document.querySelector(".name").innerHTML = na;
 }
+else {
+      document.querySelector(".name").innerHTML = "ShashankDAV";
+}
 function replaceAll(txt){
       for (c of txt){
             txt = txt.replace(" ","+")
@@ -124,6 +127,6 @@ function setVal(txt){
 }
 
 function makeWebData(name , url){
-      
+
 }
 </script>
