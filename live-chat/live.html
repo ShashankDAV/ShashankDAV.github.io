@@ -324,7 +324,9 @@ function show(){
 
                   mes.id = "mess"
                   tme.id = "tme"
-                  var message = snapshot.val()['message'];
+                  
+                  var messages = snapshot.val()['message'];
+                  var message = messages.replace("\n" , "<br>");
                   for (let i=0 ; i<8 ; i++){
                   if (message.startsWith("*")){
                         mes.style.fontWeight = "1000";
